@@ -36,3 +36,19 @@ We have to setup 2 things:
 7. Remove `restapi:war` from (*Before launch:...*) section with `-`
 8. Apply => Ok
 
+## Setting up database in IntelliJ (optional)
+**Precondition**: Docker containers are up and running.
+1. Look at the right section of your IntelliJ instance
+2. Open the `Database` tab
+3. `+` => Data Source => MySQL
+4. Choose your connection properties according to the docker-compose.yml file
+    - Port
+    - Database
+    - User
+    - Password
+5. Test Connection (Should be fine)
+6. Apply => Ok
+
+
+## Start your application
+Select your Tomcat Configuration and execute it (Play button | Shift + F10)
