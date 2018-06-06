@@ -47,3 +47,4 @@ We have to setup 2 things:
 
 ## Start your application
 Select your Tomcat Configuration and execute it (Play button | Shift + F10)
+You can find the "HelloWorld" endpoint at `http://localhost:8080/webapi/hello`
