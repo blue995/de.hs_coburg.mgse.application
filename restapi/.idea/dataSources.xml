@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="mgse_user_db@localhost" uuid="93c83a51-0651-4b81-bc39-04f710ebae4a">
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="c3074960-233c-4440-a91c-9fd5384f9330">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml</remarks>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3308/mgse_user_db</jdbc-url>
       <driver-properties>
