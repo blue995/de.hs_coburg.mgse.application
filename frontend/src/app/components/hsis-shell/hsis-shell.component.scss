@@ -1,0 +1,72 @@
+/* toolbar on top of page */
+.hsis-toolbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  padding-right: 0;
+  padding-left: 0;
+  display: flex;
+
+  &__button {
+    transition-duration: .4s;
+    transition-property: color,margin;
+    transition-timing-function: cubic-bezier(.25,.8,.25,1);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  &__spacer {
+    flex: 1 1 auto;
+  }
+  &__logout {
+    cursor: pointer;
+  }
+}
+
+/* sidebar and main content area */
+.hsis-home {
+
+  &__container {
+    position: relative;
+  }
+
+  &__side-nav {
+    position: fixed;
+    top: 64px;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+    min-width: 260px;
+    background-color: #fafafa;
+    box-shadow: 6px 0 6px rgba(0, 0, 0, .1);
+  }
+
+  &__nav-link {
+    font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 8px 0;
+    margin: 3px 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #222;
+    display: block;
+    transition: background-color .2s;
+    &:hover {
+      color: #0000ff;
+      background-color: #eee;
+    }
+  }
+
+  &__main-content {
+    font-size: 1.1em;
+    top: 64px;
+    padding: 1vh 2vw 64px 2vw;
+  }
+}

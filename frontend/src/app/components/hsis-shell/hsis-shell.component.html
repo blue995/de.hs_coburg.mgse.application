@@ -1,0 +1,23 @@
+<mat-toolbar class="hsis-toolbar mat-elevation-z6" color="primary">
+  <button class="hsis-toolbar__button" (click)="sidenav.toggle()" mat-button>
+    <mat-icon class="hsis-toolbar__clickable">menu</mat-icon>
+  </button>
+  <span>HSIS</span>
+  <!-- This fills the remaining space of the current row -->
+  <span class="hsis-toolbar__spacer"></span>
+  <!-- logout button -->
+  <button class="hsis-toolbar__button" (click)="logout()" mat-button>
+    <mat-icon class="hsis-toolbar__logout">exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container class="hsis-home__container">
+  <mat-sidenav #sidenav class="hsis-home__side-nav" mode="side" [(opened)]="sideNavOpened">
+    <div *ngFor="let item of navLinks">
+      <a class="hsis-home__nav-link" [routerLink]="[item.link]">{{item.label}}</a>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="hsis-home__main-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
