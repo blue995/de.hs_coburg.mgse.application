@@ -29,3 +29,17 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Code conventions and styling
+
+Please follow the rules below when working on the frontend
+
+### CSS
+
+* SCSS (SASS) is being used
+* [BEM](http://getbem.com/naming/) is used as the naming convention for custom styles (keep it flat)
+
+### Typescript
+
+* all `.ts` files should follow the [Angular Styleguide](https://angular.io/guide/styleguide)
+* stay consistent
