@@ -9,12 +9,12 @@ import { MatTreeNestedDataSource } from '@angular/material';
 import { of as observableOf } from 'rxjs';
 
 @Component({
-  selector: 'app-spo',
-  templateUrl: './spo.component.html',
-  styleUrls: ['./spo.component.scss'],
+  selector: 'app-spos',
+  templateUrl: './spos.component.html',
+  styleUrls: ['./spos.component.scss'],
   providers: [FileDatabase]
 })
-export class SpoComponent implements OnInit {
+export class SposComponent implements OnInit {
 
   nestedTreeControl: NestedTreeControl<FileNode>;
   nestedDataSource: MatTreeNestedDataSource<FileNode>;

@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './auth-guard.guard';
 import { HsisShellComponent } from './components/hsis-shell/hsis-shell.component';
-import { SpoComponent } from './components/spo/spo.component';
+import { SposComponent } from './components/spos/spos.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { CurriculumComponent } from './components/curriculum/curriculum.component';
 
@@ -16,8 +16,8 @@ const routes: Routes = [
   {
     path: '', canActivate: [AuthGuard], component: HsisShellComponent,
     children: [
-      { path: '', canActivate: [AuthGuard], component: SpoComponent },
-      { path: 'spo', canActivate: [AuthGuard], component: SpoComponent },
+      { path: '', canActivate: [AuthGuard], component: SposComponent },
+      { path: 'spos', canActivate: [AuthGuard], component: SposComponent },
       { path: 'courses', canActivate: [AuthGuard], component: CoursesComponent },
       { path: 'curriculum', canActivate: [AuthGuard], component: CurriculumComponent },
     ]

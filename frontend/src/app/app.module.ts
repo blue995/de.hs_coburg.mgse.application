@@ -18,20 +18,20 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './auth-guard.guard';
 import { HsisShellComponent } from './components/hsis-shell/hsis-shell.component';
-import { SpoComponent } from './components/spo/spo.component';
+import { SposComponent } from './components/spos/spos.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { CurriculumComponent } from './components/curriculum/curriculum.component';
 
 /* this will be removed once we start using our REST api */
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './shared/mocks/in-memory-data.service';
+import { InMemoryDataService } from './shared/helper/in-memory-data.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HsisShellComponent,
     LoginComponent,
-    SpoComponent,
+    SposComponent,
     CoursesComponent,
     CurriculumComponent
   ],

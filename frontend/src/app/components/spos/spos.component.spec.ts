@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SpoComponent } from './spo.component';
+import { SposComponent } from './spos.component';
 
 describe('SpoComponent', () => {
-  let component: SpoComponent;
-  let fixture: ComponentFixture<SpoComponent>;
+  let component: SposComponent;
+  let fixture: ComponentFixture<SposComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SpoComponent ]
+      declarations: [ SposComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SpoComponent);
+    fixture = TestBed.createComponent(SposComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
