@@ -20,7 +20,7 @@ import { AuthGuard } from './auth-guard.guard';
 import { HsisShellComponent } from './components/hsis-shell/hsis-shell.component';
 import { SposComponent } from './components/spos/spos.component';
 import { CoursesComponent } from './components/courses/courses.component';
-import { CurriculumComponent } from './components/curriculum/curriculum.component';
+import { CurriculaComponent } from './components/curricula/curricula.component';
 
 /* this will be removed once we start using our REST api */
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -33,7 +33,7 @@ import { InMemoryDataService } from './shared/helper/in-memory-data.service';
     LoginComponent,
     SposComponent,
     CoursesComponent,
-    CurriculumComponent
+    CurriculaComponent
   ],
   imports: [
     BrowserModule, // make sure this import is on the top of the list
