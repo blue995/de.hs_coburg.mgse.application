@@ -10,6 +10,9 @@ import { Spo } from '../../shared/models/spo';
 export class SposComponent implements OnInit {
   spos: Spo[];
 
+  // TODO: somehow get list of courseOfStudies including degrees in courseOfStudies
+  // TODO: somehow get
+
   constructor(private spoService: SpoService) { }
 
   ngOnInit() {

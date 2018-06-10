@@ -1,6 +1,6 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
-import { SPOS } from '../mocks/mock-spos';
+import { SPOS } from './mock-spos';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {

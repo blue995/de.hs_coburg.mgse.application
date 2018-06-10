@@ -24,7 +24,7 @@ import { CurriculaComponent } from './components/curricula/curricula.component';
 
 /* this will be removed once we start using our REST api */
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './shared/helper/in-memory-data.service';
+import { InMemoryDataService } from './shared/mocks/in-memory-data.service';
 
 @NgModule({
   declarations: [
