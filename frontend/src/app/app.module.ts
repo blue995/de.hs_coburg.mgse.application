@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
   MatCardModule,
-  MatCheckboxModule,
+  MatCheckboxModule, MatExpansionModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
@@ -54,6 +54,7 @@ import { InMemoryDataService } from './shared/helper/in-memory-data.service';
     MatButtonModule,
     MatCardModule,
     MatTreeModule,
+    MatExpansionModule,
     FormsModule,
     AppRoutingModule
   ],

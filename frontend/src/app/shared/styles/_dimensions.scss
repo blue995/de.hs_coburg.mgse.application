@@ -1,0 +1,18 @@
+@import 'responsive';
+
+/* height of toolbar in hsis-shell */
+$hsis-toolbar-height-regular: 64px;
+$hsis-toolbar-height-mobile: 56px;
+
+/* top padding of hsis-shell content (side-nav and main content */
+$hsis-content-top-padding: 1vh;
+
+/* content height to fill screen height but without the toolbar if NOT mobile */
+$hsis-content-height-regular: -webkit-calc(100vh - #{$hsis-toolbar-height-regular} - #{$hsis-content-top-padding});
+$hsis-content-height-regular:    -moz-calc(100vh - #{$hsis-toolbar-height-regular} - #{$hsis-content-top-padding});
+$hsis-content-height-regular:         calc(100vh - #{$hsis-toolbar-height-regular} - #{$hsis-content-top-padding});
+
+/* content height to fill screen height but without the toolbar if NOT mobile */
+$hsis-content-height-mobile: -webkit-calc(100vh - #{$hsis-toolbar-height-mobile} - #{$hsis-content-top-padding});
+$hsis-content-height-mobile:    -moz-calc(100vh - #{$hsis-toolbar-height-mobile} - #{$hsis-content-top-padding});
+$hsis-content-height-mobile:         calc(100vh - #{$hsis-toolbar-height-mobile} - #{$hsis-content-top-padding});

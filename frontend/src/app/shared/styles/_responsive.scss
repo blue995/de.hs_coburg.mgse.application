@@ -1,0 +1,48 @@
+/* Breakpoint declaration */
+$break-xs: 767px;   // Mobile
+$break-sm: 991px;   // Tablet / iPad Portrait
+$break-md: 1199px;  // Computer / Desktop / iPad Landscape
+$break-lg: 1919px;  // Large Monitor
+$break-xl: 1920px;  // Widescreen Monitor
+
+/* Mobile */
+@mixin xs {
+  @media only screen and (max-width: $break-xs) {
+    @content;
+  }
+}
+/* Tablet / iPad Portrait */
+@mixin sm {
+  @media only screen and (min-width: $break-xs) and (max-width: $break-sm) {
+    @content;
+  }
+}
+/* Computer / Desktop / iPad Landscape */
+@mixin md {
+  @media only screen and (min-width: $break-sm) and (max-width: $break-md) {
+    @content;
+  }
+}
+/* Large Monitor */
+@mixin lg {
+  @media only screen and (min-width: $break-md) and (max-width: $break-lg) {
+    @content;
+  }
+}
+/* Widescreen Monitor */
+@mixin xl {
+  @media only screen and (min-width: $break-xl) {
+    @content;
+  }
+}
+
+/* Use multiple resolutions at once */
+@mixin display-res($resolutions) {
+  @each $res in $resolutions {
+    @if $res == 'xs' { @include xs { @content }}
+    @else if $res == 'sm' { @include sm { @content }}
+    @else if $res == 'md' { @include md { @content }}
+    @else if $res == 'lg' { @include lg { @content }}
+    @else if $res == 'xl' { @include xl { @content }}
+  }
+}

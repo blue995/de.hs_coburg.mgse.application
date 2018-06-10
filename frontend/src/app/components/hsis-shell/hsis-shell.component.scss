@@ -1,3 +1,6 @@
+@import '../../shared/styles/dimensions';
+@import '../../shared/styles/responsive';
+
 /* toolbar on top of page */
 .hsis-toolbar {
   position: fixed;
@@ -40,15 +43,18 @@
 
   &__side-nav {
     position: fixed;
-    top: 64px;
+    top: $hsis-toolbar-height-regular;
     bottom: 0;
     left: 0;
     display: flex;
     flex-direction: column;
-    padding-top: 16px;
+    padding-top: $hsis-content-top-padding;
     min-width: 260px;
     background-color: #fafafa;
     box-shadow: 6px 0 6px rgba(0, 0, 0, .1);
+    @include display-res(xs) {
+      top: $hsis-toolbar-height-mobile;
+    }
   }
 
   &__nav-link {
@@ -70,7 +76,12 @@
 
   &__main-content {
     font-size: 1.1em;
-    top: 64px;
-    padding: 1vh 2vw 64px 2vw;
+    top: $hsis-toolbar-height-regular;
+    padding: $hsis-content-top-padding 2vw $hsis-toolbar-height-regular 2vw;
+
+    @include display-res(xs) {
+      top: $hsis-toolbar-height-mobile;
+      padding: $hsis-toolbar-height-mobile 2vw $hsis-toolbar-height-mobile 2vw;
+    }
   }
 }
