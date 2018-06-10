@@ -12,7 +12,7 @@ Execute the following steps to get startet with this project.
 2. `git pull`
 3. `npm install`
 
--> check out the [code conventions](##Code conventions and styling) and then proceed with developing
+-> check out the [code conventions](#code-conventions-and-styling) and then proceed with developing
 
 ## Start Development server
 
