@@ -36,7 +36,7 @@ Please follow the rules below when working on the frontend
 
 ### CSS
 
-* SCSS (SASS) is being used
+* SCSS [(SASS)](https://sass-lang.com/documentation/file.SASS_REFERENCE.html) is being used
 * [BEM](http://getbem.com/naming/) is used as the naming convention for custom styles (keep it flat)
 
 ### Typescript
