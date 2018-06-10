@@ -12,7 +12,7 @@
 </mat-toolbar>
 
 <mat-sidenav-container class="hsis-home__container">
-  <mat-sidenav #sidenav class="hsis-home__side-nav" mode="side" [(opened)]="sideNavOpened">
+  <mat-sidenav #sidenav class="hsis-home__side-nav" mode="push" [(opened)]="sideNavOpened">
     <div *ngFor="let item of navLinks">
       <a class="hsis-home__nav-link" [routerLink]="[item.link]">{{item.label}}</a>
     </div>
