@@ -12,7 +12,7 @@ import {
   MatIconModule,
   MatInputModule,
   MatSidenavModule,
-  MatToolbarModule, MatTreeModule
+  MatToolbarModule
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
@@ -53,7 +53,6 @@ import { InMemoryDataService } from './shared/helper/in-memory-data.service';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatTreeModule,
     MatExpansionModule,
     FormsModule,
     AppRoutingModule
