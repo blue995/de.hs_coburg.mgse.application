@@ -1,5 +1,4 @@
-@import '../../shared/styles/dimensions';
-@import '../../shared/styles/responsive';
+@import '../../shared/styles/common';
 
 .example-tree-invisible {
   display: none;
@@ -10,11 +9,4 @@
   margin-top: 0;
   margin-bottom: 0;
   list-style-type: none;
-}
-
-.spos-wrapper {
-  min-height: $hsis-content-height-regular;
-  @include display-res(xs) {
-    min-height: $hsis-content-height-mobile;
-  }
 }

@@ -1,0 +1,9 @@
+@import 'dimensions';
+@import 'responsive';
+
+.main-content-wrapper {
+  min-height: $hsis-content-height-regular;
+  @include display-res(xs) {
+    min-height: $hsis-content-height-mobile;
+  }
+}

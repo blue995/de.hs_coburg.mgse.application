@@ -20,7 +20,7 @@ export class HsisShellComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.sideNavOpened = true;
+    this.sideNavOpened = false;
     this.navLinks = NAVLINKS;
   }
 
