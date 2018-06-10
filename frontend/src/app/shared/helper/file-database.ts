@@ -2,8 +2,6 @@ import {FileNode} from '../models/file-node';
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 
-import { FileNode } from '../models/file-node';
-
 const TREE_DATA = `
   {
     "Informatik": {

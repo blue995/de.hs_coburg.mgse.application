@@ -2,7 +2,7 @@ import { Faculty } from './faculty';
 import {Degree} from './degree';
 
 export class CourseOfStudy {
-  name: String
+  name: String;
   ects: number;
   semesters: number;
   requirements: String;
