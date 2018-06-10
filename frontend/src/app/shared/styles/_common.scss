@@ -1,6 +1,10 @@
 @import 'dimensions';
 @import 'responsive';
 
+/*
+ * main content wrapper should be used with a wrapper around the content component
+ * such as the view of all the SPOs and/or the detailed view of a SPO
+ */
 .main-content-wrapper {
   min-height: $hsis-content-height-regular;
   @include display-res(xs) {
