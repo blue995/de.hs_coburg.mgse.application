@@ -11,7 +11,7 @@ import {
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatSidenavModule,
+  MatSidenavModule, MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
@@ -54,6 +54,7 @@ import { InMemoryDataService } from './shared/mocks/in-memory-data.service';
     MatButtonModule,
     MatCardModule,
     MatExpansionModule,
+    MatTabsModule,
     FormsModule,
     AppRoutingModule
   ],
