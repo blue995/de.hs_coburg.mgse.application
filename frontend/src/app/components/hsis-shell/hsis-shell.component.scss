@@ -9,6 +9,10 @@
   padding-left: 0;
   display: flex;
 
+  &__branding {
+    margin: 0 8px;
+  }
+
   &__button {
     transition-duration: .4s;
     transition-property: color, margin;
