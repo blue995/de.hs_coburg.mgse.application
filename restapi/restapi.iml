@@ -25,7 +25,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="" />
         <datasource-mapping>
-          <factory-entry name="mgse-persistence" />
+          <factory-entry name="mgse-persistence" value="211226ad-7a9f-4263-95d8-b7b2ee86b242" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
       </configuration>
