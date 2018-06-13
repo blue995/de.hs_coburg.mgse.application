@@ -21,9 +21,9 @@ import javax.ws.rs.core.Response;
 //import javax.naming.InitialContext;
 
 
-import de.hs_coburg.mgse.persistence.test.Glossary;
-import de.hs_coburg.mgse.persistence.test.GlossarySection;
-import de.hs_coburg.mgse.persistence.test.GlossaryEntry;
+import de.hs_coburg.mgse.persistence.test.GlossaryBl;
+import de.hs_coburg.mgse.persistence.test.GlossaryEntryBl;
+import de.hs_coburg.mgse.persistence.test.GlossarySectionBl;
 import de.hs_coburg.mgse.business.GlossaryBusinessIf;
 import de.hs_coburg.mgse.business.test.GlossaryBusiness;
 
@@ -64,16 +64,16 @@ public class GlossaryService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getGlossaryList() {
 		if (this.bg == null) Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("{ error: 'Business interface not found' }").build();
-		List<Glossary> glossary_list;
+		List<GlossaryBl> glossary_Bl_list;
 
 		try {
-			glossary_list = bg.readGlossaryList();
+			glossary_Bl_list = bg.readGlossaryList();
 		} catch (Exception e) {
 			return Response.status(Response.Status.BAD_REQUEST).entity("{ error: " + e.toString() + " }").build();
 		}
 
-		if (glossary_list == null) return Response.status(Response.Status.NOT_FOUND).entity("{ error: 'Glossary list not found' }").build();
-		return Response.ok(glossary_list).build();
+		if (glossary_Bl_list == null) return Response.status(Response.Status.NOT_FOUND).entity("{ error: 'GlossaryBl list not found' }").build();
+		return Response.ok(glossary_Bl_list).build();
 	}
 
 	/*
@@ -84,49 +84,49 @@ public class GlossaryService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getGlossary(@PathParam("glossary_id") long glossary_id) {
 		if (this.bg == null) Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("{ error: 'Business interface not found' }").build();
-		Glossary glossary;
+		GlossaryBl glossaryBl;
 
 		try {
-			glossary = bg.readGlossary(glossary_id);
+			glossaryBl = bg.readGlossary(glossary_id);
 		} catch (Exception e) {
 			return Response.status(Response.Status.BAD_REQUEST).entity("{ error: " + e.toString() + " }").build();
 		}
 
-		if (glossary == null) return Response.status(Response.Status.NOT_FOUND).entity("{ error: 'Glossary not found for GID: '" + glossary_id + " }").build();
-		return Response.ok(glossary).build();
+		if (glossaryBl == null) return Response.status(Response.Status.NOT_FOUND).entity("{ error: 'GlossaryBl not found for GID: '" + glossary_id + " }").build();
+		return Response.ok(glossaryBl).build();
 	}
 
 	/*
-	 * Create a new glossary
+	 * Create a new glossaryBl
 	 */
 	@POST
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response addGlossary(Glossary glossary) {
+	public Response addGlossary(GlossaryBl glossaryBl) {
 		if (this.bg == null) Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("{ error: 'Business interface not found' }").build();
 
 		try {
-			bg.insertGlossary(glossary);
+			bg.insertGlossary(glossaryBl);
 		} catch (Exception e) {
 			return Response.status(Response.Status.BAD_REQUEST).entity("{ error: " + e.toString() + " }").build();
 		}
 
-		return Response.status(Response.Status.BAD_REQUEST).entity("{ error: 'Glossary could not be created }").build();
+		return Response.status(Response.Status.BAD_REQUEST).entity("{ error: 'GlossaryBl could not be created }").build();
 	}
 
 	/*
-	 * Editing a glossary [glossary_id]
+	 * Editing a glossaryBl [glossary_id]
 	 */
 	@PUT
 	@Path("/{glossary_id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response updateGlossary(@PathParam("glossary_id") long glossary_id, Glossary glossary) {
+	public Response updateGlossary(@PathParam("glossary_id") long glossary_id, GlossaryBl glossaryBl) {
 		if (this.bg == null) Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("{ error: 'Business interface not found' }").build();
 
 		try {
-			bg.updateGlossary(glossary_id, glossary);
+			bg.updateGlossary(glossary_id, glossaryBl);
 		} catch (Exception e) {
 			return Response.status(Response.Status.BAD_REQUEST).entity("{ error: " + e.toString() + " }").build();
 		}
@@ -161,7 +161,7 @@ public class GlossaryService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getGlossarySection(@PathParam("glossary_id") long glossary_id, @PathParam("section_id") long section_id) {
 		if (this.bg == null) Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("{ error: 'Business interface not found' }").build();
-		GlossarySection section;
+		GlossarySectionBl section;
 
 		try {
 			section = bg.readGlossarySection(glossary_id, section_id);
@@ -169,7 +169,7 @@ public class GlossaryService {
 			return Response.status(Response.Status.BAD_REQUEST).entity("{ error: " + e.toString() + " }").build();
 		}
 
-		if (section == null) return Response.status(Response.Status.NOT_FOUND).entity("{ error: 'Glossary section not found for GID/SID: '" + glossary_id + "/" + section_id + " }").build();
+		if (section == null) return Response.status(Response.Status.NOT_FOUND).entity("{ error: 'GlossaryBl section not found for GID/SID: '" + glossary_id + "/" + section_id + " }").build();
 		return Response.ok(section).build();
 	}
 
@@ -180,7 +180,7 @@ public class GlossaryService {
 	@Path("/{glossary_id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response addGlossarySection(@PathParam("glossary_id") long glossary_id, GlossarySection section) {
+	public Response addGlossarySection(@PathParam("glossary_id") long glossary_id, GlossarySectionBl section) {
 		if (this.bg == null) Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("{ error: 'Business interface not found' }").build();
 
 		try {
@@ -199,7 +199,7 @@ public class GlossaryService {
 	@Path("/{glossary_id}/{section_id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response updateGlossarySection(@PathParam("glossary_id") long glossary_id, @PathParam("section_id") long section_id, GlossarySection section) {
+	public Response updateGlossarySection(@PathParam("glossary_id") long glossary_id, @PathParam("section_id") long section_id, GlossarySectionBl section) {
 		if (this.bg == null) Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("{ error: 'Business interface not found' }").build();
 
 		try {
@@ -238,7 +238,7 @@ public class GlossaryService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getGlossaryEntry(@PathParam("glossary_id") long glossary_id, @PathParam("section_id") long section_id, @PathParam("entry_id") long entry_id) {
 		if (this.bg == null) Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("{ error: 'Business interface not found' }").build();
-		GlossaryEntry entry;
+		GlossaryEntryBl entry;
 
 		try {
 			entry = bg.readGlossaryEntry(glossary_id, section_id, entry_id);
@@ -246,7 +246,7 @@ public class GlossaryService {
 			return Response.status(Response.Status.BAD_REQUEST).entity("{ error: " + e.toString() + " }").build();
 		}
 
-		if (entry == null) return Response.status(Response.Status.NOT_FOUND).entity("{ error: 'Glossary entry not found for GID/SID/EID: '" + glossary_id + "/" + section_id + "/" + entry_id + " }").build();
+		if (entry == null) return Response.status(Response.Status.NOT_FOUND).entity("{ error: 'GlossaryBl entry not found for GID/SID/EID: '" + glossary_id + "/" + section_id + "/" + entry_id + " }").build();
 		return Response.ok(entry).build();
 	}
 
@@ -257,7 +257,7 @@ public class GlossaryService {
 	@Path("/{glossary_id}/{section_id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response addGlossaryEntry(@PathParam("glossary_id") long glossary_id, @PathParam("section_id") long section_id, GlossaryEntry entry) {
+	public Response addGlossaryEntry(@PathParam("glossary_id") long glossary_id, @PathParam("section_id") long section_id, GlossaryEntryBl entry) {
 		if (this.bg == null) Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("{ error: 'Business interface not found' }").build();
 
 		try {
@@ -276,7 +276,7 @@ public class GlossaryService {
 	@Path("/{glossary_id}/{section_id}/{entry_id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response updateGlossaryEntry(@PathParam("glossary_id") long glossary_id, @PathParam("section_id") long section_id, @PathParam("entry_id") long entry_id, GlossaryEntry entry) {
+	public Response updateGlossaryEntry(@PathParam("glossary_id") long glossary_id, @PathParam("section_id") long section_id, @PathParam("entry_id") long entry_id, GlossaryEntryBl entry) {
 		if (this.bg == null) Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("{ error: 'Business interface not found' }").build();
 
         try {

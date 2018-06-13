@@ -2,29 +2,29 @@ package de.hs_coburg.mgse.business;
 
 import java.util.List;
 
-import de.hs_coburg.mgse.persistence.test.Glossary;
-import de.hs_coburg.mgse.persistence.test.GlossarySection;
-import de.hs_coburg.mgse.persistence.test.GlossaryEntry;
+import de.hs_coburg.mgse.persistence.test.GlossaryBl;
+import de.hs_coburg.mgse.persistence.test.GlossaryEntryBl;
+import de.hs_coburg.mgse.persistence.test.GlossarySectionBl;
 
 public interface GlossaryBusinessIf {
 
-    // Glossary
-    void insertGlossary(Glossary glossary) throws Exception;
-    void updateGlossary(long glossary_id, Glossary glossary) throws Exception;
+    // GlossaryBl
+    void insertGlossary(GlossaryBl glossaryBl) throws Exception;
+    void updateGlossary(long glossary_id, GlossaryBl glossaryBl) throws Exception;
     void deleteGlossary(long glossary_id) throws Exception;
-    Glossary readGlossary(long glossary_id) throws Exception;
-    List<Glossary> readGlossaryList() throws Exception;
+    GlossaryBl readGlossary(long glossary_id) throws Exception;
+    List<GlossaryBl> readGlossaryList() throws Exception;
 
-    // GlossarySection
-    void insertGlossarySection(long glossary_id, GlossarySection section) throws Exception;
-    void updateGlossarySection(long glossary_id, long section_id, GlossarySection section) throws Exception;
+    // GlossarySectionBl
+    void insertGlossarySection(long glossary_id, GlossarySectionBl section) throws Exception;
+    void updateGlossarySection(long glossary_id, long section_id, GlossarySectionBl section) throws Exception;
     void deleteGlossarySection(long glossary_id, long section_id) throws Exception;
-    GlossarySection readGlossarySection(long glossary_id, long section_id) throws Exception;
+    GlossarySectionBl readGlossarySection(long glossary_id, long section_id) throws Exception;
 
-    // GlossaryEntry
-    void insertGlossaryEntry(long glossary_id, long section_id, GlossaryEntry entry) throws Exception;
-    void updateGlossaryEntry(long glossary_id, long section_id, long entry_id, GlossaryEntry entry) throws Exception;
+    // GlossaryEntryBl
+    void insertGlossaryEntry(long glossary_id, long section_id, GlossaryEntryBl entry) throws Exception;
+    void updateGlossaryEntry(long glossary_id, long section_id, long entry_id, GlossaryEntryBl entry) throws Exception;
     void deleteGlossaryEntry(long glossary_id, long section_id, long entry_id) throws Exception;
-    GlossaryEntry readGlossaryEntry(long glossary_id, long section_id, long entry_id) throws Exception;
+    GlossaryEntryBl readGlossaryEntry(long glossary_id, long section_id, long entry_id) throws Exception;
 
 }

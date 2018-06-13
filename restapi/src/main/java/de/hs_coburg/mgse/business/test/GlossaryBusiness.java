@@ -2,9 +2,9 @@ package de.hs_coburg.mgse.business.test;
 
 import de.hs_coburg.mgse.business.GlossaryBusinessIf;
 
-import de.hs_coburg.mgse.persistence.test.Glossary;
-import de.hs_coburg.mgse.persistence.test.GlossaryEntry;
-import de.hs_coburg.mgse.persistence.test.GlossarySection;
+import de.hs_coburg.mgse.persistence.test.GlossaryBl;
+import de.hs_coburg.mgse.persistence.test.GlossaryEntryBl;
+import de.hs_coburg.mgse.persistence.test.GlossarySectionBl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,80 +12,80 @@ import java.util.List;
 
 public class GlossaryBusiness implements GlossaryBusinessIf {
 
-    protected  List<Glossary> glossary_list;
+    protected  List<GlossaryBl> glossary_Bl_list;
 
     public GlossaryBusiness () {
-        this.glossary_list = new ArrayList<>();
+        this.glossary_Bl_list = new ArrayList<>();
 
-        this.glossary_list.add(new Glossary("Glossary One"));
-        this.glossary_list.add(new Glossary("Glossary Two"));
-        this.glossary_list.add(new Glossary("Glossary Three"));
+        this.glossary_Bl_list.add(new GlossaryBl("GlossaryBl One"));
+        this.glossary_Bl_list.add(new GlossaryBl("GlossaryBl Two"));
+        this.glossary_Bl_list.add(new GlossaryBl("GlossaryBl Three"));
     }
 
     @Override
-    public void insertGlossary(Glossary glossary) throws Exception {
-        this.glossary_list.add(glossary);
+    public void insertGlossary(GlossaryBl glossaryBl) throws Exception {
+        this.glossary_Bl_list.add(glossaryBl);
     }
 
     @Override
-    public void updateGlossary(long glossary_id, Glossary glossary) throws Exception {
-        for (int i = 0; i<this.glossary_list.size(); i++) {
-            long id = this.glossary_list.get(i).getID();
+    public void updateGlossary(long glossary_id, GlossaryBl glossaryBl) throws Exception {
+        for (int i = 0; i<this.glossary_Bl_list.size(); i++) {
+            long id = this.glossary_Bl_list.get(i).getID();
 
             if (id == glossary_id) {
-                glossary.setID(id);
-                this.glossary_list.set(i, glossary);
+                glossaryBl.setID(id);
+                this.glossary_Bl_list.set(i, glossaryBl);
                 return;
             }
         }
 
-        throw new Exception("Glossary konnte nicht bearbeitet werden");
+        throw new Exception("GlossaryBl konnte nicht bearbeitet werden");
     }
 
     @Override
     public void deleteGlossary(long glossary_id) throws Exception {
-        for (int i = 0; i<this.glossary_list.size(); i++) {
-            long id = this.glossary_list.get(i).getID();
+        for (int i = 0; i<this.glossary_Bl_list.size(); i++) {
+            long id = this.glossary_Bl_list.get(i).getID();
 
             if (id == glossary_id) {
-                this.glossary_list.remove(i);
+                this.glossary_Bl_list.remove(i);
                 return;
             }
         }
 
-        throw new Exception("Glossary konnte nicht entfernt werden");
+        throw new Exception("GlossaryBl konnte nicht entfernt werden");
     }
 
     @Override
-    public Glossary readGlossary(long glossary_id) throws Exception {
-        for (int i = 0; i<this.glossary_list.size(); i++) {
-            Glossary glossary = this.glossary_list.get(i);
-            if (glossary.getID() == glossary_id) return glossary;
+    public GlossaryBl readGlossary(long glossary_id) throws Exception {
+        for (int i = 0; i<this.glossary_Bl_list.size(); i++) {
+            GlossaryBl glossaryBl = this.glossary_Bl_list.get(i);
+            if (glossaryBl.getID() == glossary_id) return glossaryBl;
         }
 
-        throw new Exception("Glossary " + glossary_id + " nicht gefunden");
+        throw new Exception("GlossaryBl " + glossary_id + " nicht gefunden");
     }
 
     @Override
-    public List<Glossary> readGlossaryList() throws Exception {
-        List<Glossary> glossary_list = new ArrayList<>();
+    public List<GlossaryBl> readGlossaryList() throws Exception {
+        List<GlossaryBl> glossary_Bl_list = new ArrayList<>();
 
-        for (Glossary g : this.glossary_list) {
-            Glossary glossary = new Glossary(g);
-            glossary.setSectionList(null);
-            glossary_list.add(glossary);
+        for (GlossaryBl g : this.glossary_Bl_list) {
+            GlossaryBl glossaryBl = new GlossaryBl(g);
+            glossaryBl.setSectionList(null);
+            glossary_Bl_list.add(glossaryBl);
         }
 
-        return glossary_list;
+        return glossary_Bl_list;
     }
 
     @Override
-    public void insertGlossarySection(long glossary_id, GlossarySection section) throws Exception {
+    public void insertGlossarySection(long glossary_id, GlossarySectionBl section) throws Exception {
 
     }
 
     @Override
-    public void updateGlossarySection(long glossary_id, long section_id, GlossarySection section) throws Exception {
+    public void updateGlossarySection(long glossary_id, long section_id, GlossarySectionBl section) throws Exception {
 
     }
 
@@ -95,17 +95,17 @@ public class GlossaryBusiness implements GlossaryBusinessIf {
     }
 
     @Override
-    public GlossarySection readGlossarySection(long glossary_id, long section_id) throws Exception {
+    public GlossarySectionBl readGlossarySection(long glossary_id, long section_id) throws Exception {
         return null;
     }
 
     @Override
-    public void insertGlossaryEntry(long glossary_id, long section_id, GlossaryEntry entry) throws Exception {
+    public void insertGlossaryEntry(long glossary_id, long section_id, GlossaryEntryBl entry) throws Exception {
 
     }
 
     @Override
-    public void updateGlossaryEntry(long glossary_id, long section_id, long entry_id, GlossaryEntry entry) throws Exception {
+    public void updateGlossaryEntry(long glossary_id, long section_id, long entry_id, GlossaryEntryBl entry) throws Exception {
 
     }
 
@@ -115,7 +115,7 @@ public class GlossaryBusiness implements GlossaryBusinessIf {
     }
 
     @Override
-    public GlossaryEntry readGlossaryEntry(long glossary_id, long section_id, long entry_id) throws Exception {
+    public GlossaryEntryBl readGlossaryEntry(long glossary_id, long section_id, long entry_id) throws Exception {
         return null;
     }
 }
