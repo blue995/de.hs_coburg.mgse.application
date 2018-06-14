@@ -25,5 +25,35 @@ public class ExamTypeDeclaration {
     private String unit;
 
     //getter and setter
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<ExamType> getExamTypes() {
+        return examTypes;
+    }
+
+    public void setExamTypes(List<ExamType> examTypes) {
+        this.examTypes = examTypes;
+    }
+
+    public GlossaryEntry getDetails() {
+        return details;
+    }
+
+    public void setDetails(GlossaryEntry details) {
+        this.details = details;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
 }

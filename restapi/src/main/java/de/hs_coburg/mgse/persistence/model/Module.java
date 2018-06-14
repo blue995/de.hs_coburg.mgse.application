@@ -33,6 +33,83 @@ public class Module {
     @Column(name = "semesterHours", nullable = true)
     private int semesterHours;
 
-    //getter and setter
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = true)
+    private GlossaryEntry details;
 
+    @Column(name = "count", nullable = true)
+    private int count;
+
+    //getter and setter
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<CourseTypeDeclaration> getCourseType() {
+        return courseType;
+    }
+
+    public void setCourseType(List<CourseTypeDeclaration> courseType) {
+        this.courseType = courseType;
+    }
+
+    public List<ExamType> getExamTypes() {
+        return examTypes;
+    }
+
+    public void setExamTypes(List<ExamType> examTypes) {
+        this.examTypes = examTypes;
+    }
+
+    public String getCompleteName() {
+        return completeName;
+    }
+
+    public void setCompleteName(String completeName) {
+        this.completeName = completeName;
+    }
+
+    public int getEcts() {
+        return ects;
+    }
+
+    public void setEcts(int ects) {
+        this.ects = ects;
+    }
+
+    public int getQuantifier() {
+        return quantifier;
+    }
+
+    public void setQuantifier(int quantifier) {
+        this.quantifier = quantifier;
+    }
+
+    public int getSemesterHours() {
+        return semesterHours;
+    }
+
+    public void setSemesterHours(int semesterHours) {
+        this.semesterHours = semesterHours;
+    }
+
+    public GlossaryEntry getDetails() {
+        return details;
+    }
+
+    public void setDetails(GlossaryEntry details) {
+        this.details = details;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
 }

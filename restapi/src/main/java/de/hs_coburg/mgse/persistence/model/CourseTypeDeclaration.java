@@ -22,5 +22,27 @@ public class CourseTypeDeclaration {
     private GlossaryEntry details;
 
     //getter and setter
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Module> getModules() {
+        return modules;
+    }
+
+    public void setModules(List<Module> modules) {
+        this.modules = modules;
+    }
+
+    public GlossaryEntry getDetails() {
+        return details;
+    }
+
+    public void setDetails(GlossaryEntry details) {
+        this.details = details;
+    }
 }

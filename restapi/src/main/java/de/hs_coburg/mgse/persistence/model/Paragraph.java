@@ -16,4 +16,21 @@ public class Paragraph extends AParagraph {
     private List<SubParagraph> subParagraphs = new ArrayList<SubParagraph>();
 
     //getter and setter
+    @Override
+    public int getNumber() {
+        return number;
+    }
+
+    @Override
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public List<SubParagraph> getSubParagraphs() {
+        return subParagraphs;
+    }
+
+    public void setSubParagraphs(List<SubParagraph> subParagraphs) {
+        this.subParagraphs = subParagraphs;
+    }
 }

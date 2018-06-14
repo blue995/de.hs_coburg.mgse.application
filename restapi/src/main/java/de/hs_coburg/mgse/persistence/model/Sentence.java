@@ -21,5 +21,27 @@ public class Sentence {
     private String text;
 
     //getter and setter
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Footnote> getFootnotes() {
+        return footnotes;
+    }
+
+    public void setFootnotes(List<Footnote> footnotes) {
+        this.footnotes = footnotes;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
 }
