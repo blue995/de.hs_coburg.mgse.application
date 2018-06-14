@@ -25,7 +25,11 @@ public class CourseOfStudies {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
-    private List<AdmissionRequirement> admissionRequirements = new ArrayList<AdmissionRequirement>();
+    private List<AdmissionRequirement> requirements = new ArrayList<AdmissionRequirement>();
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = false)
+    private List<StudyExaminationRegulations> ser = new ArrayList<StudyExaminationRegulations>();
 
     //getter and setter
     public Long getId() {
@@ -60,11 +64,19 @@ public class CourseOfStudies {
         this.semester = semester;
     }
 
-    public List<AdmissionRequirement> getAdmissionRequirements() {
-        return admissionRequirements;
+    public List<AdmissionRequirement> getRequirements() {
+        return requirements;
     }
 
-    public void setAdmissionRequirements(List<AdmissionRequirement> admissionRequirements) {
-        this.admissionRequirements = admissionRequirements;
+    public void setRequirements(List<AdmissionRequirement> requirements) {
+        this.requirements = requirements;
+    }
+
+    public List<StudyExaminationRegulations> getSer() {
+        return ser;
+    }
+
+    public void setSer(List<StudyExaminationRegulations> ser) {
+        this.ser = ser;
     }
 }
