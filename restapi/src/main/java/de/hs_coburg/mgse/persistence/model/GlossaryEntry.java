@@ -11,7 +11,7 @@ public class GlossaryEntry {
     private Long id;
 
     @Column(name = "word", nullable = true)
-    private int word;
+    private String word;
 
     @Column(name = "meaning", nullable = true)
     private String meaning;
@@ -29,11 +29,11 @@ public class GlossaryEntry {
         this.id = id;
     }
 
-    public int getWord() {
+    public String getWord() {
         return word;
     }
 
-    public void setWord(int word) {
+    public void setWord(String word) {
         this.word = word;
     }
 

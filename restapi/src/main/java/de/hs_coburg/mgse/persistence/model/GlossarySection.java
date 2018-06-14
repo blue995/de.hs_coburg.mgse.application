@@ -12,7 +12,7 @@ public class GlossarySection {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "name", nullable = true)
+    @Column(name = "completeName", nullable = true)
     private String completeName;
 
     @OneToMany(cascade = CascadeType.ALL)
