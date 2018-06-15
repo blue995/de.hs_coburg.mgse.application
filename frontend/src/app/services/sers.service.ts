@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Spo } from '../shared/models/spo';
+import { Ser } from '../shared/models/ser';
 
 /* currently not needed because we are only using a GET request */
 const httpOptions = {
@@ -12,14 +12,14 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class SpoService {
+export class SersService {
 
   private spoUrl = 'api/spos';
 
   constructor(private http: HttpClient) { }
 
-  getSpos (): Observable<Spo[]> {
-    return this.http.get<Spo[]>(this.spoUrl)
+  getSpos (): Observable<Ser[]> {
+    return this.http.get<Ser[]>(this.spoUrl)
       .pipe(
         tap(spos => console.log(`fetched spos`)),
         catchError(this.handleError('getSpos', []))

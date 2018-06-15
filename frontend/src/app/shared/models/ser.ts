@@ -1,7 +1,7 @@
 import {Paragraph} from './paragraph';
 import {CourseOfStudy} from './course-of-study';
 
-export class Spo {
+export class Ser {
   shortName: String;
   title: String;
   validity: String; // could change this to a class like in the metamodel

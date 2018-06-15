@@ -18,7 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './auth-guard.guard';
 import { HsisShellComponent } from './components/hsis-shell/hsis-shell.component';
-import { SposComponent } from './components/spos/spos.component';
+import { SersComponent } from './components/sers/sers.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { CurriculaComponent } from './components/curricula/curricula.component';
 
@@ -31,7 +31,7 @@ import { InMemoryDataService } from './shared/mocks/in-memory-data.service';
     AppComponent,
     HsisShellComponent,
     LoginComponent,
-    SposComponent,
+    SersComponent,
     CoursesComponent,
     CurriculaComponent
   ],
