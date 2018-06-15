@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Ser } from '../shared/models/ser';
+import {SerMeta} from '../shared/models/ser-meta';
 
 /* currently not needed because we are only using a GET request */
 const httpOptions = {
@@ -14,15 +14,15 @@ const httpOptions = {
 })
 export class SersService {
 
-  private spoUrl = 'api/spos';
+  private sersUrl = 'api/sers';
 
   constructor(private http: HttpClient) { }
 
-  getSpos (): Observable<Ser[]> {
-    return this.http.get<Ser[]>(this.spoUrl)
+  getSersMeta (): Observable<SerMeta[]> {
+    return this.http.get<SerMeta[]>(this.sersUrl)
       .pipe(
-        tap(spos => console.log(`fetched spos`)),
-        catchError(this.handleError('getSpos', []))
+        tap(sersMeta => console.log(sersMeta)),  // `fetched ser meta objects`
+        catchError(this.handleError('getSersMeta', []))
       );
   }
 

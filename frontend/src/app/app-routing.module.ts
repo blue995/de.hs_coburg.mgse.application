@@ -17,7 +17,7 @@ const routes: Routes = [
     path: '', canActivate: [AuthGuard], component: HsisShellComponent,
     children: [
       { path: '', canActivate: [AuthGuard], component: SersComponent },
-      { path: 'spos', canActivate: [AuthGuard], component: SersComponent },
+      { path: 'sers', canActivate: [AuthGuard], component: SersComponent },
       { path: 'courses', canActivate: [AuthGuard], component: CoursesComponent },
       { path: 'curriculum', canActivate: [AuthGuard], component: CurriculaComponent },
     ]

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 
 const NAVLINKS: Object[] = [
-  { link: '/spos', label: 'SPOs anzeigen' },
+  { link: '/sers', label: 'SPOs anzeigen' },
   { link: '/courses', label: 'Module anzeigen' },
   { link: '/curriculum', label: 'Studienpläne anzeigen' }
 ];

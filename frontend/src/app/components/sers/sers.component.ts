@@ -1,44 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import { SersService } from '../../services/sers.service';
-import { Ser } from '../../shared/models/ser';
-import { CourseOfStudy } from '../../shared/models/course-of-study';
-import * as _ from 'lodash';
+import {SerMeta} from '../../shared/models/ser-meta';
 
 @Component({
-  selector: 'app-spos',
+  selector: 'app-sers',
   templateUrl: './sers.component.html',
   styleUrls: ['./sers.component.scss']
 })
 export class SersComponent implements OnInit {
-  spos: Ser[];
-  coursesOfStudy: CourseOfStudy[];
+  sersMeta: SerMeta[];
 
   // TODO: somehow get list of courseOfStudies including degrees in courseOfStudies
 
-  constructor(private spoService: SersService) { }
+  constructor(private sersService: SersService) { }
 
   ngOnInit() {
-    this.getSpos();
+    this.getSersMeta();
   }
 
-  getSpos(): void {
-    this.spoService.getSpos()
-      .subscribe(spos => this.initLists(spos));
+  getSersMeta(): void {
+    this.sersService.getSersMeta()
+      .subscribe(sersMeta => this.initLists(sersMeta));
   }
 
-  initLists(spos: Ser[]): void {
-    this.spos = spos;
-
+  initLists(sersMeta: SerMeta[]): void {
+    this.sersMeta = sersMeta;
+    /*
     if (!this.coursesOfStudy) {
       this.coursesOfStudy = [];
     }
 
-    for (let i = 0; i < spos.length; i++) {
-      if (!_.find(this.coursesOfStudy, ['name', spos[i].courseOfStudy.name])) {
-        this.coursesOfStudy.push(spos[i].courseOfStudy);
+    for (let i = 0; i < sersMeta.length; i++) {
+      if (!_.find(this.coursesOfStudy, ['name', sersMeta[i].courseOfStudy.name])) {
+        this.coursesOfStudy.push(sersMeta[i].courseOfStudy);
       }
     }
     this.coursesOfStudy = _.sortBy(this.coursesOfStudy, ['name']);
-    console.log(this.coursesOfStudy);
+    console.log(this.coursesOfStudy);*/
   }
 }

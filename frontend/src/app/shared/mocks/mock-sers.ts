@@ -1,6 +1,6 @@
 import { Ser } from '../models/ser';
 
-export const SPOS: Ser[] = [
+export const SERS: Ser[] = [
   {
     shortName: 'SPO B IF 3',
     title: 'Studien- und Prüfungsordnung für den Bachelorstudiengang Informatik\n' +

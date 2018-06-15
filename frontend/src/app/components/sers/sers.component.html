@@ -1,9 +1,9 @@
 <div class="main-content-wrapper">
   <mat-accordion>
-    <mat-expansion-panel *ngFor="let course of coursesOfStudy">
+    <mat-expansion-panel *ngFor="let serMeta of sersMeta">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Studiengang: {{ course.name }}
+          Studiengang: {{ serMeta.completeName }}
         </mat-panel-title>
       </mat-expansion-panel-header>
 

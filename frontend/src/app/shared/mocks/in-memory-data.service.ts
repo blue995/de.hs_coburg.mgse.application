@@ -1,11 +1,13 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
-import { SPOS } from './mock-sers';
+// import { SERS } from './mock-sers';
+import { SERS_META } from './mock-sers-meta';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    const spos = SPOS;
+    // const sers = SERS;
+    const sers = SERS_META;
 
-    return {spos};
+    return {sers};
   }
 }
