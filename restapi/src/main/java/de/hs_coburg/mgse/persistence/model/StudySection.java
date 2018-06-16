@@ -18,10 +18,10 @@ public class StudySection {
     private List<Module> modules = new ArrayList<Module>();
 
     @Column(name = "firstSemester", nullable = true)
-    private int firstSemester;
+    private Integer firstSemester;
 
     @Column(name = "lastSemester", nullable = true)
-    private int lastSemester;
+    private Integer lastSemester;
 
     @Column(name = "completeName", nullable = true)
     private String completeName;
@@ -43,19 +43,19 @@ public class StudySection {
         this.modules = modules;
     }
 
-    public int getFirstSemester() {
+    public Integer getFirstSemester() {
         return firstSemester;
     }
 
-    public void setFirstSemester(int firstSemester) {
+    public void setFirstSemester(Integer firstSemester) {
         this.firstSemester = firstSemester;
     }
 
-    public int getLastSemester() {
+    public Integer getLastSemester() {
         return lastSemester;
     }
 
-    public void setLastSemester(int lastSemester) {
+    public void setLastSemester(Integer lastSemester) {
         this.lastSemester = lastSemester;
     }
 

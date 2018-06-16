@@ -29,20 +29,20 @@ public class Module {
     private String completeName;
 
     @Column(name = "ects", nullable = true)
-    private int ects;
+    private Integer ects;
 
     @Column(name = "quantifier", nullable = true)
-    private int quantifier;
+    private Integer quantifier;
 
     @Column(name = "semesterHours", nullable = true)
-    private int semesterHours;
+    private Integer semesterHours;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
     private GlossaryEntry details;
 
     @Column(name = "count", nullable = true)
-    private int count;
+    private Integer count;
 
     //getter and setter
     public Long getId() {
@@ -69,6 +69,14 @@ public class Module {
         this.examTypes = examTypes;
     }
 
+    public List<ModuleSpecification> getModuleSpecifications() {
+        return moduleSpecifications;
+    }
+
+    public void setModuleSpecifications(List<ModuleSpecification> moduleSpecifications) {
+        this.moduleSpecifications = moduleSpecifications;
+    }
+
     public String getCompleteName() {
         return completeName;
     }
@@ -77,27 +85,27 @@ public class Module {
         this.completeName = completeName;
     }
 
-    public int getEcts() {
+    public Integer getEcts() {
         return ects;
     }
 
-    public void setEcts(int ects) {
+    public void setEcts(Integer ects) {
         this.ects = ects;
     }
 
-    public int getQuantifier() {
+    public Integer getQuantifier() {
         return quantifier;
     }
 
-    public void setQuantifier(int quantifier) {
+    public void setQuantifier(Integer quantifier) {
         this.quantifier = quantifier;
     }
 
-    public int getSemesterHours() {
+    public Integer getSemesterHours() {
         return semesterHours;
     }
 
-    public void setSemesterHours(int semesterHours) {
+    public void setSemesterHours(Integer semesterHours) {
         this.semesterHours = semesterHours;
     }
 
@@ -109,11 +117,11 @@ public class Module {
         this.details = details;
     }
 
-    public int getCount() {
+    public Integer getCount() {
         return count;
     }
 
-    public void setCount(int count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
 }

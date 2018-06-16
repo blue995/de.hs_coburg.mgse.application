@@ -21,5 +21,27 @@ public class Aid {
     private List<ModuleSpecification> moduleSpecifications = new ArrayList<ModuleSpecification>();
 
     //getter and setter
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCompleteName() {
+        return completeName;
+    }
+
+    public void setCompleteName(String completeName) {
+        this.completeName = completeName;
+    }
+
+    public List<ModuleSpecification> getModuleSpecifications() {
+        return moduleSpecifications;
+    }
+
+    public void setModuleSpecifications(List<ModuleSpecification> moduleSpecifications) {
+        this.moduleSpecifications = moduleSpecifications;
+    }
 }

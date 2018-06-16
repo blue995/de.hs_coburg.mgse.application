@@ -19,17 +19,63 @@ public class Curriculum {
     private List<ModuleSpecification> moduleSpecifications = new ArrayList<ModuleSpecification>();
 
     @Column(name = "version", nullable = true)
-    private int version;
+    private Integer version;
 
     @Column(name = "semester", nullable = true)
     private String semester;
 
     @Column(name = "year", nullable = true)
-    private int year;
+    private Integer year;
 
     @Column(name = "date", nullable = true)
     private Date date;
 
     //getter and setter
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<ModuleSpecification> getModuleSpecifications() {
+        return moduleSpecifications;
+    }
+
+    public void setModuleSpecifications(List<ModuleSpecification> moduleSpecifications) {
+        this.moduleSpecifications = moduleSpecifications;
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
+    public String getSemester() {
+        return semester;
+    }
+
+    public void setSemester(String semester) {
+        this.semester = semester;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 }
