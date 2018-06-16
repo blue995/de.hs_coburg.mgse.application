@@ -1,4 +1,3 @@
-
 export class CourseMeta {
   completeName: String;                 // e.g.: "Informatik"
   degrees: DegreeMeta[];                // list of degrees (can be empty, but must be included)
@@ -6,11 +5,11 @@ export class CourseMeta {
 
 class DegreeMeta {
   completeName: String;                 // e.g.: "Bachelor"
-  courseCatalogues: CourseCatalogue[];  // list of study examination regulations (can be empty, but must be included
+  courseCatalogues: CourseCatalogue[];  // list of course catalogues (can be empty, but must be included
 }
 
 class CourseCatalogue {
-  catalogueId: number;                  // e.g.: "1" or whatever you defined as ser id (used to call it for detail view)
-  shortName: String;                    // e.g.: "SPO B IF 3" <- "SPO" + "B" (Bachelor) + "IF" (Informatik) + "3" (version 3)
+  catalogueId: number;                  // e.g.: "1" or whatever you defined as catalogue id (used to call it for detail view)
+  shortName: String;                    // e.g.: "Modulhandbuch"
   validityDate: String;                 // e.g.: "14.01.2017"
 }
