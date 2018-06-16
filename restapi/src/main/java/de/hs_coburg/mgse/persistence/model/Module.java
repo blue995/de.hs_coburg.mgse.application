@@ -21,6 +21,10 @@ public class Module {
     @JoinColumn(nullable = false)
     private List<ExamType> examTypes = new ArrayList<ExamType>();
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = true)
+    private List<ModuleSpecification> moduleSpecifications = new ArrayList<ModuleSpecification>();
+
     @Column(name = "completeName", nullable = true)
     private String completeName;
 
