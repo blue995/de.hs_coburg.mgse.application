@@ -9,7 +9,7 @@ import java.util.List;
 public class Paragraph extends AParagraph {
 
     @Column(name = "number", nullable = true)
-    private int number;
+    private Integer number;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
@@ -17,12 +17,12 @@ public class Paragraph extends AParagraph {
 
     //getter and setter
     @Override
-    public int getNumber() {
+    public Integer getNumber() {
         return number;
     }
 
     @Override
-    public void setNumber(int number) {
+    public void setNumber(Integer number) {
         this.number = number;
     }
 

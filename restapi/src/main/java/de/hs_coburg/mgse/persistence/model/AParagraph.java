@@ -17,7 +17,7 @@ public abstract class AParagraph {
     private List<Sentence> sentences = new ArrayList<Sentence>();
 
     @Column(name = "number", nullable = true)
-    private int number;
+    private Integer number;
 
     //getter and setter
     public Long getId() {
@@ -36,11 +36,11 @@ public abstract class AParagraph {
         this.sentences = sentences;
     }
 
-    public int getNumber() {
+    public Integer getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(Integer number) {
         this.number = number;
     }
 }

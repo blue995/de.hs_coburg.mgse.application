@@ -12,10 +12,10 @@ public class ExamType {
     private Long id;
 
     @Column(name = "lowerBound", nullable = true)
-    private int lowerBound;
+    private Integer lowerBound;
 
     @Column(name = "upperBound", nullable = true)
-    private int upperBound;
+    private Integer upperBound;
 
     //getter and setter
     public Long getId() {
@@ -26,19 +26,19 @@ public class ExamType {
         this.id = id;
     }
 
-    public int getLowerBound() {
+    public Integer getLowerBound() {
         return lowerBound;
     }
 
-    public void setLowerBound(int lowerBound) {
+    public void setLowerBound(Integer lowerBound) {
         this.lowerBound = lowerBound;
     }
 
-    public int getUpperBound() {
+    public Integer getUpperBound() {
         return upperBound;
     }
 
-    public void setUpperBound(int upperBound) {
+    public void setUpperBound(Integer upperBound) {
         this.upperBound = upperBound;
     }
 }

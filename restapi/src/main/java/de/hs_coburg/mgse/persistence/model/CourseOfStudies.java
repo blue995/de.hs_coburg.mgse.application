@@ -18,10 +18,10 @@ public class CourseOfStudies {
     private String completeName;
 
     @Column(name = "ects", nullable = true)
-    private int ects;
+    private Integer ects;
 
     @Column(name = "semester", nullable = true)
-    private int semester;
+    private Integer semester;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
@@ -48,19 +48,19 @@ public class CourseOfStudies {
         this.completeName = completeName;
     }
 
-    public int getEcts() {
+    public Integer getEcts() {
         return ects;
     }
 
-    public void setEcts(int ects) {
+    public void setEcts(Integer ects) {
         this.ects = ects;
     }
 
-    public int getSemester() {
+    public Integer getSemester() {
         return semester;
     }
 
-    public void setSemester(int semester) {
+    public void setSemester(Integer semester) {
         this.semester = semester;
     }
 

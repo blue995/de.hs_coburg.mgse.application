@@ -1,6 +1,8 @@
 package de.hs_coburg.mgse.persistence.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name = "Professor")
 @Table(name = "PROFESSOR")
@@ -29,6 +31,14 @@ public class Professor {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
     private GlossaryEntry abbreviation;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = true)
+    private List<ModuleDescription> responsibleForModules = new ArrayList<ModuleDescription>();
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = true)
+    private List<ModuleDescription> lectures = new ArrayList<ModuleDescription>();
 
     //getter and setter
     public Long getId() {
@@ -85,5 +95,21 @@ public class Professor {
 
     public void setAbbreviation(GlossaryEntry abbreviation) {
         this.abbreviation = abbreviation;
+    }
+
+    public List<ModuleDescription> getResponsibleForModules() {
+        return responsibleForModules;
+    }
+
+    public void setResponsibleForModules(List<ModuleDescription> responsibleForModules) {
+        this.responsibleForModules = responsibleForModules;
+    }
+
+    public List<ModuleDescription> getLectures() {
+        return lectures;
+    }
+
+    public void setLectures(List<ModuleDescription> lectures) {
+        this.lectures = lectures;
     }
 }
