@@ -24,7 +24,12 @@ export class SerDetailComponent implements OnInit {
   getSer(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.sersService.getSer(id)
-      .subscribe(ser => this.ser = ser);
+      .subscribe(ser => this.testtest(ser));
+  }
+
+  testtest (ser: Ser) {
+    this.ser = ser;
+    console.log(this.ser);
   }
 
 }

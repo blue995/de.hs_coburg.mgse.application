@@ -1,1 +1,102 @@
 @import '../../shared/styles/common';
+@import '../../shared/styles/dimensions';
+@import '../../shared/styles/responsive';
+
+
+/*
+ * layout for DIN-A4 page class
+ * this is only a view component (does not translate to a optimized print view/PDF)
+ */
+.a4-document {
+  background: white;
+  margin: 0.5em auto;
+  box-shadow: 0 0 1em rgba(0,0,0,0.5);
+  padding: $a4-margin-top $a4-margin-right $a4-margin-bottom $a4-margin-left;
+  font-family: "Times New Roman", serif;
+  font-size: 16px;
+
+  &--page-break {
+    /* Force page breaks after */
+    page-break-before: always;
+  }
+
+  &--portrait {
+    width: $a4-width-portrait;
+    min-height: $a4-height-portrait;
+  }
+
+  &--landscape {
+    width: $a4-width-landscape;
+    height: $a4-height-landscape;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  &__creation-date {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  &__sub-title {
+    padding: 25px 0;
+    text-align: justify;
+  }
+
+  &__content {
+    column-count: 2;
+    column-fill: auto;
+    column-gap: 1.4cm;
+  }
+
+  &__paragraph-title {
+    text-align: center;
+  }
+
+  &__paragraph-text {
+    text-align: justify;
+    margin-bottom: 0.5cm;
+  }
+}
+
+@page {
+  /* You can only change the size, margins, orphans, widows and page breaks here */
+
+  /* Require that at least this many lines of a paragraph must be left at the bottom of a page */
+  orphans: 3;
+  /* Require that at least this many lines of a paragraph must be left at the top of a new page */
+  widows: 2;
+
+  /* Paper size and page orientation */
+  size: A4 portrait;
+
+  /* Margin per single side of the page */
+  margin: $a4-margin-top $a4-margin-right $a4-margin-bottom $a4-margin-left;
+}
+
+@media print {
+  .main-content-wrapper,
+  .a4-document {
+    padding: 0;
+    margin: 0;
+  }
+  .a4-document {
+    box-shadow: none;
+    width: auto;
+    height: auto;
+
+    &__header {
+      min-height: 4.5cm;
+      padding: 0.4cm 1cm 0 1cm;
+    }
+
+    &__content {
+      height: 21cm;
+      padding: 0 1cm 1cm 1cm;
+    }
+  }
+}
+
