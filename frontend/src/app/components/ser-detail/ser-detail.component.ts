@@ -11,8 +11,6 @@ import {ActivatedRoute} from '@angular/router';
 export class SerDetailComponent implements OnInit {
 
   @Input() ser: Ser;
-  @ViewChild('a4Sheet') elementView: ElementRef;
-  viewHeight: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,8 +19,6 @@ export class SerDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getSer();
-    this.viewHeight = this.elementView.nativeElement.offsetHeight;
-    console.log(this.viewHeight);
   }
 
   getSer(): void {
