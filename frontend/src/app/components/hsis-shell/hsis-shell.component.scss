@@ -85,3 +85,16 @@
     }
   }
 }
+
+@media print {
+  .hsis-toolbar,
+  .hsis-home__side-nav {
+    display: none;
+  }
+
+  .hsis-home__main-content {
+    top: 0;
+    margin: 0;
+    padding: 0;
+  }
+}

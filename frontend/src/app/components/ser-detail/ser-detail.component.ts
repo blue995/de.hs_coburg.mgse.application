@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {SersService} from '../../services/sers.service';
 import {Ser} from '../../shared/models/ser';
 import {ActivatedRoute} from '@angular/router';
+import * as jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-ser-detail',
@@ -11,6 +12,8 @@ import {ActivatedRoute} from '@angular/router';
 export class SerDetailComponent implements OnInit {
 
   @Input() ser: Ser;
+  @ViewChild('a4Sheet') elementView: ElementRef;
+  viewHeight: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,6 +22,8 @@ export class SerDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getSer();
+    this.viewHeight = this.elementView.nativeElement.offsetHeight;
+    console.log(this.viewHeight);
   }
 
   getSer(): void {

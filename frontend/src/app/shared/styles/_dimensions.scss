@@ -2,7 +2,7 @@
 
 /* height of toolbar in hsis-shell */
 $hsis-toolbar-height-regular: 64px;
-$hsis-toolbar-height-mobile: 56px;
+$hsis-toolbar-height-mobile:  56px;
 
 /* top padding of hsis-shell content (side-nav and main content */
 $hsis-content-top-padding: 1vh;
@@ -16,3 +16,15 @@ $hsis-content-height-regular:         calc(100vh - #{$hsis-toolbar-height-regula
 $hsis-content-height-mobile: -webkit-calc(100vh - #{$hsis-toolbar-height-mobile} - #{$hsis-content-top-padding});
 $hsis-content-height-mobile:    -moz-calc(100vh - #{$hsis-toolbar-height-mobile} - #{$hsis-content-top-padding});
 $hsis-content-height-mobile:         calc(100vh - #{$hsis-toolbar-height-mobile} - #{$hsis-content-top-padding});
+
+/* DIN-A4 sheet dimensions */
+$a4-width-portrait:   21cm;
+$a4-height-portrait:  29.7cm;
+$a4-width-landscape:  29.7cm;
+$a4-height-landscape: 21cm;
+
+/* DIN-A4 view sheet (inner) margins */
+$a4-margin-left: 2.4cm;
+$a4-margin-right: 2.4cm;
+$a4-margin-top: 2cm;
+$a4-margin-bottom: 2cm;
