@@ -1,3 +1,28 @@
-<div class="main-content-wrapper">
-  this is just a placeholder
+<div class="main-content-wrapper main-content-wrapper--side-padding">
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let courseCatalogueMeta of courseCataloguesMeta">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Studiengang: {{ courseCatalogueMeta.completeName }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <p *ngIf="courseCatalogueMeta.degrees.length == 0">
+        Für diesen Studiengang sind leider noch keine Einträge vorhanden.
+      </p>
+
+      <mat-list>
+        <div *ngFor="let degree of courseCatalogueMeta.degrees; last as isLast">
+          <h3 mat-subheader>{{ degree.completeName }}</h3>
+          <mat-list-item *ngFor="let courseCatalogue of degree.courseCatalogues">
+            <mat-icon mat-list-icon>description</mat-icon>
+            <a routerLink="/courses/{{ courseCatalogue.catalogueId }}" mat-line>{{ courseCatalogue.shortName }}</a>
+            <p mat-line> Gültig für Studienanfänger ab dem {{ courseCatalogue.validityDate }} </p>
+          </mat-list-item>
+          <mat-divider *ngIf="!isLast"></mat-divider>
+        </div>
+      </mat-list>
+
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>
