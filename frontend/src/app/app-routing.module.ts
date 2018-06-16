@@ -9,6 +9,7 @@ import { HsisShellComponent } from './components/hsis-shell/hsis-shell.component
 import { SersComponent } from './components/sers/sers.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { CurriculaComponent } from './components/curricula/curricula.component';
+import {SerDetailComponent} from './components/ser-detail/ser-detail.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
     children: [
       { path: '', canActivate: [AuthGuard], component: SersComponent },
       { path: 'sers', canActivate: [AuthGuard], component: SersComponent },
+      { path: 'sers/:id', canActivate: [AuthGuard], component: SerDetailComponent },
       { path: 'courses', canActivate: [AuthGuard], component: CoursesComponent },
       { path: 'curriculum', canActivate: [AuthGuard], component: CurriculaComponent },
     ]

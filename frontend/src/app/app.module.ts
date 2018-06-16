@@ -7,11 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
   MatCardModule,
-  MatCheckboxModule, MatExpansionModule,
+  MatCheckboxModule, MatDividerModule, MatExpansionModule,
   MatFormFieldModule,
   MatIconModule,
-  MatInputModule,
-  MatSidenavModule, MatTabsModule,
+  MatInputModule, MatListModule,
+  MatSidenavModule,
   MatToolbarModule
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
@@ -25,6 +25,7 @@ import { CurriculaComponent } from './components/curricula/curricula.component';
 /* this will be removed once we start using our REST api */
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './shared/mocks/in-memory-data.service';
+import { SerDetailComponent } from './components/ser-detail/ser-detail.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { InMemoryDataService } from './shared/mocks/in-memory-data.service';
     LoginComponent,
     SersComponent,
     CoursesComponent,
-    CurriculaComponent
+    CurriculaComponent,
+    SerDetailComponent
   ],
   imports: [
     BrowserModule, // make sure this import is on the top of the list
@@ -54,7 +56,8 @@ import { InMemoryDataService } from './shared/mocks/in-memory-data.service';
     MatButtonModule,
     MatCardModule,
     MatExpansionModule,
-    MatTabsModule,
+    MatListModule,
+    MatDividerModule,
     FormsModule,
     AppRoutingModule
   ],

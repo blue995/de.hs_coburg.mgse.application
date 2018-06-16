@@ -7,12 +7,21 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <!-- <p>This is the primary content of the panel.</p> -->
+      <p *ngIf="serMeta.degrees.length == 0">
+        Für diesen Studiengang sind leider noch keine Einträge vorhanden.
+      </p>
 
-      <mat-tab-group>
-        <mat-tab label="Bachelor">Bachelor Content</mat-tab>
-        <mat-tab label="Master">Master Content</mat-tab>
-      </mat-tab-group>
+      <mat-list>
+        <div *ngFor="let degree of serMeta.degrees; last as isLast">
+          <h3 mat-subheader>{{ degree.completeName }}</h3>
+          <mat-list-item *ngFor="let ser of degree.sers">
+            <mat-icon mat-list-icon>description</mat-icon>
+            <a routerLink="/sers/{{ ser.serId }}" mat-line>{{ ser.shortName }}</a>
+            <p mat-line> Gültig für Studienanfänger ab dem {{ ser.validityDate }} </p>
+          </mat-list-item>
+          <mat-divider *ngIf="!isLast"></mat-divider>
+        </div>
+      </mat-list>
 
     </mat-expansion-panel>
   </mat-accordion>
