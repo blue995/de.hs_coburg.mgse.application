@@ -10,6 +10,12 @@
   @include display-res(xs) {
     min-height: $hsis-content-height-mobile;
   }
+
+  &--side-padding {
+    @include display-res(lg xl) {
+      margin: 0 15vw;
+    }
+  }
 }
 
 /*

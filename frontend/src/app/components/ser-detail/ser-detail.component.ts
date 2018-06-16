@@ -2,7 +2,6 @@ import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {SersService} from '../../services/sers.service';
 import {Ser} from '../../shared/models/ser';
 import {ActivatedRoute} from '@angular/router';
-import * as jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-ser-detail',
