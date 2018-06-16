@@ -83,7 +83,8 @@
     border-spacing: 0;
     table-layout: fixed;
     font-size: 0.9em;
-    @include word-wrap();
+    @include word-wrap;
+    border-collapse: collapse;
     tr > td {
       border: 1px solid black;
       text-align: center;
@@ -94,11 +95,10 @@
   }
 
   &__sum-table {
-    margin: 20px 0;
+    margin: 20px 0 90px 0;
 
     tr > td {
       border: 2px solid black;
-      text-align: center;
     }
   }
 }

@@ -31,7 +31,7 @@
     <div class="a4-document__addendum-header">
       Anlage: Übersicht über die Module und Prüfungen des Bachelorstudiengangs Informatik
     </div>
-    <div class="a4-document__module-overview" *ngFor="let studySection of ser.studySections">
+    <div class="a4-document__module-overview" *ngFor="let studySection of ser?.studySections">
       <div class="a4-document__study-section-header">
         {{ studySection.completeName }} {{ studySection.firstSemester }} und {{ studySection.lastSemester }}
       </div>
@@ -112,7 +112,7 @@
         <tr>
           <td style="width: 30%" valign="top">
             <span class="a4-document__section-sum-text">
-              Zischensumme {{ studySection.firstSemester }}. + {{ studySection.lastSemester }}.
+              Zwischensumme {{ studySection.firstSemester }}. + {{ studySection.lastSemester }}.
             </span>
           </td>
           <td style="width: 7.5%" valign="top">
