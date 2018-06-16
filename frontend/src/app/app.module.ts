@@ -26,6 +26,7 @@ import { CurriculaComponent } from './components/curricula/curricula.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './shared/mocks/in-memory-data.service';
 import { SerDetailComponent } from './components/ser-detail/ser-detail.component';
+import { CourseCatalogueComponent } from './components/course-catalogue/course-catalogue.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SerDetailComponent } from './components/ser-detail/ser-detail.component
     SersComponent,
     CoursesComponent,
     CurriculaComponent,
-    SerDetailComponent
+    SerDetailComponent,
+    CourseCatalogueComponent
   ],
   imports: [
     BrowserModule, // make sure this import is on the top of the list
