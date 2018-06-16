@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {SersService} from '../../services/sers.service';
 import {Ser} from '../../shared/models/ser';
 import {ActivatedRoute} from '@angular/router';
