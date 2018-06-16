@@ -1,6 +1,6 @@
 import { GlossaryEntry } from './glossary-entry';
-import { CourseType } from './course-type';
 import { ExamType } from './exam-type';
+import { CourseType } from './course-type';
 
 export class Module {
   completeName: String;

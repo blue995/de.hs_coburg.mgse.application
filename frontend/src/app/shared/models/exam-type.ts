@@ -1,7 +1,6 @@
-import { GlossaryEntry } from './glossary-entry';
-
 export class ExamType {
-  details: GlossaryEntry;
+  name: String;
+  abbreviation: String;
   examTestUnit: String;
   lowerBound: number;
   upperBound: number;

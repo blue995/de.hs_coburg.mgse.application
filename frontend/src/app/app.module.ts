@@ -12,7 +12,7 @@ import {
   MatIconModule,
   MatInputModule, MatListModule,
   MatSidenavModule,
-  MatToolbarModule
+  MatToolbarModule, MatTooltipModule
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
@@ -58,6 +58,7 @@ import { SerDetailComponent } from './components/ser-detail/ser-detail.component
     MatExpansionModule,
     MatListModule,
     MatDividerModule,
+    MatTooltipModule,
     FormsModule,
     AppRoutingModule
   ],

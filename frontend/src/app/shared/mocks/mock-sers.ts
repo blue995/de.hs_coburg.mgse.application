@@ -129,7 +129,482 @@ export const SERS: Ser[] = [
         ]
       }
     ],
-    studySections: [],
+    studySections: [
+      {
+        completeName: 'Erster Studienabschnitt - theoretische Studiensemester',
+        firstSemester: 1,
+        lastSemester: 2,
+        sumOfEcts: 60,
+        sumOfSemesterHours: 52,
+        moduleTypes: [
+          {
+            typeName: 'Fachwissenschaftliche Pflichtmodule',
+            modules: [
+              {
+                completeName: 'Analysis',
+                ects: 7,
+                quantifier: 5,
+                semesterHours: 6,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                examTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ]
+              },
+              {
+                completeName: 'Diskrete Mathematik',
+                ects: 5,
+                quantifier: 4,
+                semesterHours: 4,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                examTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ]
+              },
+              {
+                completeName: 'Grundlagen der Informatik',
+                ects: 7,
+                quantifier: 5,
+                semesterHours: 6,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                examTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ]
+              },
+              {
+                completeName: 'Rechnerarchitekturen',
+                ects: 7,
+                quantifier: 5,
+                semesterHours: 6,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                examTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ]
+              },
+              {
+                completeName: 'Webtechnologien',
+                ects: 7,
+                quantifier: 5,
+                semesterHours: 6,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' },
+                  { name: 'Praktikum', abbreviation: 'Pr' }
+                ],
+                examTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ]
+              },
+              {
+                completeName: 'Programmieren 1',
+                ects: 5,
+                quantifier: 4,
+                semesterHours: 4,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' },
+                  { name: 'Praktikum', abbreviation: 'Pr' }
+                ],
+                examTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ]
+              },
+              {
+                completeName: 'Programmieren 2',
+                ects: 7,
+                quantifier: 5,
+                semesterHours: 6,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' },
+                  { name: 'Praktikum', abbreviation: 'Pr' }
+                ],
+                examTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ]
+              },
+              {
+                completeName: 'Computernetze',
+                ects: 5,
+                quantifier: 4,
+                semesterHours: 4,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' },
+                  { name: 'Praktikum', abbreviation: 'Pr' }
+                ],
+                examTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            typeName: 'Schlüsselqualifikation',
+            modules: [
+              {
+                completeName: 'Betriebswirtschaftslehre 1 und 2',
+                ects: 2,
+                quantifier: 1,
+                semesterHours: 2,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Lehrvortrag', abbreviation: 'V' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                examTypes: [
+                  {
+                    name: 'studienbegleitende schriftliche Prüfung',
+                    abbreviation: 'sschrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 45,
+                    upperBound: 60
+                  }
+                ],
+                count: 2
+              },
+              {
+                completeName: 'Englisch (GER B2) 1 und 2',
+                ects: 2,
+                quantifier: 1,
+                semesterHours: 2,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Seminar', abbreviation: 'S' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                examTypes: [
+                  {
+                    name: 'studienbegleitende schriftliche Prüfung',
+                    abbreviation: 'sschrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 45,
+                    upperBound: 60
+                  },
+                  {
+                    name: 'Präsentation',
+                    abbreviation: 'Prs',
+                    examTestUnit: 'Min',
+                    lowerBound: 15,
+                    upperBound: 45
+                  }
+                ],
+                count: 2
+              },
+              {
+                completeName: ' Wahlpflichtmodul weitere Schlüsselqualifikation',
+                ects: 2,
+                quantifier: 1,
+                semesterHours: 2,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' },
+                  { name: 'Seminar', abbreviation: 'S' },
+                  { name: 'Praktikum', abbreviation: 'Pr' }
+                ],
+                examTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        completeName: 'Zweiter Studienabschnitt – theoretische Studiensemester',
+        firstSemester: 3,
+        lastSemester: 4,
+        sumOfEcts: 60,
+        sumOfSemesterHours: 48,
+        moduleTypes: [
+          {
+            typeName: 'Fachwissenschaftliche Pflichtmodule',
+            modules: [
+              {
+                completeName: 'Stochastik',
+                ects: 7,
+                quantifier: 5,
+                semesterHours: 6,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                examTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ]
+              },
+              {
+                completeName: 'Diskrete Mathematik',
+                ects: 5,
+                quantifier: 4,
+                semesterHours: 4,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                examTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ]
+              },
+              {
+                completeName: 'Grundlagen der Informatik',
+                ects: 7,
+                quantifier: 5,
+                semesterHours: 6,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                examTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ]
+              },
+              {
+                completeName: 'Rechnerarchitekturen',
+                ects: 7,
+                quantifier: 5,
+                semesterHours: 6,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                examTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ]
+              },
+              {
+                completeName: 'Webtechnologien',
+                ects: 7,
+                quantifier: 5,
+                semesterHours: 6,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' },
+                  { name: 'Praktikum', abbreviation: 'Pr' }
+                ],
+                examTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ]
+              },
+              {
+                completeName: 'Programmieren 1',
+                ects: 5,
+                quantifier: 4,
+                semesterHours: 4,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' },
+                  { name: 'Praktikum', abbreviation: 'Pr' }
+                ],
+                examTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ]
+              },
+              {
+                completeName: 'Programmieren 2',
+                ects: 7,
+                quantifier: 5,
+                semesterHours: 6,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' },
+                  { name: 'Praktikum', abbreviation: 'Pr' }
+                ],
+                examTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ]
+              },
+              {
+                completeName: 'Computernetze',
+                ects: 5,
+                quantifier: 4,
+                semesterHours: 4,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' },
+                  { name: 'Praktikum', abbreviation: 'Pr' }
+                ],
+                examTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            typeName: 'Fachwissentschaftliche Wahlpflichtmodule',
+            modules: [
+              {
+                completeName: 'Fachwissenschaftliche Wahlpflichtmodule',
+                ects: 5,
+                quantifier: 5,
+                semesterHours: 4,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Praktikum', abbreviation: 'Pr' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                examTypes: [
+                  {
+                    name: 'studienbegleitende schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  },
+                  {
+                    name: 'mündliche Prüfung',
+                    abbreviation: 'mdlP',
+                    examTestUnit: 'Min',
+                    lowerBound: 15,
+                    upperBound: 45
+                  }
+                ],
+                count: 3
+              }
+            ]
+          },
+          {
+            typeName: 'Schlüsselqualifikation',
+            modules: [
+              {
+                completeName: ' Wahlpflichtmodul weitere Schlüsselqualifikation',
+                ects: 2,
+                quantifier: 1,
+                semesterHours: 2,
+                courseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' },
+                  { name: 'Seminar', abbreviation: 'S' },
+                  { name: 'Praktikum', abbreviation: 'Pr' }
+                ],
+                examTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
     footnotes: []
   }
 ];
