@@ -48,8 +48,11 @@
 
   &__content {
     column-count: 2;
+    -webkit-column-count: 2;
     column-fill: auto;
+    -webkit-column-fill: auto;
     column-gap: 1.4cm;
+    -webkit-column-gap: 1.4cm;
   }
 
   &__paragraph-title {
