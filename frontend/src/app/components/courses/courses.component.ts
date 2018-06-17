@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CourseCatalogue} from '../../shared/models/course-catalogue';
+import {Course} from '../../shared/models/course';
 import {CoursesService} from '../../services/courses.service';
 
 @Component({
@@ -9,7 +9,7 @@ import {CoursesService} from '../../services/courses.service';
 })
 export class CoursesComponent implements OnInit {
 
-  courseCataloguesMeta: CourseCatalogue[];
+  courseCataloguesMeta: Course[];
 
   constructor(private coursesService: CoursesService) { }
 

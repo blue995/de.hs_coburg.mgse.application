@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {CourseMeta} from '../shared/models/course-meta';
 import {catchError, tap} from 'rxjs/operators';
-import {CourseCatalogue} from '../shared/models/course-catalogue';
+import {Course} from '../shared/models/course';
 import {Ser} from '../shared/models/ser';
 
 /* currently not needed because we are only using a GET request */
@@ -29,9 +29,9 @@ export class CoursesService {
       );
   }
 
-  getCourseCatalogue (id: number): Observable<CourseCatalogue> {
+  getCourseCatalogue (id: number): Observable<Course> {
     const url = `${this.coursesUrl}Complete/${id}`; // TODO: remove "Complete from id template string
-    return this.http.get<CourseCatalogue>(url).pipe(
+    return this.http.get<Course>(url).pipe(
       tap(courseCatalogue => console.log(`fetched course catalogue id=${id}`)),
       catchError(this.handleError<Ser>(`getCourseCatalogue id=${id}`))
     );

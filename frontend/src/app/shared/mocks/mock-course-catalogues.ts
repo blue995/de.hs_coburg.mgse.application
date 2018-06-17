@@ -1,7 +1,7 @@
-import {CourseCatalogue} from '../models/course-catalogue';
+import {Course} from '../models/course';
 
 // TODO: mock course catalogues
-export const COURSE_CATALOGUES: CourseCatalogue[] = [
+export const COURSE_CATALOGUES: Course[] = [
   {
     id: 1,
     courseOfStudy: 'Informatik',
