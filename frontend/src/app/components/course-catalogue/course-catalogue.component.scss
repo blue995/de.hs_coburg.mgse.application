@@ -60,7 +60,7 @@ $color-primary: #df0134;
     @include word-wrap;
     border-collapse: collapse;
 
-    > td {
+    tr > td {
       border: 1px solid black;
       padding: 0.2cm;
     }

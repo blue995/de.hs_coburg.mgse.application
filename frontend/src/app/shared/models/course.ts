@@ -1,4 +1,3 @@
-
 export class Course {
   id: number;
   courseOfStudy: String;
@@ -18,6 +17,6 @@ export class Course {
   qualificationGoals: String;
   content: String;
   examType: String;
-  mediaTuypes: String;
+  mediaTypes: String;
   literature: String;
 }

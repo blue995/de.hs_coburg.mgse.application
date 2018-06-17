@@ -1,4 +1,4 @@
-export class CourseMeta {
+export class CourseCatalogueMeta {
   completeName: String;                 // e.g.: "Informatik"
   degrees: DegreeMeta[];                // list of degrees (can be empty, but must be included)
 }

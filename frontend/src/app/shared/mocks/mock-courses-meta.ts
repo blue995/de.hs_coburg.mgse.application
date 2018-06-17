@@ -1,6 +1,6 @@
-import { CourseMeta } from '../models/course-meta';
+import { CourseCatalogueMeta } from '../models/course-catalogue-meta';
 
-export const COURSES_META: CourseMeta[] = [
+export const COURSES_META: CourseCatalogueMeta[] = [
   {
     completeName: 'Informatik',
     degrees: [

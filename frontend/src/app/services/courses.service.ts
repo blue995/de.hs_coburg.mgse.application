@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable, of} from 'rxjs';
-import {CourseMeta} from '../shared/models/course-meta';
+import {CourseCatalogueMeta} from '../shared/models/course-catalogue-meta';
 import {catchError, tap} from 'rxjs/operators';
-import {Course} from '../shared/models/course';
 import {Ser} from '../shared/models/ser';
+import {CourseCatalogue} from '../shared/models/course-catalogue';
 
 /* currently not needed because we are only using a GET request */
 const httpOptions = {
@@ -21,19 +21,19 @@ export class CoursesService {
 
   constructor(private http: HttpClient) { }
 
-  getCoursesMeta (): Observable<CourseMeta[]> {
-    return this.http.get<CourseMeta[]>(this.coursesUrl)
+  getCoursesMeta (): Observable<CourseCatalogueMeta[]> {
+    return this.http.get<CourseCatalogueMeta[]>(this.coursesUrl)
       .pipe(
-        tap(courseCataloguesMeta => console.log(`fetched ser meta objects`)),
-        catchError(this.handleError('getSersMeta', []))
+        tap(courseCataloguesMeta => console.log(`fetched course meta objects`)),
+        catchError(this.handleError('getCoursesMeta', []))
       );
   }
 
-  getCourseCatalogue (id: number): Observable<Course> {
+  getCourseCatalogue (id: number): Observable<CourseCatalogue> {
     const url = `${this.coursesUrl}Complete/${id}`; // TODO: remove "Complete from id template string
-    return this.http.get<Course>(url).pipe(
+    return this.http.get<CourseCatalogue>(url).pipe(
       tap(courseCatalogue => console.log(`fetched course catalogue id=${id}`)),
-      catchError(this.handleError<Ser>(`getCourseCatalogue id=${id}`))
+      catchError(this.handleError<CourseCatalogue>(`getCourseCatalogue id=${id}`))
     );
   }
 

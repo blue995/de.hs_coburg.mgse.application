@@ -25,14 +25,84 @@
     </div>
   </div>
 
-  <div class="a4-document a4-document--portrait">
+  <div class="a4-document a4-document--portrait" *ngFor="let course of courses?">
     <table class="a4-document__course-table a4-document--page-break">
-      <td>
-        Beschreibung
-      </td>
-      <td>
-        Inhalt
-      </td>
+      <tr>
+        <td>Studiengang</td>
+        <td>{{ course.courseOfStudy }}</td>
+      </tr>
+      <tr>
+        <td>Modulbezeichnung</td>
+        <td>{{ course.moduleSpecification }}</td>
+      </tr>
+      <tr>
+        <td>Kürzel</td>
+        <td>{{ course.abbreviation }}</td>
+      </tr>
+      <tr>
+        <td>SWS</td>
+        <td>{{ course.semesterHours }} SWS</td>
+      </tr>
+      <tr>
+        <td>Leistungspunkte</td>
+        <td>{{ course.ects }} ECTS</td>
+      </tr>
+      <tr>
+        <td>Arbeitsaufwand</td>
+        <td [innerHTML]="course.workload"></td>
+      </tr>
+      <tr>
+        <td>Fachsemester</td>
+        <td>{{ course.semester }}</td>
+      </tr>
+      <tr>
+        <td>Turnus</td>
+        <td>{{ course.rota }}</td>
+      </tr>
+      <tr>
+        <td>Dauer des Moduls</td>
+        <td>{{ course.duration }}</td>
+      </tr>
+      <tr>
+        <td>Modulverantwortliche(r)</td>
+        <td>{{ course.responsiblePerson }}</td>
+      </tr>
+      <tr>
+        <td>Dozent(in)</td>
+        <td [innerHTML]="course.lecturer"></td>
+      </tr>
+      <tr>
+        <td>Sprache</td>
+        <td>{{ course.language }}</td>
+      </tr>
+      <tr>
+        <td>Zulassungsvoraussetzungen</td>
+        <td [innerHTML]="course.admissionRequirements"></td>
+      </tr>
+      <tr>
+        <td>Inhaltliche Voraussetzungen</td>
+        <td [innerHTML]="course.prerequesites"></td>
+      </tr>
+      <tr>
+        <td>Qualifikationsziele / Kompetenzen</td>
+        <td [innerHTML]="course.qualificationGoals"></td>
+      </tr>
+      <tr>
+        <td>Lehrinhalte</td>
+        <td [innerHTML]="course.content"></td>
+      </tr>
+      <tr>
+        <td>Endnotenbildende Studien- / Prüfungsleistungen</td>
+        <td [innerHTML]="course.examType"></td>
+      </tr>
+      <tr>
+        <td>Medienformen</td>
+        <td [innerHTML]="course.mediaTypes"></td>
+      </tr>
+      <tr>
+        <td>Literatur</td>
+        <td [innerHTML]="course.literature"></td>
+      </tr>
     </table>
   </div>
 </div>
