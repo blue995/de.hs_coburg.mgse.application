@@ -16,16 +16,17 @@
           Modulhandbuch
         </span>
         <span class="a4-document__cover-subheadline">
-          Bachelorstudiengang Informatik (IF) - <br/>Gueltig fuer Studienanfaenger ab 01.01.2014
+          {{ courseCatalogue?.courseOfStudy }} ({{ courseCatalogue?.courseOfStudyAbbreviation }}) -
+          <br/>Gueltig fuer Studienanfaenger ab {{ courseCatalogue?.validityDate }}
         </span>
         <span class="a4-document__cover-faculty-information">
-          Fakultaet Elektrotechnik und Informatik
+          {{ courseCatalogue?.facultyName }}
         </span>
       </div>
     </div>
   </div>
 
-  <div class="a4-document a4-document--portrait" *ngFor="let course of courses?">
+  <div class="a4-document a4-document--portrait" *ngFor="let course of courses">
     <table class="a4-document__course-table a4-document--page-break">
       <tr>
         <td>Studiengang</td>

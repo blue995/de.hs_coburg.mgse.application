@@ -5,7 +5,8 @@ export const COURSE_CATALOGUES: CourseCatalogue[] = [
   {
     id: 1,
     courseOfStudy: 'Bachelorstudiengang Informatik',
-    validity: '01.01.2014',
+    courseOfStudyAbbreviation: 'IF',
+    validityDate: '01.01.2014',
     facultyName: 'Fakultaet Elektrotechnik und Informatik',
     courses: [
       {
