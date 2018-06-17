@@ -558,7 +558,7 @@ export const SERS: Ser[] = [
                 ],
                 examTypes: [
                   {
-                    name: 'studienbegleitende schriftliche Prüfung',
+                    name: 'schriftliche Prüfung',
                     abbreviation: 'schrP',
                     examTestUnit: 'Min',
                     lowerBound: 90,
