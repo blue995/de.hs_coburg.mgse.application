@@ -19,6 +19,33 @@
 }
 
 /*
+ * layout for a4 document including basic modifiers
+ */
+.a4-document {
+  background: white;
+  margin: 0.5em auto;
+  box-shadow: 0 0 1em rgba(0,0,0,0.5);
+  padding: $a4-margin-top $a4-margin-right $a4-margin-bottom $a4-margin-left;
+  font-family: "Times New Roman", serif;
+  font-size: 16px;
+
+  &--page-break {
+    /* Force page breaks after */
+    page-break-after: always;
+  }
+
+  &--portrait {
+    width: $a4-width-portrait;
+    min-height: $a4-height-portrait;
+  }
+
+  &--landscape {
+    width: $a4-width-landscape;
+    min-height: $a4-height-landscape;
+  }
+}
+
+/*
  * mixin for word wraps
  */
 @mixin word-wrap {
