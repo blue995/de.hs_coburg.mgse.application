@@ -45,6 +45,48 @@
   }
 }
 
+@page {
+  /* You can only change the size, margins, orphans, widows and page breaks here */
+
+  /* Require that at least this many lines of a paragraph must be left at the bottom of a page */
+  orphans: 3;
+  /* Require that at least this many lines of a paragraph must be left at the top of a new page */
+  widows: 2;
+
+  /* Paper size and page orientation */
+  size: A4 portrait;
+
+  /* Margin per single side of the page */
+  margin: $a4-margin-top $a4-margin-right $a4-margin-bottom $a4-margin-left;
+}
+
+/*
+ * this is only experimental and does not work properly
+ * best way to print: generate PDF in the backend
+ */
+@media print {
+  .main-content-wrapper, .a4-document {
+    padding: 0;
+    margin: 0;
+  }
+
+  .a4-document {
+    box-shadow: none;
+    width: auto;
+    height: auto;
+
+    &__header {
+      min-height: 4.5cm;
+      padding: 0.4cm 1cm 0 1cm;
+    }
+
+    &__content {
+      height: 21cm;
+      padding: 0 1cm 1cm 1cm;
+    }
+  }
+}
+
 /*
  * mixin for word wraps
  */
