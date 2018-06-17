@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Course} from '../../shared/models/course';
+import {CoursesService} from '../../services/courses.service';
+import {ActivatedRoute} from '@angular/router';
+import {CourseCatalogue} from '../../shared/models/course-catalogue';
 
 @Component({
   selector: 'app-course-catalogue',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseCatalogueComponent implements OnInit {
 
-  @Input() course:
+  @Input() courseCatalogue: CourseCatalogue;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private coursesService: CoursesService
+  ) { }
 
   ngOnInit() {
   }
