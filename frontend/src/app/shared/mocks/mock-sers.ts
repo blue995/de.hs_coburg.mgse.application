@@ -6,14 +6,16 @@ export const SERS: Ser[] = [
     shortName: 'SPO B IF 3',
     title: 'Studien- und Prüfungsordnung für den Bachelorstudiengang Informatik\n' +
     'an der Hochschule für angewandte Wissenschaften Coburg (SPO B IF)',
-    validity: '25. Juni 2014',
+    validityDate: '25. Juni 2014',
     courseOfStudy: {
       name: 'Informatik',
       ects: 210,
       semesters: 7,
       requirements: 'Abitur',
-      faculty: { name: 'Elektrotechnik & Informatik', shortName: 'E/INF'},
-      degree: { glossaryEntry: {word: 'Bachelor of Science', abbreviation: 'B. Sc.'} }
+      facultyName: 'Elektrotechnik & Informatik',
+      facultyShortName: 'E/INF',
+      degreeName: 'Bachelor of Science',
+      degreeAbbreviation: 'B. Sc.',
     },
     preface: 'Auf Grund von Art.13 Abs.1, 43, 44, 58 Abs.1, 61 Abs.2 und 8 und 66 des Bayerischen Hochschulgesetzes\n' +
     '–BayHSchG– (BayRS 2210–1–1–WFK) erlässt die Hochschule für angewandte\n' +
@@ -136,6 +138,7 @@ export const SERS: Ser[] = [
         lastSemester: 2,
         sumOfEcts: 60,
         sumOfSemesterHours: 52,
+        sumOfQuantifiers: 48,
         moduleTypes: [
           {
             typeName: 'Fachwissenschaftliche Pflichtmodule',
@@ -381,6 +384,7 @@ export const SERS: Ser[] = [
         lastSemester: 4,
         sumOfEcts: 60,
         sumOfSemesterHours: 48,
+        sumOfQuantifiers: 48,
         moduleTypes: [
           {
             typeName: 'Fachwissenschaftliche Pflichtmodule',

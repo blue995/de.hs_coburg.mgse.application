@@ -7,7 +7,7 @@ export class Ser {
   id: number;
   shortName: String;
   title: String;
-  validity: String;
+  validityDate: String;
   courseOfStudy: CourseOfStudy;
   preface: String;
   paragraphs: Paragraph[];

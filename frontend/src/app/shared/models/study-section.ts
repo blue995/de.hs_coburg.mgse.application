@@ -1,11 +1,11 @@
-import {ModuleTypes} from './module-types';
+import {ModuleType} from './module-type';
 
 export class StudySection {
-  id?: number;
   completeName: String;
   firstSemester: number;
   lastSemester: number;
   sumOfEcts: number;
   sumOfSemesterHours: number;
-  moduleTypes: ModuleTypes[];
+  sumOfQuantifiers: number;
+  moduleTypes: ModuleType[];
 }

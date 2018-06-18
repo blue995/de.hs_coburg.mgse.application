@@ -1,6 +1,6 @@
 import {Module} from './module';
 
-export class ModuleTypes {
+export class ModuleType {
   typeName: String;
   modules: Module[];
 }
