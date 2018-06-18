@@ -23,7 +23,7 @@ const routes: Routes = [
       { path: 'sers/:id', canActivate: [AuthGuard], component: SerDetailComponent },
       { path: 'courses', canActivate: [AuthGuard], component: CoursesComponent },
       { path: 'courses/:id', canActivate: [AuthGuard], component: CourseCatalogueComponent },
-      { path: 'curriculum', canActivate: [AuthGuard], component: CurriculaComponent },
+      { path: 'curricula', canActivate: [AuthGuard], component: CurriculaComponent },
     ]
   },
 ];
