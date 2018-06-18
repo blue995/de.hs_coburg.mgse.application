@@ -1,6 +1,4 @@
 import { GlossaryEntry } from './glossary-entry';
-import { ExamType } from './exam-type';
-import { CourseType } from './course-type';
 
 export class Module {
   completeName: String;
@@ -11,4 +9,17 @@ export class Module {
   examTypes: ExamType[];
   details?: GlossaryEntry;
   count?: number;
+}
+
+class CourseType {
+  name: String;
+  abbreviation: String;
+}
+
+class ExamType {
+  name: String;
+  abbreviation: String;
+  examTestUnit: String;
+  lowerBound: number;
+  upperBound: number;
 }
