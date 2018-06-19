@@ -4,14 +4,14 @@ package de.hs_coburg.mgse.services;
 import java.util.List;
 
 import javax.ws.rs.GET;
-import javax.ws.rs.PUT;
-import javax.ws.rs.POST;
-import javax.ws.rs.DELETE;
+//import javax.ws.rs.PUT;
+//import javax.ws.rs.POST;
+//import javax.ws.rs.DELETE;
 
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+//import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.Consumes;
+//import javax.ws.rs.Consumes;
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -20,8 +20,8 @@ import de.hs_coburg.mgse.business.GlossaryBusinessIf;
 import de.hs_coburg.mgse.business.GlossaryBusiness;
 
 import de.hs_coburg.mgse.persistence.model.Glossary;
-import de.hs_coburg.mgse.persistence.model.GlossaryEntry;
-import de.hs_coburg.mgse.persistence.model.GlossarySection;
+//import de.hs_coburg.mgse.persistence.model.GlossaryEntry;
+//import de.hs_coburg.mgse.persistence.model.GlossarySection;
 
 @Path("/glossary")
 public class GlossaryService {
@@ -54,6 +54,7 @@ public class GlossaryService {
 	/*
 	 * get a glossary section [section_id]
 	 */
+	/*
 	@GET
 	@Path("/{section_id}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -70,6 +71,7 @@ public class GlossaryService {
 		if (section == null) return Response.status(Response.Status.NOT_FOUND).entity(new Exception("Glossary section not found for SID: '" + section_id)).build();
 		return Response.ok(section).build();
 	}
+	*/
 
 	/*
 	 * add a new glossary section
@@ -114,6 +116,7 @@ public class GlossaryService {
 	/*
 	 * delete the glossary section [section_id]
 	 */
+	/*
 	@DELETE
 	@Path("/{section_id}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -128,11 +131,13 @@ public class GlossaryService {
 
 		return Response.ok().build();
 	}
+	*/
 
 
 	/*
 	 * get a glossary entry [entry_id] from the section [section_id]
 	 */
+	/*
 	@GET
 	@Path("/{section_id}/{entry_id}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -149,6 +154,7 @@ public class GlossaryService {
 		if (entry == null) return Response.status(Response.Status.NOT_FOUND).entity(new Exception("Glossary entry not found for SID/EID: '" + section_id + "/" + entry_id)).build();
 		return Response.ok(entry).build();
 	}
+	*/
 
 	/*
 	 * add a new glossary entry to the section [section_id]
@@ -193,6 +199,7 @@ public class GlossaryService {
 	/*
 	 * delete the glossary entry [entry_id] from the section [section_id]
 	 */
+	/*
 	@DELETE
 	@Path("/{section_id}/{entry_id}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -207,4 +214,5 @@ public class GlossaryService {
 
 		return Response.ok().build();
 	}
+	*/
 }

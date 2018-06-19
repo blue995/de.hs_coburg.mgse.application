@@ -13,7 +13,7 @@ public class GlossaryBusiness implements GlossaryBusinessIf {
 
     @Override
     public List<Glossary> readGlossaryList() throws Exception {
-        List<Glossary> glossary_list = null;
+        List<Glossary> glossary_list;
 
         try {
             EntityManager em = HibernateUtil.getEntityManager();
@@ -22,13 +22,13 @@ public class GlossaryBusiness implements GlossaryBusinessIf {
             glossary_list = em.createQuery("SELECT x FROM Glossary x").getResultList();
 
             em.getTransaction().commit();
-            em.close();
+            //em.close();
         } catch (Exception e) {
             e.printStackTrace();
             throw new Exception(e);
         }
 
-        if (glossary_list == null) throw new Exception("Glossary konnte nicht entfernt werden");
+        if (glossary_list == null) throw new Exception("Glossary list not found");
         return glossary_list;
     }
 

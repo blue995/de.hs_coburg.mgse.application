@@ -3,6 +3,10 @@ package de.hs_coburg.mgse.services.test;
 import de.hs_coburg.mgse.persistence.HibernateUtil;
 import de.hs_coburg.mgse.persistence.test.StudentInfo;
 
+import de.hs_coburg.mgse.persistence.model.CourseOfStudies;
+import de.hs_coburg.mgse.persistence.model.AdmissionRequirement;
+import de.hs_coburg.mgse.persistence.model.ModuleAdmissionRequirement;
+
 import javax.naming.NamingException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -40,6 +44,32 @@ public class HelloWorldResource {
             e.printStackTrace();
             msg = "Maybe not..";
         }
+
+
+        try{
+            AdmissionRequirement ar = new AdmissionRequirement();
+            ar.setValue("some value");
+
+            EntityManager em = HibernateUtil.getEntityManager();
+
+            for (int i=0; i<3; i++) {
+                em.getTransaction().begin();
+                CourseOfStudies info = new CourseOfStudies();
+
+                info.setCompleteName("Course " + (i+1));
+                info.setEcts(6);
+                info.setSemester(i + 1);
+
+                info.getRequirements().add(ar);
+
+                em.persist(info);
+                em.getTransaction().commit();
+            }
+        } catch(Exception e){
+            e.printStackTrace();
+            msg = "Maybe not..";
+        }
+
         return msg;
     }
 }
