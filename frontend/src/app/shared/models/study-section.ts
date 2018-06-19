@@ -1,4 +1,4 @@
-import {ModuleType} from './module-type';
+import {Module} from './module';
 
 export class StudySection {
   completeName: String;
@@ -8,4 +8,9 @@ export class StudySection {
   sumOfSemesterHours: number;
   sumOfQuantifiers: number;
   moduleTypes: ModuleType[];
+}
+
+export class ModuleType {
+  typeName: String;
+  modules: Module[];
 }
