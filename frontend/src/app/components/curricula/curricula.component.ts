@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CurriculumMeta} from '../../shared/models/curriculum-meta';
+import {CurriculaService} from '../../services/curricula.service';
 
 @Component({
   selector: 'app-curriculum',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurriculaComponent implements OnInit {
 
-  constructor() { }
+  curriculaMeta: CurriculumMeta[];
+
+  constructor(private curriculaService: CurriculaService) { }
 
   ngOnInit() {
+    this.getCurriculaMeta();
+  }
+
+  getCurriculaMeta(): void {
+    this.curriculaService.getCurriculaMeta()
+      .subscribe( curriculaMeta => this.curriculaMeta = curriculaMeta);
   }
 
 }
