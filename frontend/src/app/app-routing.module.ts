@@ -12,6 +12,7 @@ import { CurriculaComponent } from './components/curricula/curricula.component';
 import { SerDetailComponent } from './components/ser-detail/ser-detail.component';
 import { CourseCatalogueComponent } from './components/course-catalogue/course-catalogue.component';
 import { CurriculumComponent } from './components/curriculum/curriculum.component';
+import { GlossaryComponent } from './components/glossary/glossary.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,8 @@ const routes: Routes = [
       { path: 'courses', canActivate: [AuthGuard], component: CoursesComponent },
       { path: 'courses/:id', canActivate: [AuthGuard], component: CourseCatalogueComponent },
       { path: 'curricula', canActivate: [AuthGuard], component: CurriculaComponent },
-      { path: 'curricula/:id', canActivate: [AuthGuard], component: CurriculumComponent }
+      { path: 'curricula/:id', canActivate: [AuthGuard], component: CurriculumComponent },
+      { path: 'glossary', canActivate: [AuthGuard], component: GlossaryComponent },
     ]
   },
 ];

@@ -1,0 +1,64 @@
+<!--
+<h1>
+  Glossary
+</h1>
+
+<ng-container *ngIf="glossary">
+  <div *ngFor="let section of glossary.sections" style="margin-bottom: 20px;">
+    <h2>{{ section.completeName }}</h2>
+    <div *ngFor="let entry of section.entries" style="margin-bottom: 10px;">
+      <div *ngFor="let item of entry | keys">
+        <ng-container *ngIf="item && item.key !== 'id'">
+          {{ item.key }}: {{ item.value }}
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ng-container>
+-->
+
+<div class="main-content-wrapper">
+  <div class="a4-document a4-document--portrait">
+    <div class="a4-document__cover">
+      <div class="a4-document__cover-ribbon-wrap">
+        <span class="a4-document__cover-ribbon" style="width: 40px; height: 35px;"></span>
+      </div>
+      <div class="a4-document__cover-image-wrap">
+        <img
+          src="../../../assets/images/1280px-Logo_Hochschule_Coburg.svg.png"
+          alt="hs coburg logo"
+          class="a4-document__cover-image"
+        />
+      </div>
+      <div class="a4-document__cover-information-wrap">
+        <span class="a4-document__cover-headline">
+          Glossar
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <ng-container *ngIf="glossary">
+    <div class="a4-document a4-document--portrait" *ngFor="let section of glossary.sections">
+      <div style="margin-bottom: 20px;">
+        <span class="a4-document__cover-subheadline">{{ section?.completeName }}</span>
+      </div>
+      <table class="a4-document__course-table a4-document--page-break">
+        <tr>
+          <ng-container *ngFor="let item of section.entries[0] | keys">
+            <th *ngIf="item?.key !== 'id'">
+              {{ item.key | translate }}
+            </th>
+          </ng-container>
+        </tr>
+        <tr *ngFor="let entry of section.entries">
+          <ng-container *ngFor="let item of entry | keys">
+            <td *ngIf="item?.key !== 'id'">
+              {{ item.value }}
+            </td>
+          </ng-container>
+        </tr>
+      </table>
+    </div>
+  </ng-container>
+</div>
