@@ -23,6 +23,7 @@ export class TranslatePipe implements PipeTransform {
     let lexicon = {
       abbreviation: "Abkürzung",
       word: "Bezeichnung",
+      description: "Bedeutung",
       meaning: "Bedeutung"
     };
     return (lexicon[value] !== undefined) ? lexicon[value] : value;
