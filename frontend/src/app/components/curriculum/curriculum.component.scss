@@ -1,3 +1,54 @@
 @import '../../shared/styles/common';
 @import '../../shared/styles/dimensions';
 @import '../../shared/styles/responsive';
+
+
+/*
+ * layout for DIN-A4 page class
+ * this is only a view component (does not translate to a optimized print view/PDF)
+ */
+.a4-document {
+
+  font-family: sans-serif;
+
+  &__title,
+  &__section-title,
+  &__section-subtitle {
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  &__title {
+    text-align: center;
+    padding: 0 3cm;
+    margin-bottom: 2cm;
+  }
+
+  &__section-subtitle {
+    padding-left: 0.5cm;
+  }
+
+  &__title-number {
+    margin-right: 0.3cm;
+  }
+
+  &__subtitle-number {
+    margin-right: 0.7cm;
+  }
+
+  &__courses-table {
+    margin-top: 0.4cm;
+    text-align: center;
+    border: 2px solid black;
+    border-collapse: collapse;
+
+    tr > td {
+      border: 1px solid black;
+      padding: 3px;
+    }
+  }
+
+  &__courses-table-header {
+    border: 2px solid black;
+  }
+}
