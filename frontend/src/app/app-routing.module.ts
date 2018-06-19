@@ -11,6 +11,7 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { CurriculaComponent } from './components/curricula/curricula.component';
 import { SerDetailComponent } from './components/ser-detail/ser-detail.component';
 import { CourseCatalogueComponent } from './components/course-catalogue/course-catalogue.component';
+import { CurriculumComponent } from './components/curriculum/curriculum.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
       { path: 'courses', canActivate: [AuthGuard], component: CoursesComponent },
       { path: 'courses/:id', canActivate: [AuthGuard], component: CourseCatalogueComponent },
       { path: 'curricula', canActivate: [AuthGuard], component: CurriculaComponent },
+      { path: 'curricula/:id', canActivate: [AuthGuard], component: CurriculumComponent }
     ]
   },
 ];
