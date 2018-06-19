@@ -1,5 +1,5 @@
 package de.hs_coburg.mgse.services.test;
-
+import de.hs_coburg.mgse.persistence.model.*;
 import de.hs_coburg.mgse.persistence.HibernateUtil;
 import de.hs_coburg.mgse.persistence.model.*;
 import de.hs_coburg.mgse.persistence.test.StudentInfo;
@@ -30,20 +30,18 @@ public class HelloWorldResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
+        /*
         String msg = "Got it!";
         try{
-            EntityManager em = HibernateUtil.getEntityManager();
-            em.getTransaction().begin();
-            StudentInfo info = new StudentInfo();
-            info.setName("Hakan");
-            em.persist(info);
-            em.getTransaction().commit();
-            //em.close();
+
+            GlossaryModelCreator.createModel();
+
+
         } catch(Exception e){
             e.printStackTrace();
             msg = "Maybe not..";
         }
-
+        return msg;*/
 
         try{
             AdmissionRequirement ar = new AdmissionRequirement();
@@ -64,9 +62,9 @@ public class HelloWorldResource {
                 em.persist(info);
                 em.getTransaction().commit();
             }
+            msg = "ok";
         } catch(Exception e){
             e.printStackTrace();
-            msg = "Maybe not..";
         }
 
         Glossary glossary = new Glossary();
@@ -145,11 +143,18 @@ public class HelloWorldResource {
                 em.persist(glossary);
                 em.getTransaction().commit();
             }
+
+            msg = "ok";
         } catch(Exception e){
             e.printStackTrace();
-            msg = "Maybe not..";
         }
 
-        return msg;
+        boolean msg;
+        msg = GlossaryModelCreator.createModel();
+
+        if(msg)
+            return "Got it!";
+        else
+            return "Maybe not..";
     }
 }
