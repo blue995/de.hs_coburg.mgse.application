@@ -1,11 +1,8 @@
 package de.hs_coburg.mgse.services.test;
 
 import de.hs_coburg.mgse.persistence.HibernateUtil;
+import de.hs_coburg.mgse.persistence.model.*;
 import de.hs_coburg.mgse.persistence.test.StudentInfo;
-
-import de.hs_coburg.mgse.persistence.model.CourseOfStudies;
-import de.hs_coburg.mgse.persistence.model.AdmissionRequirement;
-import de.hs_coburg.mgse.persistence.model.ModuleAdmissionRequirement;
 
 import javax.naming.NamingException;
 import javax.persistence.EntityManager;
@@ -15,6 +12,8 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Root resource (exposed at "hello" path)
@@ -63,6 +62,87 @@ public class HelloWorldResource {
                 info.getRequirements().add(ar);
 
                 em.persist(info);
+                em.getTransaction().commit();
+            }
+        } catch(Exception e){
+            e.printStackTrace();
+            msg = "Maybe not..";
+        }
+
+        Glossary glossary = new Glossary();
+        List<GlossarySection> gs_list = new ArrayList<>();
+
+        // Abschlüsse
+        List<GlossaryEntry> ge_list = new ArrayList<>();
+        GlossarySection gs = new GlossarySection();
+        gs.setCompleteName("Abschlüsse");
+
+        GlossaryEntry ge = new GlossaryEntry();
+        ge.setAbbreviation("M.Sc.");
+        ge.setMeaning("Masterabschluss eines naturwissenschaftlichen Studienganges");
+        ge.setWord("Master of Science");
+        ge_list.add(ge);
+
+        ge = new GlossaryEntry();
+        ge.setAbbreviation("Master of Arts");
+        ge.setMeaning("Masterabschluss eines geistes-, kultur-, sozial- oder wirtschaftswissenschaftlichen Studienganges");
+        ge.setWord("Master of Science");
+        ge_list.add(ge);
+
+        ge = new GlossaryEntry();
+        ge.setAbbreviation("Master of Business Administration");
+        ge.setMeaning("Masterabschluss eines Studienganges, welcher hauptsächlich Managementkompetenzen vermittelt.");
+        ge.setWord("MBA");
+        ge_list.add(ge);
+
+        ge = new GlossaryEntry();
+        ge.setAbbreviation("Bachelor of Science");
+        ge.setMeaning("Bachelorabschluss eines naturwissenschaftlichen Studienganges");
+        ge.setWord("B.Sc.");
+        ge_list.add(ge);
+
+        gs.setEntries(ge_list);
+        gs_list.add(gs);
+
+        // Professoren
+        ge_list = new ArrayList<>();
+        gs = new GlossarySection();
+        gs.setCompleteName("Professoren");
+
+        ge = new GlossaryEntry();
+        ge.setAbbreviation("AM");
+        ge.setWord("Abel Müller");
+        ge_list.add(ge);
+
+        ge = new GlossaryEntry();
+        ge.setAbbreviation("BM");
+        ge.setWord("Bebel Maier");
+        ge_list.add(ge);
+
+        ge = new GlossaryEntry();
+        ge.setAbbreviation("CF");
+        ge.setWord("Cebel Fischer");
+        ge_list.add(ge);
+
+        ge = new GlossaryEntry();
+        ge.setAbbreviation("DB");
+        ge.setWord("Debel Bauer");
+        ge_list.add(ge);
+
+        gs.setEntries(ge_list);
+        gs_list.add(gs);
+
+        glossary.setSections(gs_list);
+
+        try{
+            AdmissionRequirement ar = new AdmissionRequirement();
+            ar.setValue("some value");
+
+            EntityManager em = HibernateUtil.getEntityManager();
+
+            for (int i=0; i<3; i++) {
+                em.getTransaction().begin();
+                em.persist(glossary);
                 em.getTransaction().commit();
             }
         } catch(Exception e){
