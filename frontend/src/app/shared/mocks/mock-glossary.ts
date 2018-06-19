@@ -24,22 +24,22 @@ export const GLOSSARY: Glossary = <Glossary> {
         abbreviation: "M.Sc.",
         id: 0,
         word: "Master of Science",
-        meaning: "Masterabschluss eines naturwissenschaftlichen Studienganges"
+        description: "Masterabschluss eines naturwissenschaftlichen Studienganges"
       }, {
         abbreviation: "MA",
         id: 1,
         word: "Master of Arts",
-        meaning: "Masterabschluss eines geistes-, kultur-, sozial- oder wirtschaftswissenschaftlichen Studienganges"
+        description: "Masterabschluss eines geistes-, kultur-, sozial- oder wirtschaftswissenschaftlichen Studienganges"
       }, {
         abbreviation: "MBA",
         id: 2,
         word: "Master of Business Administration",
-        meaning: "Masterabschluss eines Studienganges, welcher hauptsächlich Managementkompetenzen vermittelt."
+        description: "Masterabschluss eines Studienganges, welcher hauptsächlich Managementkompetenzen vermittelt."
       }, {
         abbreviation: "B.Sc.",
         id: 3,
         word: "Bachelor of Science",
-        meaning: "Bachelorabschluss eines naturwissenschaftlichen Studienganges"
+        description: "Bachelorabschluss eines naturwissenschaftlichen Studienganges"
       }]
     },
     {
