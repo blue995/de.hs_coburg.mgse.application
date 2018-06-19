@@ -1,11 +1,11 @@
-export class CurriculaMeta {
+export class CurriculumMeta {
   completeName: String;                 // e.g.: "Informatik"
   degrees: DegreeMeta[];                // list of degrees (can be empty, but must be included)
 }
 
 class DegreeMeta {
   completeName: String;                 // e.g.: "Bachelor"
-  courseCatalogues: CurriculumInfo[];       // list of curricula (can be empty, but must be included
+  curricula: CurriculumInfo[];       // list of curricula (can be empty, but must be included
 }
 
 class CurriculumInfo {
