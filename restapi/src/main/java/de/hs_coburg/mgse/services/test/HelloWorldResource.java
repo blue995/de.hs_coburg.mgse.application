@@ -43,6 +43,8 @@ public class HelloWorldResource {
         }
         return msg;*/
 
+        boolean msg;
+
         try{
             AdmissionRequirement ar = new AdmissionRequirement();
             ar.setValue("some value");
@@ -62,11 +64,13 @@ public class HelloWorldResource {
                 em.persist(info);
                 em.getTransaction().commit();
             }
-            msg = "ok";
+            msg = true;
         } catch(Exception e){
             e.printStackTrace();
+            msg = false;
         }
 
+        /*
         Glossary glossary = new Glossary();
         List<GlossarySection> gs_list = new ArrayList<>();
 
@@ -144,13 +148,14 @@ public class HelloWorldResource {
                 em.getTransaction().commit();
             }
 
-            msg = "ok";
+            msg = true;
         } catch(Exception e){
             e.printStackTrace();
+            msg = false;
         }
+        */
 
-        boolean msg;
-        msg = GlossaryModelCreator.createModel();
+        msg = msg && GlossaryModelCreator.createModel();
 
         if(msg)
             return "Got it!";

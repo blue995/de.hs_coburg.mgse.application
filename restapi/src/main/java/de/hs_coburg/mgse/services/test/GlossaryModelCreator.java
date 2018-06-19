@@ -148,7 +148,7 @@ public class GlossaryModelCreator {
 
             //commit and close Transaction
             em.getTransaction().commit();
-            em.close();
+            //em.close();
         } catch(Exception e) {
             e.printStackTrace();
             resp = false;
