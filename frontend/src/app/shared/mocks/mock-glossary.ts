@@ -26,7 +26,7 @@ export const GLOSSARY: Glossary = <Glossary> {
         word: "Master of Science",
         description: "Masterabschluss eines naturwissenschaftlichen Studienganges"
       }, {
-        abbreviation: "MA",
+        abbreviation: "M.A.",
         id: 1,
         word: "Master of Arts",
         description: "Masterabschluss eines geistes-, kultur-, sozial- oder wirtschaftswissenschaftlichen Studienganges"
@@ -76,7 +76,7 @@ export const GLOSSARY: Glossary = <Glossary> {
       id: 4,
       completeName: "Prüfungsarten",
       entries: [{
-        abbreviation: "Prog1",
+        abbreviation: "schrPr",
         id: 11,
         word: "Schriftliche Prüfung"
       }]

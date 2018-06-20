@@ -1,22 +1,3 @@
-<!--
-<h1>
-  Glossary
-</h1>
-
-<ng-container *ngIf="glossary">
-  <div *ngFor="let section of glossary.sections" style="margin-bottom: 20px;">
-    <h2>{{ section.completeName }}</h2>
-    <div *ngFor="let entry of section.entries" style="margin-bottom: 10px;">
-      <div *ngFor="let item of entry | keys">
-        <ng-container *ngIf="item && item.key !== 'id'">
-          {{ item.key }}: {{ item.value }}
-        </ng-container>
-      </div>
-    </div>
-  </div>
-</ng-container>
--->
-
 <div class="main-content-wrapper">
   <div class="a4-document a4-document--portrait">
     <div class="a4-document__cover">
@@ -51,8 +32,8 @@
             </th>
           </ng-container>
         </tr>
-        <tr *ngFor="let entry of section.entries">
-          <ng-container *ngFor="let item of entry | keys">
+        <tr *ngFor="let entry of section.entries | orderBy : ['abbreviation', '-abbreviation']">
+          <ng-container *ngFor="let item of entry | keys ">
             <td *ngIf="item?.key !== 'id'">
               {{ item.value }}
             </td>
