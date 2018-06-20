@@ -70,6 +70,33 @@ public class HelloWorldResource {
             msg = false;
         }
 
+        try{
+            EntityManager em = HibernateUtil.getEntityManager();
+
+            em.getTransaction().begin();
+            Faculty info = new Faculty();
+            info.setCompleteName("Informatik");
+            em.persist(info);
+            em.getTransaction().commit();
+
+            em.getTransaction().begin();
+            info = new Faculty();
+            info.setCompleteName("Elektrotechnik");
+            em.persist(info);
+            em.getTransaction().commit();
+
+            em.getTransaction().begin();
+            info = new Faculty();
+            info.setCompleteName("Maschinenbau");
+            em.persist(info);
+            em.getTransaction().commit();
+
+            msg = true;
+        } catch(Exception e){
+            e.printStackTrace();
+            msg = false;
+        }
+
         /*
         Glossary glossary = new Glossary();
         List<GlossarySection> gs_list = new ArrayList<>();
@@ -137,9 +164,6 @@ public class HelloWorldResource {
         glossary.setSections(gs_list);
 
         try{
-            AdmissionRequirement ar = new AdmissionRequirement();
-            ar.setValue("some value");
-
             EntityManager em = HibernateUtil.getEntityManager();
 
             for (int i=0; i<3; i++) {
