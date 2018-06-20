@@ -1,4 +1,5 @@
 import {CourseType, ExamType} from './module';
+import {Professor} from './professor';
 
 export class CurriculumEntry {
   semester: number;
@@ -8,6 +9,6 @@ export class CurriculumEntry {
   moduleCourseTypes: CourseType[];
   moduleExamTypes: ExamType[];
   aidList: String[];
-  responsiblePerson: String;        // joined string of professor abbreviations
-  lecturers: String;                // joined string of professor abbreviations
+  responsiblePerson: Professor[];        // can be more than one in the case of "Seminar" and similar courses
+  lecturers: Professor[];                // joined string of professor abbreviations
 }
