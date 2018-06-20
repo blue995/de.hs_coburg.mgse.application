@@ -4,7 +4,8 @@ import {Router} from '@angular/router';
 const NAVLINKS: Object[] = [
   { link: '/sers', label: 'SPOs anzeigen' },
   { link: '/courses', label: 'Module anzeigen' },
-  { link: '/curricula', label: 'Studienpläne anzeigen' }
+  { link: '/curricula', label: 'Studienpläne anzeigen' },
+  { link: '/glossary', label: 'Glossar anzeigen' }
 ];
 
 @Component({

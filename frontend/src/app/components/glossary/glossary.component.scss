@@ -1,0 +1,75 @@
+@import '../../shared/styles/common';
+@import '../../shared/styles/dimensions';
+@import '../../shared/styles/responsive';
+
+$left-padding: 1.7cm;
+$color-primary: #df0134;
+
+.a4-document {
+  font-family: sans-serif;
+
+  &__cover {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__cover-ribbon {
+    padding: 1.5cm 0.2cm 0.2cm 0.2cm;
+    background: $color-primary;
+    color: white;
+    float: right;
+    text-align: center;
+  }
+
+  &__cover-image-wrap {
+    padding: 4.5cm 0 6cm 0;
+  }
+
+  &__cover-image {
+    width: 70%;
+  }
+
+  &__cover-information-wrap {
+    padding-left: $left-padding;
+    width: 70%;
+  }
+
+  &__cover-headline {
+    color: $color-primary;
+    font-size: 2.8em;
+    padding-bottom: 2cm;
+    display: block;
+  }
+
+  &__cover-subheadline,
+  &__cover-faculty-information {
+    text-transform: uppercase;
+    display: block;
+    font-size: 1.2em;
+  }
+
+  &__cover-faculty-information {
+    color: $color-primary;
+    padding-top: 0.6cm;
+  }
+
+  &__course-table {
+    width: 100%;
+    border-spacing: 0;
+    table-layout: fixed;
+    @include word-wrap;
+    border-collapse: collapse;
+
+    tr > td {
+      border: 1px solid black;
+      padding: 0.2cm;
+    }
+
+    tr > th {
+      background-color: #df0134;
+      color: white;
+      border: 1px solid black;
+      padding: 0.2cm;
+    }
+  }
+}

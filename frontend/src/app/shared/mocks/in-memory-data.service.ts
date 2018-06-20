@@ -5,6 +5,7 @@ import { SERS_META } from './mock-sers-meta';
 import { COURSES_META } from './mock-courses-meta';
 import { COURSE_CATALOGUES } from './mock-course-catalogues';
 import { CURRICULA_META } from './mock-curricula-meta';
+import { GLOSSARY } from './mock-glossary';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
@@ -16,6 +17,8 @@ export class InMemoryDataService implements InMemoryDbService {
 
     const curricula = CURRICULA_META;
 
-    return {sers, sersComplete, courses, coursesComplete, curricula};
+    const glossary = GLOSSARY;
+
+    return {sers, sersComplete, courses, coursesComplete, curricula, glossary};
   }
 }
