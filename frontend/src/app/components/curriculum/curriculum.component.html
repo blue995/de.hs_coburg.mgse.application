@@ -1,15 +1,16 @@
 <div class="main-content-wrapper">
   <div class="a4-document a4-document--landscape">
     <div class="a4-document__title">
-      {{ curriculum.completeName }}<br/>
-      (gültig für Studienanfänger ab dem {{ curriculum.validityDate }})<br/>
-      ({{ curriculum.semester | getSem }} {{ curriculum.year }})
+      {{ curriculum?.completeName }}<br/>
+      (gültig für Studienanfänger ab dem {{ curriculum?.validityDate }})<br/>
+      ({{ curriculum?.semester | getSem }} {{ curriculum?.year }})
     </div>
-    <div class="a4-document__study-section" *ngFor="let studySection of curriculum.curriculumStudySections; let i = index">
+    <div class="a4-document__study-section a4-document--page-break" *ngFor="let studySection of curriculum?.curriculumStudySections; let i = index">
       <div class="a4-document__section-title">
         <span class="a4-document__title-number">
           {{ i+1 | romanize }}
-        </span>Erster Studienabschnitt (1. u. 2. theoretisches Studiensemester)
+        </span>
+        {{ studySection.completeName }}
       </div>
       <div class="a4-document__section-subtitle">
         <span class="a4-document__subtitle-number">1.1</span>Pflichtfächer
@@ -30,9 +31,42 @@
           <td>Erstprüfer</td>
           <td>Zweitprüfer</td>
         </tr>
-        <tr>
+        <tr *ngFor="let entry of studySection.curriculumEntries">
+          <td>{{ entry.moduleCompleteName }}</td>
+          <td>{{ entry.moduleAbbreviation }}</td>
           <td>
-            Analysis
+            <span *ngIf="entry.semester === 1 || entry.semester === 3 || entry.semester === 5">
+              {{ entry.semesterHours }}
+            </span>
+          </td>
+          <td>
+            <span *ngIf="entry.semester === 2 || entry.semester === 4 || entry.semester === 6">
+              {{ entry.semesterHours }}
+            </span>
+          </td>
+          <td>{{ entry.semesterHours }}</td>
+          <td>{{ entry.ects }}</td>
+          <td>
+            <span *ngFor="let courseType of entry.moduleCourseTypes; last as isLast" matTooltip="{{ courseType.name }}">
+                {{ courseType.abbreviation }}<span *ngIf="!isLast">,</span>
+            </span>
+          </td>
+          <td>{{ entry.semester }}.</td>
+          <td>
+            <span *ngFor="let examType of entry.moduleExamTypes; last as isLast" matTooltip="{{ examType.name }}">
+                {{ examType.abbreviation }} ({{ examType.upperBound + " " + examType.examTestUnit }})<span *ngIf="!isLast">,<br/></span>
+            </span>
+          </td>
+          <td>{{ entry.aidList }}</td>
+          <td>
+            <span *ngFor="let person of entry.responsiblePerson; last as isLast" matTooltip="{{ person.lastName }}">
+                {{ person.abbreviation }}<span *ngIf="!isLast">,</span>
+            </span>
+          </td>
+          <td>
+            <span *ngFor="let person of entry.testers; last as isLast" matTooltip="{{ person.lastName }}">
+                <span *ngIf="person">{{ person.abbreviation }}<span *ngIf="!isLast">,</span></span>
+            </span>
           </td>
         </tr>
       </table>

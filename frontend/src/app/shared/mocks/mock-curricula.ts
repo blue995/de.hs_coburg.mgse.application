@@ -12,6 +12,7 @@ export const CURRICULA: Curriculum[] = [
     curriculumStudySections: [
       {
         completeName: 'Erster Studienabschnitt (1. u. 2. theoretisches Studiensemester)',
+        // TODO: Pflichtfächer fehlen im Modell
         curriculumEntries: [
           {
             semester: 1,
