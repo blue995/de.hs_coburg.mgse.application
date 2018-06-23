@@ -4,6 +4,8 @@ import {CourseType, ExamType} from './module';
 export class Curriculum {
   id: number;
   version: number;
+  validityDate: String;
+  semester: String;
   year: number;
   completeName: String;
   curriculumStudySections: CurriculumStudySection[];

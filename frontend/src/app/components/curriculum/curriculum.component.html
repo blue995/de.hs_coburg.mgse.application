@@ -1,14 +1,15 @@
 <div class="main-content-wrapper">
   <div class="a4-document a4-document--landscape">
     <div class="a4-document__title">
-      Studienplan für die theoretischen und praktischen Studiensemester des Studienganges
-      Informatik neu (Bachelor) an der Hochschule Coburg<br/>
-      (gültig für Studienanfänger ab dem 01.10.2014)<br/>
-      (Sommersemester 2018)
+      {{ curriculum.completeName }}<br/>
+      (gültig für Studienanfänger ab dem {{ curriculum.validityDate }})<br/>
+      ({{ curriculum.semester | getSem }} {{ curriculum.year }})
     </div>
-    <div class="a4-document__study-section">
+    <div class="a4-document__study-section" *ngFor="let studySection of curriculum.curriculumStudySections; let i = index">
       <div class="a4-document__section-title">
-        <span class="a4-document__title-number">I</span>Erster Studienabschnitt (1. u. 2. theoretisches Studiensemester)
+        <span class="a4-document__title-number">
+          {{ i+1 | romanize }}
+        </span>Erster Studienabschnitt (1. u. 2. theoretisches Studiensemester)
       </div>
       <div class="a4-document__section-subtitle">
         <span class="a4-document__subtitle-number">1.1</span>Pflichtfächer

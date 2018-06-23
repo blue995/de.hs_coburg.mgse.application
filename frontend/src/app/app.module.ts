@@ -29,6 +29,8 @@ import { InMemoryDataService } from './shared/mocks/in-memory-data.service';
 import { SerDetailComponent } from './components/ser-detail/ser-detail.component';
 import { CourseCatalogueComponent } from './components/course-catalogue/course-catalogue.component';
 import { CurriculumComponent } from './components/curriculum/curriculum.component';
+import { RomanizePipe } from './shared/pipes/romanize.pipe';
+import { GetSemPipe } from './shared/pipes/get-sem.pipe';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,7 @@ import { CurriculumComponent } from './components/curriculum/curriculum.componen
     GlossaryComponent,
     KeysPipe,             // TEST
     TranslatePipe,        // TEST
-    OrderBy
+    OrderBy, RomanizePipe, GetSemPipe
   ],
   imports: [
     BrowserModule, // make sure this import is on the top of the list
