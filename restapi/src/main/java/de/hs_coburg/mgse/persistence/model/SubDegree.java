@@ -16,10 +16,6 @@ public class SubDegree {
     @Column(name = "completeName", nullable = true)
     private String completeName;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(nullable = true)
-    private List<Degree> degrees = new ArrayList<Degree>();
-
     //getter and setter
     public Long getId() {
         return id;
@@ -35,13 +31,5 @@ public class SubDegree {
 
     public void setCompleteName(String completeName) {
         this.completeName = completeName;
-    }
-
-    public List<Degree> getDegrees() {
-        return degrees;
-    }
-
-    public void setDegrees(List<Degree> degrees) {
-        this.degrees = degrees;
     }
 }
