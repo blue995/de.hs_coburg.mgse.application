@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 export const NAVLINKS: Object[] = [
-  { routeString: '/sers', label: 'SPOs' },
+  { routeString: '/sers', label: 'Studienprüfungsordnungen' },
   { routeString: '/courses', label: 'Modulhandbücher' },
   { routeString: '/curricula', label: 'Studienpläne' },
   { routeString: '/glossary', label: 'Glossar' }
