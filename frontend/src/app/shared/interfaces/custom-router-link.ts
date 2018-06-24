@@ -1,4 +1,4 @@
 export interface CustomRouterLink {
-  routeString: String;
-  label: String;
+  routeString: string;
+  label: string;
 }

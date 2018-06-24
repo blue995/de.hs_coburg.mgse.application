@@ -7,15 +7,15 @@ import * as _ from 'lodash';
 })
 export class GetRouteLabelPipe implements PipeTransform {
 
-  transform(value: String): String {
-    let routeName = '';
+  transform(value: string): String {
+    let routeName;
     for (let i = 0; i < NAVLINKS.length; i++) {
       if (_.startsWith(value, NAVLINKS[i].routeString)) {
         routeName = NAVLINKS[i].label;
       }
     }
 
-    return routeName;
+    return (routeName === undefined || routeName === null) ? '' : routeName;
   }
 
 }
