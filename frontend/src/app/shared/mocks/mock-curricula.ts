@@ -12,377 +12,381 @@ export const CURRICULA: Curriculum[] = [
     curriculumStudySections: [
       {
         completeName: 'Erster Studienabschnitt (1. u. 2. theoretisches Studiensemester)',
-        // TODO: Pflichtfächer fehlen im Modell
-        curriculumEntries: [
+        subsectionTypes: [
           {
-            semester: 1,
-            rota: 'jährlich',
-            moduleCompleteName: 'Analysis',
-            moduleAbbreviation: 'Ana',
-            ects: 7,
-            semesterHours: 6,
-            moduleCourseTypes: [
-              { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
-              { name: 'Übung', abbreviation: 'Ü' }
-            ],
-            moduleExamTypes: [
+            subsectionTypeName: 'Pflichtfächer',
+            curriculumEntries: [
               {
-                name: 'Schriftliche Prüfung',
-                abbreviation: 'schrP',
-                examTestUnit: 'Min',
-                lowerBound: 90,
-                upperBound: 120
-              }
-            ],
-            aidList: [
-              'alle m. E.'
-            ],
-            responsiblePerson: [
+                semester: 1,
+                rota: 'jährlich',
+                moduleCompleteName: 'Analysis',
+                moduleAbbreviation: 'Ana',
+                ects: 7,
+                semesterHours: 6,
+                moduleCourseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                moduleExamTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ],
+                aidList: [
+                  'alle m. E.'
+                ],
+                responsiblePerson: [
+                  {
+                    firstName: 'Michael',
+                    lastName: 'Geisler',
+                    email: 'michael.geisler@hs-coburg.de',
+                    room: '2-215a',
+                    abbreviation: 'Gs'
+                  }
+                ],
+                testers: [
+                  // nothing here
+                ]
+              },
               {
-                firstName: 'Michael',
-                lastName: 'Geisler',
-                email: 'michael.geisler@hs-coburg.de',
-                room: '2-215a',
-                abbreviation: 'Gs'
+                semester: 2,
+                rota: 'jährlich',
+                moduleCompleteName: 'Diskrete Mathematik',
+                moduleAbbreviation: 'DMth',
+                ects: 5,
+                semesterHours: 4,
+                moduleCourseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                moduleExamTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 60,
+                    upperBound: 90
+                  }
+                ],
+                aidList: [
+                  'alle m. E.'
+                ],
+                responsiblePerson: [
+                  {
+                    firstName: 'Michael',
+                    lastName: 'Geisler',
+                    email: 'michael.geisler@hs-coburg.de',
+                    room: '2-215a',
+                    abbreviation: 'Gs'
+                  }
+                ],
+                testers: [
+                  {
+                    firstName: 'Vorname',
+                    lastName: 'Kühnlenz',
+                    email: 'email@adresse.de',
+                    room: '123',
+                    abbreviation: 'Kü'
+                  }
+                ]
+              },
+              {
+                semester: 2,
+                rota: 'jährlich',
+                moduleCompleteName: 'Diskrete Mathematik',
+                moduleAbbreviation: 'DMth',
+                ects: 5,
+                semesterHours: 4,
+                moduleCourseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                moduleExamTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 60,
+                    upperBound: 90
+                  }
+                ],
+                aidList: [
+                  'alle m. E.'
+                ],
+                responsiblePerson: [
+                  {
+                    firstName: 'Michael',
+                    lastName: 'Geisler',
+                    email: 'michael.geisler@hs-coburg.de',
+                    room: '2-215a',
+                    abbreviation: 'Gs'
+                  }
+                ],
+                testers: [
+                  {
+                    firstName: 'Vorname',
+                    lastName: 'Kühnlenz',
+                    email: 'email@adresse.de',
+                    room: '123',
+                    abbreviation: 'Kü'
+                  }
+                ]
               }
-            ],
-            testers: [
-              // nothing here
             ]
           },
-          {
-            semester: 2,
-            rota: 'jährlich',
-            moduleCompleteName: 'Diskrete Mathematik',
-            moduleAbbreviation: 'DMth',
-            ects: 5,
-            semesterHours: 4,
-            moduleCourseTypes: [
-              { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
-              { name: 'Übung', abbreviation: 'Ü' }
-            ],
-            moduleExamTypes: [
-              {
-                name: 'Schriftliche Prüfung',
-                abbreviation: 'schrP',
-                examTestUnit: 'Min',
-                lowerBound: 60,
-                upperBound: 90
-              }
-            ],
-            aidList: [
-              'alle m. E.'
-            ],
-            responsiblePerson: [
-              {
-                firstName: 'Michael',
-                lastName: 'Geisler',
-                email: 'michael.geisler@hs-coburg.de',
-                room: '2-215a',
-                abbreviation: 'Gs'
-              }
-            ],
-            testers: [
-              {
-                firstName: 'Vorname',
-                lastName: 'Kühnlenz',
-                email: 'email@adresse.de',
-                room: '123',
-                abbreviation: 'Kü'
-              }
-            ]
-          },
-          {
-            semester: 2,
-            rota: 'jährlich',
-            moduleCompleteName: 'Diskrete Mathematik',
-            moduleAbbreviation: 'DMth',
-            ects: 5,
-            semesterHours: 4,
-            moduleCourseTypes: [
-              { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
-              { name: 'Übung', abbreviation: 'Ü' }
-            ],
-            moduleExamTypes: [
-              {
-                name: 'Schriftliche Prüfung',
-                abbreviation: 'schrP',
-                examTestUnit: 'Min',
-                lowerBound: 60,
-                upperBound: 90
-              }
-            ],
-            aidList: [
-              'alle m. E.'
-            ],
-            responsiblePerson: [
-              {
-                firstName: 'Michael',
-                lastName: 'Geisler',
-                email: 'michael.geisler@hs-coburg.de',
-                room: '2-215a',
-                abbreviation: 'Gs'
-              }
-            ],
-            testers: [
-              {
-                firstName: 'Vorname',
-                lastName: 'Kühnlenz',
-                email: 'email@adresse.de',
-                room: '123',
-                abbreviation: 'Kü'
-              }
-            ]
-          }
-        ]
-      },
 
-      {
-        completeName: 'Erster Studienabschnitt (1. u. 2. theoretisches Studiensemester)',
-        curriculumEntries: [
           {
-            semester: 1,
-            rota: 'jährlich',
-            moduleCompleteName: 'Analysis',
-            moduleAbbreviation: 'Ana',
-            ects: 7,
-            semesterHours: 6,
-            moduleCourseTypes: [
-              { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
-              { name: 'Übung', abbreviation: 'Ü' }
-            ],
-            moduleExamTypes: [
+            subsectionTypeName: 'Wahlpflichtfächer',
+            curriculumEntries: [
               {
-                name: 'Schriftliche Prüfung',
-                abbreviation: 'schrP',
-                examTestUnit: 'Min',
-                lowerBound: 90,
-                upperBound: 120
-              }
-            ],
-            aidList: [
-              'alle m. E.'
-            ],
-            responsiblePerson: [
+                semester: 1,
+                rota: 'jährlich',
+                moduleCompleteName: 'Analysis',
+                moduleAbbreviation: 'Ana',
+                ects: 7,
+                semesterHours: 6,
+                moduleCourseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                moduleExamTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ],
+                aidList: [
+                  'alle m. E.'
+                ],
+                responsiblePerson: [
+                  {
+                    firstName: 'Michael',
+                    lastName: 'Geisler',
+                    email: 'michael.geisler@hs-coburg.de',
+                    room: '2-215a',
+                    abbreviation: 'Gs'
+                  }
+                ],
+                testers: [
+                  // nothing here
+                ]
+              },
               {
-                firstName: 'Michael',
-                lastName: 'Geisler',
-                email: 'michael.geisler@hs-coburg.de',
-                room: '2-215a',
-                abbreviation: 'Gs'
+                semester: 2,
+                rota: 'jährlich',
+                moduleCompleteName: 'Diskrete Mathematik',
+                moduleAbbreviation: 'DMth',
+                ects: 5,
+                semesterHours: 4,
+                moduleCourseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                moduleExamTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 60,
+                    upperBound: 90
+                  }
+                ],
+                aidList: [
+                  'alle m. E.'
+                ],
+                responsiblePerson: [
+                  {
+                    firstName: 'Michael',
+                    lastName: 'Geisler',
+                    email: 'michael.geisler@hs-coburg.de',
+                    room: '2-215a',
+                    abbreviation: 'Gs'
+                  }
+                ],
+                testers: [
+                  {
+                    firstName: 'Vorname',
+                    lastName: 'Kühnlenz',
+                    email: 'email@adresse.de',
+                    room: '123',
+                    abbreviation: 'Kü'
+                  }
+                ]
+              },
+              {
+                semester: 2,
+                rota: 'jährlich',
+                moduleCompleteName: 'Diskrete Mathematik',
+                moduleAbbreviation: 'DMth',
+                ects: 5,
+                semesterHours: 4,
+                moduleCourseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                moduleExamTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 60,
+                    upperBound: 90
+                  }
+                ],
+                aidList: [
+                  'alle m. E.'
+                ],
+                responsiblePerson: [
+                  {
+                    firstName: 'Michael',
+                    lastName: 'Geisler',
+                    email: 'michael.geisler@hs-coburg.de',
+                    room: '2-215a',
+                    abbreviation: 'Gs'
+                  }
+                ],
+                testers: [
+                  {
+                    firstName: 'Vorname',
+                    lastName: 'Kühnlenz',
+                    email: 'email@adresse.de',
+                    room: '123',
+                    abbreviation: 'Kü'
+                  }
+                ]
               }
-            ],
-            testers: [
-              // nothing here
             ]
           },
-          {
-            semester: 2,
-            rota: 'jährlich',
-            moduleCompleteName: 'Diskrete Mathematik',
-            moduleAbbreviation: 'DMth',
-            ects: 5,
-            semesterHours: 4,
-            moduleCourseTypes: [
-              { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
-              { name: 'Übung', abbreviation: 'Ü' }
-            ],
-            moduleExamTypes: [
-              {
-                name: 'Schriftliche Prüfung',
-                abbreviation: 'schrP',
-                examTestUnit: 'Min',
-                lowerBound: 60,
-                upperBound: 90
-              }
-            ],
-            aidList: [
-              'alle m. E.'
-            ],
-            responsiblePerson: [
-              {
-                firstName: 'Michael',
-                lastName: 'Geisler',
-                email: 'michael.geisler@hs-coburg.de',
-                room: '2-215a',
-                abbreviation: 'Gs'
-              }
-            ],
-            testers: [
-              {
-                firstName: 'Vorname',
-                lastName: 'Kühnlenz',
-                email: 'email@adresse.de',
-                room: '123',
-                abbreviation: 'Kü'
-              }
-            ]
-          },
-          {
-            semester: 2,
-            rota: 'jährlich',
-            moduleCompleteName: 'Diskrete Mathematik',
-            moduleAbbreviation: 'DMth',
-            ects: 5,
-            semesterHours: 4,
-            moduleCourseTypes: [
-              { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
-              { name: 'Übung', abbreviation: 'Ü' }
-            ],
-            moduleExamTypes: [
-              {
-                name: 'Schriftliche Prüfung',
-                abbreviation: 'schrP',
-                examTestUnit: 'Min',
-                lowerBound: 60,
-                upperBound: 90
-              }
-            ],
-            aidList: [
-              'alle m. E.'
-            ],
-            responsiblePerson: [
-              {
-                firstName: 'Michael',
-                lastName: 'Geisler',
-                email: 'michael.geisler@hs-coburg.de',
-                room: '2-215a',
-                abbreviation: 'Gs'
-              }
-            ],
-            testers: [
-              {
-                firstName: 'Vorname',
-                lastName: 'Kühnlenz',
-                email: 'email@adresse.de',
-                room: '123',
-                abbreviation: 'Kü'
-              }
-            ]
-          }
-        ]
-      },
 
-      {
-        completeName: 'Erster Studienabschnitt (1. u. 2. theoretisches Studiensemester)',
-        curriculumEntries: [
           {
-            semester: 1,
-            rota: 'jährlich',
-            moduleCompleteName: 'Analysis',
-            moduleAbbreviation: 'Ana',
-            ects: 7,
-            semesterHours: 6,
-            moduleCourseTypes: [
-              { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
-              { name: 'Übung', abbreviation: 'Ü' }
-            ],
-            moduleExamTypes: [
+            subsectionTypeName: 'Schluesselqualifikation',
+            curriculumEntries: [
               {
-                name: 'Schriftliche Prüfung',
-                abbreviation: 'schrP',
-                examTestUnit: 'Min',
-                lowerBound: 90,
-                upperBound: 120
-              }
-            ],
-            aidList: [
-              'alle m. E.'
-            ],
-            responsiblePerson: [
+                semester: 1,
+                rota: 'jährlich',
+                moduleCompleteName: 'Analysis',
+                moduleAbbreviation: 'Ana',
+                ects: 7,
+                semesterHours: 6,
+                moduleCourseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                moduleExamTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 90,
+                    upperBound: 120
+                  }
+                ],
+                aidList: [
+                  'alle m. E.'
+                ],
+                responsiblePerson: [
+                  {
+                    firstName: 'Michael',
+                    lastName: 'Geisler',
+                    email: 'michael.geisler@hs-coburg.de',
+                    room: '2-215a',
+                    abbreviation: 'Gs'
+                  }
+                ],
+                testers: [
+                  // nothing here
+                ]
+              },
               {
-                firstName: 'Michael',
-                lastName: 'Geisler',
-                email: 'michael.geisler@hs-coburg.de',
-                room: '2-215a',
-                abbreviation: 'Gs'
-              }
-            ],
-            testers: [
-              // nothing here
-            ]
-          },
-          {
-            semester: 2,
-            rota: 'jährlich',
-            moduleCompleteName: 'Diskrete Mathematik',
-            moduleAbbreviation: 'DMth',
-            ects: 5,
-            semesterHours: 4,
-            moduleCourseTypes: [
-              { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
-              { name: 'Übung', abbreviation: 'Ü' }
-            ],
-            moduleExamTypes: [
+                semester: 2,
+                rota: 'jährlich',
+                moduleCompleteName: 'Diskrete Mathematik',
+                moduleAbbreviation: 'DMth',
+                ects: 5,
+                semesterHours: 4,
+                moduleCourseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                moduleExamTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 60,
+                    upperBound: 90
+                  }
+                ],
+                aidList: [
+                  'alle m. E.'
+                ],
+                responsiblePerson: [
+                  {
+                    firstName: 'Michael',
+                    lastName: 'Geisler',
+                    email: 'michael.geisler@hs-coburg.de',
+                    room: '2-215a',
+                    abbreviation: 'Gs'
+                  }
+                ],
+                testers: [
+                  {
+                    firstName: 'Vorname',
+                    lastName: 'Kühnlenz',
+                    email: 'email@adresse.de',
+                    room: '123',
+                    abbreviation: 'Kü'
+                  }
+                ]
+              },
               {
-                name: 'Schriftliche Prüfung',
-                abbreviation: 'schrP',
-                examTestUnit: 'Min',
-                lowerBound: 60,
-                upperBound: 90
-              }
-            ],
-            aidList: [
-              'alle m. E.'
-            ],
-            responsiblePerson: [
-              {
-                firstName: 'Michael',
-                lastName: 'Geisler',
-                email: 'michael.geisler@hs-coburg.de',
-                room: '2-215a',
-                abbreviation: 'Gs'
-              }
-            ],
-            testers: [
-              {
-                firstName: 'Vorname',
-                lastName: 'Kühnlenz',
-                email: 'email@adresse.de',
-                room: '123',
-                abbreviation: 'Kü'
-              }
-            ]
-          },
-          {
-            semester: 2,
-            rota: 'jährlich',
-            moduleCompleteName: 'Diskrete Mathematik',
-            moduleAbbreviation: 'DMth',
-            ects: 5,
-            semesterHours: 4,
-            moduleCourseTypes: [
-              { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
-              { name: 'Übung', abbreviation: 'Ü' }
-            ],
-            moduleExamTypes: [
-              {
-                name: 'Schriftliche Prüfung',
-                abbreviation: 'schrP',
-                examTestUnit: 'Min',
-                lowerBound: 60,
-                upperBound: 90
-              }
-            ],
-            aidList: [
-              'alle m. E.'
-            ],
-            responsiblePerson: [
-              {
-                firstName: 'Michael',
-                lastName: 'Geisler',
-                email: 'michael.geisler@hs-coburg.de',
-                room: '2-215a',
-                abbreviation: 'Gs'
-              }
-            ],
-            testers: [
-              {
-                firstName: 'Vorname',
-                lastName: 'Kühnlenz',
-                email: 'email@adresse.de',
-                room: '123',
-                abbreviation: 'Kü'
+                semester: 2,
+                rota: 'jährlich',
+                moduleCompleteName: 'Diskrete Mathematik',
+                moduleAbbreviation: 'DMth',
+                ects: 5,
+                semesterHours: 4,
+                moduleCourseTypes: [
+                  { name: 'Seminaristischer Unterricht', abbreviation: 'SU' },
+                  { name: 'Übung', abbreviation: 'Ü' }
+                ],
+                moduleExamTypes: [
+                  {
+                    name: 'Schriftliche Prüfung',
+                    abbreviation: 'schrP',
+                    examTestUnit: 'Min',
+                    lowerBound: 60,
+                    upperBound: 90
+                  }
+                ],
+                aidList: [
+                  'alle m. E.'
+                ],
+                responsiblePerson: [
+                  {
+                    firstName: 'Michael',
+                    lastName: 'Geisler',
+                    email: 'michael.geisler@hs-coburg.de',
+                    room: '2-215a',
+                    abbreviation: 'Gs'
+                  }
+                ],
+                testers: [
+                  {
+                    firstName: 'Vorname',
+                    lastName: 'Kühnlenz',
+                    email: 'email@adresse.de',
+                    room: '123',
+                    abbreviation: 'Kü'
+                  }
+                ]
               }
             ]
           }

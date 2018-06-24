@@ -1,6 +1,7 @@
 import {Professor} from './professor';
 import {CourseType, ExamType} from './module';
 
+
 export class Curriculum {
   id: number;
   version: number;
@@ -13,6 +14,11 @@ export class Curriculum {
 
 export class CurriculumStudySection {
   completeName: String;
+  subsectionTypes: StudySectionType[];
+}
+
+export class StudySectionType {
+  subsectionTypeName: String;
   curriculumEntries: CurriculumEntry[];
 }
 
