@@ -1,0 +1,49 @@
+@import '~@angular/material/theming';
+
+/* custom color palette */
+$mat-hsis: (
+  50: #fbe1e7,
+  100: #f5b3c2,
+  200: #ef809a,
+  300: #e94d71,
+  400: #e42752,
+  500: #df0134,
+  600: #db012f,
+  700: #d70127,
+  800: #d20121,
+  900: #ca0015,
+  A100: #fff2f3,
+  A200: #ffbfc3,
+  A400: #ff8c92,
+  A700: #ff737a,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+// Include mat core package
+@include mat-core();
+
+// set custom theme variables
+$hsis-app-primary: mat-palette($mat-hsis);
+$hsis-app-accent:  mat-palette($mat-hsis, A200, A100, A400);
+$hsis-app-warn:    mat-palette($mat-yellow);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$hsis-app-theme:   mat-light-theme($hsis-app-primary, $hsis-app-accent, $hsis-app-warn);
+
+// Include theme styles for core and each component used in app
+@include angular-material-theme($hsis-app-theme);
