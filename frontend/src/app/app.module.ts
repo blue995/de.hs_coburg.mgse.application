@@ -31,6 +31,7 @@ import { CourseCatalogueComponent } from './components/course-catalogue/course-c
 import { CurriculumComponent } from './components/curriculum/curriculum.component';
 import { RomanizePipe } from './shared/pipes/romanize.pipe';
 import { GetSemPipe } from './shared/pipes/get-sem.pipe';
+import { GetRouteLabelPipe } from './shared/pipes/get-route-label.pipe';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { GetSemPipe } from './shared/pipes/get-sem.pipe';
     GlossaryComponent,
     KeysPipe,             // TEST
     TranslatePipe,        // TEST
-    OrderBy, RomanizePipe, GetSemPipe
+    OrderBy, RomanizePipe, GetSemPipe, GetRouteLabelPipe
   ],
   imports: [
     BrowserModule, // make sure this import is on the top of the list

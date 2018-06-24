@@ -22,7 +22,7 @@ export class RomanizePipe implements PipeTransform {
       I: 1
     };
     let roman = '';
-    for (let i in lookup ) {
+    for (let i in lookup) {
       while ( value >= lookup[i] ) {
         roman += i;
         value -= lookup[i];

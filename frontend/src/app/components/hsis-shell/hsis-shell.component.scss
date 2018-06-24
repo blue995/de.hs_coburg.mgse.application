@@ -38,7 +38,10 @@
 
   &__spacer {
     flex: 1 1 auto;
+    text-align: center;
+    padding-right: 145px;
   }
+
   &__logout {
     cursor: pointer;
   }
@@ -78,6 +81,7 @@
     color: #222;
     display: block;
     transition: background-color .2s;
+    outline-color: transparent;
     &:hover {
       color: #0000ff;
       background-color: #eee;
