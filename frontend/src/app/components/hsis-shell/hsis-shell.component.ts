@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CustomRouterLink } from '../../shared/interfaces/custom-router-link';
 
-export const NAVLINKS: Object[] = [
+export const NAVLINKS: CustomRouterLink[] = [
   { routeString: '/sers', label: 'Studienprüfungsordnungen' },
   { routeString: '/courses', label: 'Modulhandbücher' },
   { routeString: '/curricula', label: 'Studienpläne' },
