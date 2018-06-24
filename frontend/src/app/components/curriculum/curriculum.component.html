@@ -62,7 +62,7 @@
             </td>
             <td>{{ entry.aidList }}</td>
             <td>
-            <span *ngFor="let person of entry.responsiblePerson; last as isLast" matTooltip="{{ person.lastName }}">
+            <span *ngFor="let person of entry.responsiblePersons; last as isLast" matTooltip="{{ person.lastName }}">
                 {{ person.abbreviation }}<span *ngIf="!isLast">,</span>
             </span>
             </td>

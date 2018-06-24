@@ -14,10 +14,10 @@ export class Curriculum {
 
 export class CurriculumStudySection {
   completeName: String;
-  subsectionTypes: StudySectionType[];
+  subsectionTypes: StudySubsectionType[];
 }
 
-export class StudySectionType {
+export class StudySubsectionType {
   subsectionTypeName: String;
   curriculumEntries: CurriculumEntry[];
 }
@@ -32,6 +32,6 @@ export class CurriculumEntry {
   moduleCourseTypes: CourseType[];
   moduleExamTypes: ExamType[];
   aidList: String[];
-  responsiblePerson: Professor[];       // can be more than one in the case of "Seminar" and similar courses
+  responsiblePersons: Professor[];       // can be more than one in the case of "Seminar" and similar courses
   testers: Professor[];
 }

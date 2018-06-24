@@ -39,7 +39,7 @@ export const CURRICULA: Curriculum[] = [
                 aidList: [
                   'alle m. E.'
                 ],
-                responsiblePerson: [
+                responsiblePersons: [
                   {
                     firstName: 'Michael',
                     lastName: 'Geisler',
@@ -75,7 +75,7 @@ export const CURRICULA: Curriculum[] = [
                 aidList: [
                   'alle m. E.'
                 ],
-                responsiblePerson: [
+                responsiblePersons: [
                   {
                     firstName: 'Michael',
                     lastName: 'Geisler',
@@ -117,7 +117,7 @@ export const CURRICULA: Curriculum[] = [
                 aidList: [
                   'alle m. E.'
                 ],
-                responsiblePerson: [
+                responsiblePersons: [
                   {
                     firstName: 'Michael',
                     lastName: 'Geisler',
@@ -165,7 +165,7 @@ export const CURRICULA: Curriculum[] = [
                 aidList: [
                   'alle m. E.'
                 ],
-                responsiblePerson: [
+                responsiblePersons: [
                   {
                     firstName: 'Michael',
                     lastName: 'Geisler',
@@ -201,7 +201,7 @@ export const CURRICULA: Curriculum[] = [
                 aidList: [
                   'alle m. E.'
                 ],
-                responsiblePerson: [
+                responsiblePersons: [
                   {
                     firstName: 'Michael',
                     lastName: 'Geisler',
@@ -243,7 +243,7 @@ export const CURRICULA: Curriculum[] = [
                 aidList: [
                   'alle m. E.'
                 ],
-                responsiblePerson: [
+                responsiblePersons: [
                   {
                     firstName: 'Michael',
                     lastName: 'Geisler',
@@ -291,7 +291,7 @@ export const CURRICULA: Curriculum[] = [
                 aidList: [
                   'alle m. E.'
                 ],
-                responsiblePerson: [
+                responsiblePersons: [
                   {
                     firstName: 'Michael',
                     lastName: 'Geisler',
@@ -327,7 +327,7 @@ export const CURRICULA: Curriculum[] = [
                 aidList: [
                   'alle m. E.'
                 ],
-                responsiblePerson: [
+                responsiblePersons: [
                   {
                     firstName: 'Michael',
                     lastName: 'Geisler',
@@ -369,7 +369,7 @@ export const CURRICULA: Curriculum[] = [
                 aidList: [
                   'alle m. E.'
                 ],
-                responsiblePerson: [
+                responsiblePersons: [
                   {
                     firstName: 'Michael',
                     lastName: 'Geisler',
