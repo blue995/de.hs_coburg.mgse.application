@@ -2,7 +2,10 @@
   <button class="hsis-toolbar__button" (click)="sidenav.toggle()" mat-button>
     <mat-icon class="hsis-toolbar__clickable">menu</mat-icon>
   </button>
-  <span class="hsis-toolbar__branding">HSIS</span>
+  <div class="hsis-toolbar__branding">
+    <img src="../../../assets/images/hs-coburg-logo-grey.png" class="hsis-toolbar__branding-logo"/>
+    <span class="hsis-toolbar__branding-label">HSIS</span>
+  </div>
   <!-- This fills the remaining space of the current row -->
   <span class="hsis-toolbar__spacer"></span>
   <!-- logout button -->
