@@ -1,0 +1,22 @@
+.footnotes {
+  &__title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0.3cm 0;
+  }
+
+  &__table {
+    border: none;
+  }
+
+  &__fn-number {
+    font-weight: bold;
+    padding: 3px 0;
+    width: 5%;
+  }
+
+  &__fn-text {
+    width: 95%;
+    padding: 3px 0;
+  }
+}

@@ -23,12 +23,23 @@ export const CURRICULA: Curriculum[] = [
       sections: [
         {
           id: 1,
-          completeName: 'Abkürzungen',
+          completeName: 'Abschlüsse',
           entries: [
             {
               id: 1,
               word: 'Bachelorarbeit',
               abbreviation: 'BA'
+            }
+          ]
+        },
+        {
+          id: 2,
+          completeName: 'Prüfungen',
+          entries: [
+            {
+              id: 2,
+              word: 'computergestützte Prüfung',
+              abbreviation: 'cP'
             }
           ]
         }

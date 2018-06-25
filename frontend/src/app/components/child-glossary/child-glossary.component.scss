@@ -1,0 +1,31 @@
+.glossary {
+  margin-top: 1cm;
+  &__title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0.3cm 0;
+  }
+
+  &__section {
+    margin: 10px 0;
+  }
+
+  &__section-title {
+    font-weight: bold;
+  }
+
+  &__table {
+    border: none;
+    width: 100%;
+  }
+
+  &__abbreviation {
+    padding: 3px 0;
+    width: 10%;
+  }
+
+  &__word {
+    padding: 3px 0;
+    width: 90%;
+  }
+}
