@@ -7,6 +7,30 @@ export const COURSE_CATALOGUES: CourseCatalogue[] = [
     courseOfStudyAbbreviation: 'IF',
     validityDate: '01.01.2014',
     facultyName: 'Fakultaet Elektrotechnik und Informatik',
+    footnotes: [
+      { number: 1, text: 'alle m.E. = alle, außer PC, Laptop, programmierbarer Taschenrechner und Telekommunikationsmittel' },
+      { number: 2, text: 'Es kann freiwillig studienbegleitend eine prSTA abgelegt werden. Wurde die schrP bestanden,' +
+        ' werden die für die studienbegleitende prSTA erreichten' +
+        ' Punkte auf die in der schrP erreichten Punkte im Umfang von 10% der in der schrP erreichbaren Punkte addiert.' },
+      { number: 3, text: 'schrP und prStA haben für die Bildung der Endnote das Gewicht 1 zu 1. Zum Bestehen muss bei beiden' +
+        ' Leistungsnachweisen mindestens die Note „ausreichend“ erzielt werden' }
+    ],
+    glossary: {
+      id: 1,
+      sections: [
+        {
+          id: 1,
+          completeName: 'Abkürzungen',
+          entries: [
+            {
+              id: 1,
+              word: 'Bachelorarbeit',
+              abbreviation: 'BA'
+            }
+          ]
+        }
+      ]
+    },
     courses: [
       {
         id: 1,

@@ -1,4 +1,4 @@
-import { GlossaryEntry } from './glossary-entry';
+import {GlossaryEntry} from './glossary';
 
 export class Module {
   completeName: String;

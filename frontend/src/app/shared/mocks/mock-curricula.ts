@@ -1,4 +1,5 @@
-import {Curriculum} from '../models/curriculum';
+import { Curriculum } from '../models/curriculum';
+import {Glossary} from '../models/glossary';
 
 export const CURRICULA: Curriculum[] = [
   {
@@ -9,6 +10,30 @@ export const CURRICULA: Curriculum[] = [
     year: 2018,
     completeName: 'Studienplan für die theoretischen und praktischen Studiensemester des ' +
     'Studienganges Informatik neu (Bachelor) an der Hochschule Coburg',
+    footnotes: [
+      { number: 1, text: 'alle m.E. = alle, außer PC, Laptop, programmierbarer Taschenrechner und Telekommunikationsmittel' },
+      { number: 2, text: 'Es kann freiwillig studienbegleitend eine prSTA abgelegt werden. Wurde die schrP bestanden,' +
+        ' werden die für die studienbegleitende prSTA erreichten' +
+        ' Punkte auf die in der schrP erreichten Punkte im Umfang von 10% der in der schrP erreichbaren Punkte addiert.' },
+      { number: 3, text: 'schrP und prStA haben für die Bildung der Endnote das Gewicht 1 zu 1. Zum Bestehen muss bei beiden' +
+        ' Leistungsnachweisen mindestens die Note „ausreichend“ erzielt werden' }
+    ],
+    glossary: {
+      id: 1,
+      sections: [
+        {
+          id: 1,
+          completeName: 'Abkürzungen',
+          entries: [
+            {
+              id: 1,
+              word: 'Bachelorarbeit',
+              abbreviation: 'BA'
+            }
+          ]
+        }
+      ]
+    },
     curriculumStudySections: [
       {
         completeName: 'Erster Studienabschnitt (1. u. 2. theoretisches Studiensemester)',
