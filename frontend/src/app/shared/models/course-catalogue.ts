@@ -7,8 +7,6 @@ export class CourseCatalogue {
   courseOfStudyAbbreviation: String;
   validityDate: String;
   facultyName: String;
-  footnotes: Footnote[];
-  glossary: Glossary;
   courses: Course[];
 }
 export class Course {

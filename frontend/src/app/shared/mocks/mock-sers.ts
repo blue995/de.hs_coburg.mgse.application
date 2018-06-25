@@ -30,7 +30,7 @@ export const SERS: Ser[] = [
       sections: [
         {
           id: 1,
-          completeName: 'Abkürzungen',
+          completeName: 'Prüfungen',
           entries: [
             {
               id: 1,
