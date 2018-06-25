@@ -1,4 +1,4 @@
-package de.hs_coburg.mgse.services.test;
+package de.hs_coburg.mgse.modelcreator;
 
 import de.hs_coburg.mgse.persistence.HibernateUtil;
 import javax.persistence.EntityManager;
@@ -10,8 +10,23 @@ import de.hs_coburg.mgse.persistence.model.GlossaryEntry;
 import de.hs_coburg.mgse.persistence.model.GlossarySection;
 
 public class GlossaryModelCreator {
-    public boolean createModel() {
+    public static boolean createModel() {
         boolean resp = true;
+
+        resp = resp && createModelPart0();
+        resp = resp && createModelPart1();
+
+        return resp;
+    }
+
+    private static void setGlossaryEntryMaterials(GlossaryEntry ge, String word, String meaning, String abbreviation) {
+        ge.setWord(word);
+        ge.setMeaning(meaning);
+        ge.setAbbreviation(abbreviation);
+    }
+
+    //0: Glossary
+    private static boolean createModelPart0() {
         try {
             EntityManager em = HibernateUtil.getEntityManager();
             em.getTransaction().begin();
@@ -23,27 +38,19 @@ public class GlossaryModelCreator {
             List<GlossaryEntry> l_ge_0 = new ArrayList<GlossaryEntry>();
 
             GlossaryEntry ge_0 = new GlossaryEntry();
-            ge_0.setWord("Master of Science");
-            ge_0.setMeaning("Masterabschluss eines naturwissenschaftlichen Studienganges");
-            ge_0.setAbbreviation("M.Sc.");
+            setGlossaryEntryMaterials(ge_0, "Master of Science", "Masterabschluss eines naturwissenschaftlichen Studienganges", "M.Sc.");
             l_ge_0.add(ge_0);
             //0
             GlossaryEntry ge_1 = new GlossaryEntry();
-            ge_1.setWord("Master of Arts");
-            ge_1.setMeaning("Masterabschluss eines geistes-, kultur-, sozial- oder wirtschaftswissenschaftlichen Studienganges");
-            ge_1.setAbbreviation("M.A.");
+            setGlossaryEntryMaterials(ge_1, "Master of Arts", "Masterabschluss eines geistes-, kultur-, sozial- oder wirtschaftswissenschaftlichen Studienganges", "M.A.");
             l_ge_0.add(ge_1);
             //1
             GlossaryEntry ge_2 = new GlossaryEntry();
-            ge_2.setWord("Master of Business Administration");
-            ge_2.setMeaning("Masterabschluss eines Studienganges, welcher hauptsächlich Managementkompetenzen vermittelt.");
-            ge_2.setAbbreviation("MBA");
+            setGlossaryEntryMaterials(ge_2, "Master of Business Administration", "Masterabschluss eines Studienganges, welcher hauptsächlich Managementkompetenzen vermittelt.", "MBA");
             l_ge_0.add(ge_2);
             //2
             GlossaryEntry ge_3 = new GlossaryEntry();
-            ge_3.setWord("Bachelor of Science");
-            ge_3.setMeaning("Bachelorabschluss eines naturwissenschaftlichen Studienganges");
-            ge_3.setAbbreviation("B.Sc.");
+            setGlossaryEntryMaterials(ge_3, "Bachelor of Science", "Bachelorabschluss eines naturwissenschaftlichen Studienganges", "B.Sc.");
             l_ge_0.add(ge_3);
             //3
 
@@ -56,21 +63,15 @@ public class GlossaryModelCreator {
             List<GlossaryEntry> l_ge_1 = new ArrayList<GlossaryEntry>();
 
             GlossaryEntry ge_4 = new GlossaryEntry();
-            ge_4.setWord("Tobias Blaufuß");
-            ge_4.setMeaning("");
-            ge_4.setAbbreviation("TB");
+            setGlossaryEntryMaterials(ge_4, "Tobias Blaufuß", "", "TB");
             l_ge_1.add(ge_4);
             //4
             GlossaryEntry ge_5 = new GlossaryEntry();
-            ge_5.setWord("Jonathan Emmanuel Braat");
-            ge_5.setMeaning("");
-            ge_5.setAbbreviation("JEB");
+            setGlossaryEntryMaterials(ge_5, "Jonathan Emmanuel Braat", "", "JEB");
             l_ge_1.add(ge_5);
             //5
             GlossaryEntry ge_6 = new GlossaryEntry();
-            ge_6.setWord("Hakan Senkaya");
-            ge_6.setMeaning("");
-            ge_6.setAbbreviation("HS");
+            setGlossaryEntryMaterials(ge_6, "Hakan Senkaya", "", "HS");
             l_ge_1.add(ge_6);
             //6
 
@@ -83,15 +84,11 @@ public class GlossaryModelCreator {
             List<GlossaryEntry> l_ge_2 = new ArrayList<GlossaryEntry>();
 
             GlossaryEntry ge_7 = new GlossaryEntry();
-            ge_7.setWord("Studien- und Prüfungsordnung");
-            ge_7.setMeaning("");
-            ge_7.setAbbreviation("SPO");
+            setGlossaryEntryMaterials(ge_7, "Studien- und Prüfungsordnung", "", "SPO");
             l_ge_2.add(ge_7);
             //7
             GlossaryEntry ge_8 = new GlossaryEntry();
-            ge_8.setWord("Bayerischen Hochschulgesetzes");
-            ge_8.setMeaning("");
-            ge_8.setAbbreviation("BayHSchG");
+            setGlossaryEntryMaterials(ge_8, "Bayerischen Hochschulgesetzes", "", "BayHSchG");
             l_ge_2.add(ge_8);
             //8
 
@@ -104,9 +101,7 @@ public class GlossaryModelCreator {
             List<GlossaryEntry> l_ge_3 = new ArrayList<GlossaryEntry>();
 
             GlossaryEntry ge_9 = new GlossaryEntry();
-            ge_9.setWord("Programmieren 1");
-            ge_9.setMeaning("");
-            ge_9.setAbbreviation("Prog1");
+            setGlossaryEntryMaterials(ge_9, "Programmieren 1", "", "Prog1");
             l_ge_3.add(ge_9);
             //9
 
@@ -119,9 +114,7 @@ public class GlossaryModelCreator {
             List<GlossaryEntry> l_ge_4 = new ArrayList<GlossaryEntry>();
 
             GlossaryEntry ge_10 = new GlossaryEntry();
-            ge_10.setWord("Schriftliche Prüfung");
-            ge_10.setMeaning("");
-            ge_10.setAbbreviation("schrPr");
+            setGlossaryEntryMaterials(ge_10, "Schriftliche Prüfung", "", "schrPr");
             l_ge_4.add(ge_10);
             //10
 
@@ -134,27 +127,19 @@ public class GlossaryModelCreator {
             List<GlossaryEntry> l_ge_5 = new ArrayList<GlossaryEntry>();
 
             GlossaryEntry ge_11 = new GlossaryEntry();
-            ge_11.setWord("Übung");
-            ge_11.setMeaning("");
-            ge_11.setAbbreviation("Ü");
+            setGlossaryEntryMaterials(ge_11, "Übung", "", "Ü");
             l_ge_5.add(ge_11);
             //11
             GlossaryEntry ge_12 = new GlossaryEntry();
-            ge_12.setWord("Lehrvortrag");
-            ge_12.setMeaning("");
-            ge_12.setAbbreviation("V");
+            setGlossaryEntryMaterials(ge_12, "Lehrvortrag", "", "V");
             l_ge_5.add(ge_12);
             //12
             GlossaryEntry ge_13 = new GlossaryEntry();
-            ge_13.setWord("Seminaristischer Unterricht");
-            ge_13.setMeaning("");
-            ge_13.setAbbreviation("SU");
+            setGlossaryEntryMaterials(ge_13, "Seminaristischer Unterricht", "", "SU");
             l_ge_5.add(ge_13);
             //13
             GlossaryEntry ge_14 = new GlossaryEntry();
-            ge_14.setWord("Praktikum");
-            ge_14.setMeaning("");
-            ge_14.setAbbreviation("Pr");
+            setGlossaryEntryMaterials(ge_14, "Praktikum", "", "Pr");
             l_ge_5.add(ge_14);
             //14
 
@@ -169,11 +154,55 @@ public class GlossaryModelCreator {
 
             //commit and close Transaction
             em.getTransaction().commit();
-            //em.close();
+            return true;
         } catch(Exception e) {
             e.printStackTrace();
-            resp = false;
+            return false;
         }
-        return resp;
+    }
+    private static boolean createModelPart1() {
+        try {
+            EntityManager em = HibernateUtil.getEntityManager();
+            em.getTransaction().begin();
+
+            Glossary g = new Glossary();
+            List<GlossarySection> l_gs = new ArrayList<GlossarySection>();
+
+            GlossarySection gs_6 = new GlossarySection();
+            List<GlossaryEntry> l_ge_6 = new ArrayList<GlossaryEntry>();
+
+            GlossaryEntry ge_15 = new GlossaryEntry();
+            setGlossaryEntryMaterials(ge_15, "aaa", "dddd", "sadfadsf");
+            l_ge_6.add(ge_15);
+            //15
+            GlossaryEntry ge_16 = new GlossaryEntry();
+            setGlossaryEntryMaterials(ge_16, "bbb", "asdfdasdf", "asdsffasdf");
+            l_ge_6.add(ge_16);
+            //16
+            GlossaryEntry ge_17 = new GlossaryEntry();
+            setGlossaryEntryMaterials(ge_17, "ccc", "Madfasdfsadfmittelt.", "dfdfd");
+            l_ge_6.add(ge_17);
+            //17
+            GlossaryEntry ge_18 = new GlossaryEntry();
+            setGlossaryEntryMaterials(ge_18, "ddd", "Bachelorabschluasdfasdfss eines natusadfrwissenschaftlichen Stuasdfasdfdienganges", "B.adsfadsf.");
+            l_ge_6.add(ge_18);
+            //18
+
+            gs_6.setEntries(l_ge_6);
+            gs_6.setCompleteName("irgendwas anderes");
+
+            l_gs.add(gs_6);
+            //6
+
+            g.setSections(l_gs);
+            em.persist(g);
+
+            //commit and close Transaction
+            em.getTransaction().commit();
+            return true;
+        } catch(Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }
