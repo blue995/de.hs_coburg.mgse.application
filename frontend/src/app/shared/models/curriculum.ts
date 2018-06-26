@@ -1,5 +1,7 @@
-import {Professor} from './professor';
-import {CourseType, ExamType} from './module';
+import { Professor } from './professor';
+import { CourseType, ExamType } from './module';
+import { Footnote } from './footnote';
+import { Glossary } from './glossary';
 
 
 export class Curriculum {
@@ -9,6 +11,8 @@ export class Curriculum {
   semester: String;
   year: number;
   completeName: String;
+  footnotes: Footnote[];
+  glossary: Glossary;
   curriculumStudySections: CurriculumStudySection[];
 }
 

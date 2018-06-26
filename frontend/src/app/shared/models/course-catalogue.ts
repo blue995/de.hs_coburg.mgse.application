@@ -1,3 +1,6 @@
+import { Footnote } from './footnote';
+import { Glossary } from './glossary';
+
 export class CourseCatalogue {
   id: number;
   courseOfStudy: String;

@@ -1,0 +1,11 @@
+<div class="footnotes">
+  <div class="footnotes__title">
+    Erläuterung der Fußnoten:
+  </div>
+  <table class="footnotes__table">
+    <tr *ngFor="let footnote of footnotes">
+      <td valign="top" class="footnotes__fn-number">{{ footnote.number }})</td>
+      <td valign="top" class="footnotes__fn-text">{{ footnote.text }}</td>
+    </tr>
+  </table>
+</div>

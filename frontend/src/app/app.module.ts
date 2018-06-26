@@ -32,6 +32,8 @@ import { CurriculumComponent } from './components/curriculum/curriculum.componen
 import { RomanizePipe } from './shared/pipes/romanize.pipe';
 import { GetSemPipe } from './shared/pipes/get-sem.pipe';
 import { GetRouteLabelPipe } from './shared/pipes/get-route-label.pipe';
+import { ChildGlossaryComponent } from './components/child-glossary/child-glossary.component';
+import { ChildFootnotesComponent } from './components/child-footnotes/child-footnotes.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,7 @@ import { GetRouteLabelPipe } from './shared/pipes/get-route-label.pipe';
     GlossaryComponent,
     KeysPipe,             // TEST
     TranslatePipe,        // TEST
-    OrderBy, RomanizePipe, GetSemPipe, GetRouteLabelPipe
+    OrderBy, RomanizePipe, GetSemPipe, GetRouteLabelPipe, ChildGlossaryComponent, ChildFootnotesComponent
   ],
   imports: [
     BrowserModule, // make sure this import is on the top of the list
