@@ -1,8 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Course} from '../../shared/models/course';
 import {CoursesService} from '../../services/courses.service';
 import {ActivatedRoute} from '@angular/router';
-import {CourseCatalogue} from '../../shared/models/course-catalogue';
+import {CourseCatalogue, Course} from '../../shared/models/course-catalogue';
 import * as _ from 'lodash';
 
 @Component({

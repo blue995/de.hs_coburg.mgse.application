@@ -1,0 +1,16 @@
+<div class="glossary">
+  <div class="glossary__title">
+    Erläuterung der Abkürzungen:
+  </div>
+  <div class="glossary__section" *ngFor="let section of glossary?.sections">
+    <div class="glossary__section-title">
+      {{ section.completeName }}
+    </div>
+    <table class="glossary__table">
+      <tr *ngFor="let entry of section.entries">
+        <td valign="top" class="glossary__abbreviation">{{ entry.abbreviation }}</td>
+        <td valign="top" class="glossary__word">= {{ entry.word }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

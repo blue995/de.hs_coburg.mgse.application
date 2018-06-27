@@ -17,6 +17,30 @@ export const SERS: Ser[] = [
       degreeName: 'Bachelor of Science',
       degreeAbbreviation: 'B. Sc.',
     },
+    footnotes: [
+      { number: 1, text: 'alle m.E. = alle, außer PC, Laptop, programmierbarer Taschenrechner und Telekommunikationsmittel' },
+      { number: 2, text: 'Es kann freiwillig studienbegleitend eine prSTA abgelegt werden. Wurde die schrP bestanden,' +
+        ' werden die für die studienbegleitende prSTA erreichten' +
+        ' Punkte auf die in der schrP erreichten Punkte im Umfang von 10% der in der schrP erreichbaren Punkte addiert.' },
+      { number: 3, text: 'schrP und prStA haben für die Bildung der Endnote das Gewicht 1 zu 1. Zum Bestehen muss bei beiden' +
+        ' Leistungsnachweisen mindestens die Note „ausreichend“ erzielt werden' }
+    ],
+    glossary: {
+      id: 1,
+      sections: [
+        {
+          id: 1,
+          completeName: 'Prüfungen',
+          entries: [
+            {
+              id: 1,
+              word: 'Bachelorarbeit',
+              abbreviation: 'BA'
+            }
+          ]
+        }
+      ]
+    },
     preface: 'Auf Grund von Art.13 Abs.1, 43, 44, 58 Abs.1, 61 Abs.2 und 8 und 66 des Bayerischen Hochschulgesetzes\n' +
     '–BayHSchG– (BayRS 2210–1–1–WFK) erlässt die Hochschule für angewandte\n' +
     'Wissenschaften Coburg folgende Satzung:',
@@ -608,7 +632,6 @@ export const SERS: Ser[] = [
           }
         ]
       }
-    ],
-    footnotes: []
+    ]
   }
 ];

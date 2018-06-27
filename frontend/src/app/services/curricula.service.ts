@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {CurriculumMeta} from '../shared/models/curriculum-meta';
 import {catchError, tap} from 'rxjs/operators';
+import {Curriculum} from '../shared/models/curriculum';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,14 @@ export class CurriculaService {
         tap(curriculaMeta => console.log(`fetched curriculum meta objects`)),
         catchError(this.handleError( 'getCurriculaMeta', []))
       );
+  }
+
+  getCurriculum (id: number): Observable<Curriculum> {
+    const url = `${this.curriculaUrl}Complete/${id}`; // TODO: remove "Complete from id template string
+    return this.http.get<Curriculum>(url).pipe(
+      tap( curriculum => console.log(`fetched curriculum id=${id}`)),
+      catchError(this.handleError<Curriculum>(`getCurriculum id=${id}`))
+    );
   }
 
   private handleError<T> (operation = 'operation', result?: T) {

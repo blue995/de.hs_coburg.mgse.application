@@ -43,8 +43,8 @@ public class HelloWorldResource {
         }
         return msg;*/
 
-        boolean msg;
-
+        boolean msg = true;
+/*
         try{
             AdmissionRequirement ar = new AdmissionRequirement();
             ar.setValue("some value");
@@ -95,92 +95,16 @@ public class HelloWorldResource {
         } catch(Exception e){
             e.printStackTrace();
             msg = false;
-        }
+        }*/
 
-        /*
-        Glossary glossary = new Glossary();
-        List<GlossarySection> gs_list = new ArrayList<>();
+        GlossaryModelCreator gmc = new GlossaryModelCreator();
+        msg = msg && gmc.createModel();
 
-        // Abschlüsse
-        List<GlossaryEntry> ge_list = new ArrayList<>();
-        GlossarySection gs = new GlossarySection();
-        gs.setCompleteName("Abschlüsse");
+        DegreeModelCreator dmc = new DegreeModelCreator();
+        msg = msg && dmc.createModel();
 
-        GlossaryEntry ge = new GlossaryEntry();
-        ge.setAbbreviation("M.Sc.");
-        ge.setMeaning("Masterabschluss eines naturwissenschaftlichen Studienganges");
-        ge.setWord("Master of Science");
-        ge_list.add(ge);
-
-        ge = new GlossaryEntry();
-        ge.setAbbreviation("Master of Arts");
-        ge.setMeaning("Masterabschluss eines geistes-, kultur-, sozial- oder wirtschaftswissenschaftlichen Studienganges");
-        ge.setWord("Master of Science");
-        ge_list.add(ge);
-
-        ge = new GlossaryEntry();
-        ge.setAbbreviation("Master of Business Administration");
-        ge.setMeaning("Masterabschluss eines Studienganges, welcher hauptsächlich Managementkompetenzen vermittelt.");
-        ge.setWord("MBA");
-        ge_list.add(ge);
-
-        ge = new GlossaryEntry();
-        ge.setAbbreviation("Bachelor of Science");
-        ge.setMeaning("Bachelorabschluss eines naturwissenschaftlichen Studienganges");
-        ge.setWord("B.Sc.");
-        ge_list.add(ge);
-
-        gs.setEntries(ge_list);
-        gs_list.add(gs);
-
-        // Professoren
-        ge_list = new ArrayList<>();
-        gs = new GlossarySection();
-        gs.setCompleteName("Professoren");
-
-        ge = new GlossaryEntry();
-        ge.setAbbreviation("AM");
-        ge.setWord("Abel Müller");
-        ge_list.add(ge);
-
-        ge = new GlossaryEntry();
-        ge.setAbbreviation("BM");
-        ge.setWord("Bebel Maier");
-        ge_list.add(ge);
-
-        ge = new GlossaryEntry();
-        ge.setAbbreviation("CF");
-        ge.setWord("Cebel Fischer");
-        ge_list.add(ge);
-
-        ge = new GlossaryEntry();
-        ge.setAbbreviation("DB");
-        ge.setWord("Debel Bauer");
-        ge_list.add(ge);
-
-        gs.setEntries(ge_list);
-        gs_list.add(gs);
-
-        glossary.setSections(gs_list);
-
-        try{
-            EntityManager em = HibernateUtil.getEntityManager();
-
-            for (int i=0; i<3; i++) {
-                em.getTransaction().begin();
-                em.persist(glossary);
-                em.getTransaction().commit();
-            }
-
-            msg = true;
-        } catch(Exception e){
-            e.printStackTrace();
-            msg = false;
-        }
-        */
-
-        msg = msg && GlossaryModelCreator.createModel();
-        //msg = msg && ModuleHandbookModelCreator.createModel();
+        CourseModelCreator cmc = new CourseModelCreator();
+        msg = msg && cmc.createModel();
 
         if(msg)
             return "Got it!";

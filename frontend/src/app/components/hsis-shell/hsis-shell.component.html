@@ -2,9 +2,14 @@
   <button class="hsis-toolbar__button" (click)="sidenav.toggle()" mat-button>
     <mat-icon class="hsis-toolbar__clickable">menu</mat-icon>
   </button>
-  <span class="hsis-toolbar__branding">HSIS</span>
+  <div class="hsis-toolbar__branding">
+    <img src="../../../assets/images/hs-coburg-logo-grey.png" class="hsis-toolbar__branding-logo"/>
+    <span class="hsis-toolbar__branding-label">HSIS</span>
+  </div>
   <!-- This fills the remaining space of the current row -->
-  <span class="hsis-toolbar__spacer"></span>
+  <span class="hsis-toolbar__spacer">
+    {{ _router.url | getRouteLabel }}
+  </span>
   <!-- logout button -->
   <button class="hsis-toolbar__button" (click)="logout()" mat-button>
     <mat-icon class="hsis-toolbar__logout">exit_to_app</mat-icon>
@@ -14,7 +19,7 @@
 <mat-sidenav-container class="hsis-home__container">
   <mat-sidenav #sidenav class="hsis-home__side-nav" mode="push" [(opened)]="sideNavOpened">
     <div *ngFor="let item of navLinks">
-      <a class="hsis-home__nav-link" [routerLink]="[item.link]">{{item.label}}</a>
+      <a class="hsis-home__nav-link" [routerLink]="[item.routeString]">{{item.label}}</a>
     </div>
   </mat-sidenav>
   <mat-sidenav-content class="hsis-home__main-content">

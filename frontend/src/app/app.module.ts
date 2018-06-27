@@ -29,6 +29,11 @@ import { InMemoryDataService } from './shared/mocks/in-memory-data.service';
 import { SerDetailComponent } from './components/ser-detail/ser-detail.component';
 import { CourseCatalogueComponent } from './components/course-catalogue/course-catalogue.component';
 import { CurriculumComponent } from './components/curriculum/curriculum.component';
+import { RomanizePipe } from './shared/pipes/romanize.pipe';
+import { GetSemPipe } from './shared/pipes/get-sem.pipe';
+import { GetRouteLabelPipe } from './shared/pipes/get-route-label.pipe';
+import { ChildGlossaryComponent } from './components/child-glossary/child-glossary.component';
+import { ChildFootnotesComponent } from './components/child-footnotes/child-footnotes.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +49,7 @@ import { CurriculumComponent } from './components/curriculum/curriculum.componen
     GlossaryComponent,
     KeysPipe,             // TEST
     TranslatePipe,        // TEST
-    OrderBy
+    OrderBy, RomanizePipe, GetSemPipe, GetRouteLabelPipe, ChildGlossaryComponent, ChildFootnotesComponent
   ],
   imports: [
     BrowserModule, // make sure this import is on the top of the list

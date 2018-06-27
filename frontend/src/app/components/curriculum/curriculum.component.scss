@@ -24,6 +24,10 @@
     margin-bottom: 2cm;
   }
 
+  &__section-title {
+    margin-top: 1cm;
+  }
+
   &__section-subtitle {
     padding-left: 0.5cm;
   }
@@ -38,6 +42,7 @@
 
   &__courses-table {
     margin-top: 0.4cm;
+    margin-bottom: 2cm;
     text-align: center;
     border: 2px solid black;
     border-collapse: collapse;

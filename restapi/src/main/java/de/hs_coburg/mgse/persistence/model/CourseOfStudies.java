@@ -27,8 +27,12 @@ public class CourseOfStudies {
     @JoinColumn(nullable = true)
     private List<AdmissionRequirement> requirements = new ArrayList<AdmissionRequirement>();
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = true)
+    private Degree degree;
+
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(nullable = false)
+    @JoinColumn(nullable = true)
     private List<StudyExaminationRegulations> ser = new ArrayList<StudyExaminationRegulations>();
 
     //getter and setter
@@ -78,5 +82,13 @@ public class CourseOfStudies {
 
     public void setSer(List<StudyExaminationRegulations> ser) {
         this.ser = ser;
+    }
+
+    public Degree getDegree() {
+        return degree;
+    }
+
+    public void setDegree(Degree degree) {
+        this.degree = degree;
     }
 }

@@ -1,40 +1,81 @@
 <div class="main-content-wrapper">
   <div class="a4-document a4-document--landscape">
     <div class="a4-document__title">
-      Studienplan für die theoretischen und praktischen Studiensemester des Studienganges
-      Informatik neu (Bachelor) an der Hochschule Coburg<br/>
-      (gültig für Studienanfänger ab dem 01.10.2014)<br/>
-      (Sommersemester 2018)
+      {{ curriculum?.completeName }}<br/>
+      (gültig für Studienanfänger ab dem {{ curriculum?.validityDate }})<br/>
+      ({{ curriculum?.semester | getSem }} {{ curriculum?.year }})
     </div>
-    <div class="a4-document__study-section">
+    <div class="a4-document__study-section a4-document--page-break" *ngFor="let studySection of curriculum?.curriculumStudySections; let i = index">
       <div class="a4-document__section-title">
-        <span class="a4-document__title-number">I</span>Erster Studienabschnitt (1. u. 2. theoretisches Studiensemester)
+        <span class="a4-document__title-number">
+          {{ i+1 | romanize }}
+        </span>
+        {{ studySection.completeName }}
       </div>
-      <div class="a4-document__section-subtitle">
-        <span class="a4-document__subtitle-number">1.1</span>Pflichtfächer
-      </div>
+      <div class="a4-document__study-subsection" *ngFor="let subsectionType of studySection.subsectionTypes; let t = index">
+        <div class="a4-document__section-subtitle">
+          <span class="a4-document__subtitle-number">
+            {{ i+1 }}.{{ t+1 }}
+          </span>{{ subsectionType.subsectionTypeName }}
+        </div>
 
-      <table class="a4-document__courses-table">
-        <tr class="a4-document__courses-table-header">
-          <td>Fach</td>
-          <td>Kurzbez.</td>
-          <td>WS 1.th.</td>
-          <td>SS 2.th</td>
-          <td>SWS</td>
-          <td>ECTS</td>
-          <td>Art der Lehrveranstaltung</td>
-          <td>Fach schließt ab im Sem.</td>
-          <td>Arten der Leistungsnachweise und ggf. Dauer</td>
-          <td>Zugelassene Hilfsmittel</td>
-          <td>Erstprüfer</td>
-          <td>Zweitprüfer</td>
-        </tr>
-        <tr>
-          <td>
-            Analysis
-          </td>
-        </tr>
-      </table>
+        <table class="a4-document__courses-table">
+          <tr class="a4-document__courses-table-header">
+            <td>Fach</td>
+            <td>Kurzbez.</td>
+            <td>WS 1.th.</td>
+            <td>SS 2.th</td>
+            <td>SWS</td>
+            <td>ECTS</td>
+            <td>Art der Lehrveranstaltung</td>
+            <td>Fach schließt ab im Sem.</td>
+            <td>Arten der Leistungsnachweise und ggf. Dauer</td>
+            <td>Zugelassene Hilfsmittel</td>
+            <td>Erstprüfer</td>
+            <td>Zweitprüfer</td>
+          </tr>
+          <tr *ngFor="let entry of subsectionType.curriculumEntries">
+            <td>{{ entry.moduleCompleteName }}</td>
+            <td>{{ entry.moduleAbbreviation }}</td>
+            <td>
+            <span *ngIf="entry.semester === 1 || entry.semester === 3 || entry.semester === 5">
+              {{ entry.semesterHours }}
+            </span>
+            </td>
+            <td>
+            <span *ngIf="entry.semester === 2 || entry.semester === 4 || entry.semester === 6">
+              {{ entry.semesterHours }}
+            </span>
+            </td>
+            <td>{{ entry.semesterHours }}</td>
+            <td>{{ entry.ects }}</td>
+            <td>
+            <span *ngFor="let courseType of entry.moduleCourseTypes; last as isLast" matTooltip="{{ courseType.name }}">
+                {{ courseType.abbreviation }}<span *ngIf="!isLast">,</span>
+            </span>
+            </td>
+            <td>{{ entry.semester }}.</td>
+            <td>
+            <span *ngFor="let examType of entry.moduleExamTypes; last as isLast" matTooltip="{{ examType.name }}">
+                {{ examType.abbreviation }} ({{ examType.upperBound + " " + examType.examTestUnit }})<span *ngIf="!isLast">,<br/></span>
+            </span>
+            </td>
+            <td>{{ entry.aidList }}</td>
+            <td>
+            <span *ngFor="let person of entry.responsiblePersons; last as isLast" matTooltip="{{ person.lastName }}">
+                {{ person.abbreviation }}<span *ngIf="!isLast">,</span>
+            </span>
+            </td>
+            <td>
+            <span *ngFor="let person of entry.testers; last as isLast" matTooltip="{{ person.lastName }}">
+                <span *ngIf="person">{{ person.abbreviation }}<span *ngIf="!isLast">,</span></span>
+            </span>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
+    <app-child-footnotes [footnotes]="curriculum?.footnotes"></app-child-footnotes>
+    <app-child-glossary [glossary]="curriculum?.glossary"></app-child-glossary>
   </div>
 </div>

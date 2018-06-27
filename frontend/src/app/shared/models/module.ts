@@ -1,4 +1,4 @@
-import { GlossaryEntry } from './glossary-entry';
+import {GlossaryEntry} from './glossary';
 
 export class Module {
   completeName: String;
@@ -11,12 +11,12 @@ export class Module {
   count?: number;
 }
 
-class CourseType {
+export class CourseType {
   name: String;
   abbreviation: String;
 }
 
-class ExamType {
+export class ExamType {
   name: String;
   abbreviation: String;
   examTestUnit: String;

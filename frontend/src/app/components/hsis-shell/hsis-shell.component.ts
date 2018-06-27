@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
+import { CustomRouterLink } from '../../shared/interfaces/custom-router-link';
 
-const NAVLINKS: Object[] = [
-  { link: '/sers', label: 'SPOs anzeigen' },
-  { link: '/courses', label: 'Module anzeigen' },
-  { link: '/curricula', label: 'Studienpläne anzeigen' },
-  { link: '/glossary', label: 'Glossar anzeigen' }
+export const NAVLINKS: CustomRouterLink[] = [
+  { routeString: '/sers', label: 'Studienprüfungsordnungen' },
+  { routeString: '/courses', label: 'Modulhandbücher' },
+  { routeString: '/curricula', label: 'Studienpläne' },
+  { routeString: '/glossary', label: 'Glossar' }
 ];
 
 @Component({
@@ -17,12 +18,14 @@ export class HsisShellComponent implements OnInit {
 
   sideNavOpened: boolean;
   navLinks: Object[];
+  _router: any;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
     this.sideNavOpened = false;
     this.navLinks = NAVLINKS;
+    this._router = this.router;
   }
 
   logout() {
