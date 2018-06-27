@@ -180,6 +180,7 @@ public class HelloWorldResource {
         */
 
         msg = msg && GlossaryModelCreator.createModel();
+        //msg = msg && ModuleHandbookModelCreator.createModel();
 
         if(msg)
             return "Got it!";

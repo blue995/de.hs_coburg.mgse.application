@@ -31,6 +31,11 @@ public class ModuleDescription {
     @JoinColumn(nullable = false)
     private List<Professor> lectures = new ArrayList<Professor>();
 
+    // TO REVIEW
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = true)
+    private ModuleSpecification curriculumEntry;
+
     @Column(name = "language", nullable = true)
     private String language;
 
@@ -125,5 +130,13 @@ public class ModuleDescription {
 
     public void setLiterature(String literature) {
         this.literature = literature;
+    }
+
+    public ModuleSpecification getCurriculumEntry() {
+        return curriculumEntry;
+    }
+
+    public void setCurriculumEntry(ModuleSpecification curriculumEntry) {
+        this.curriculumEntry = curriculumEntry;
     }
 }
