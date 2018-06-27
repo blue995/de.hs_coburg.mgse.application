@@ -13,6 +13,7 @@ WORKDIR /opt/app
 COPY pom.xml /opt/app/
 # rest of the project
 COPY src /opt/app/src
+COPY docker/hibernate.cfg.xml /opt/app/src/main/resources/hibernate.cfg.xml
 
 RUN mvn install
 RUN mvn package
