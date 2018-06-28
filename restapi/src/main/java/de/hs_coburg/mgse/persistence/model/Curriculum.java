@@ -18,6 +18,13 @@ public class Curriculum {
     @JoinColumn(nullable = false)
     private List<ModuleSpecification> moduleSpecifications = new ArrayList<ModuleSpecification>();
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = true)
+    private List<ModuleHandbook> moduleHandbooks = new ArrayList<ModuleHandbook>();
+
+    @Column(name = "completeName", nullable = true)
+    private String completeName;
+
     @Column(name = "version", nullable = true)
     private Integer version;
 
@@ -77,5 +84,13 @@ public class Curriculum {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public List<ModuleHandbook> getModuleHandbooks() {
+        return moduleHandbooks;
+    }
+
+    public void setModuleHandbooks(List<ModuleHandbook> moduleHandbooks) {
+        this.moduleHandbooks = moduleHandbooks;
     }
 }

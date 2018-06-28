@@ -13,6 +13,9 @@ public class Professor {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @Column(name = "completeName", nullable = true)
+    private String completeName;
+
     @Column(name = "firstName", nullable = true)
     private String firstName;
 
