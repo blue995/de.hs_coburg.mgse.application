@@ -13,10 +13,11 @@ public class ExamTypeDeclaration {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    /*
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
     private List<ExamType> examTypes = new ArrayList<ExamType>();
-
+    */
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
     private GlossaryEntry details;
@@ -33,6 +34,7 @@ public class ExamTypeDeclaration {
         this.id = id;
     }
 
+    /*
     public List<ExamType> getExamTypes() {
         return examTypes;
     }
@@ -40,6 +42,7 @@ public class ExamTypeDeclaration {
     public void setExamTypes(List<ExamType> examTypes) {
         this.examTypes = examTypes;
     }
+    */
 
     public GlossaryEntry getDetails() {
         return details;

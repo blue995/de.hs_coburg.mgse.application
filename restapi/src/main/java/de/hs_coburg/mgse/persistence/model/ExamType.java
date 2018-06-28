@@ -11,6 +11,15 @@ public class ExamType {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    /*
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = true)
+    private List<ExamType> examTypes = new ArrayList<ExamType>();
+    */
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = true)
+    private ExamTypeDeclaration examTypeDeclaration;
+
     @Column(name = "lowerBound", nullable = true)
     private Integer lowerBound;
 
@@ -24,6 +33,14 @@ public class ExamType {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public ExamTypeDeclaration getExamTypeDeclaration() {
+        return examTypeDeclaration;
+    }
+
+    public void setExamTypeDeclaration(ExamTypeDeclaration examTypeDeclaration) {
+        this.examTypeDeclaration = examTypeDeclaration;
     }
 
     public Integer getLowerBound() {

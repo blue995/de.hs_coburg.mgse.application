@@ -14,7 +14,7 @@ public class StudySection {
     private Long id;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(nullable = false)
+    @JoinColumn(nullable = true)
     private List<Module> modules = new ArrayList<Module>();
 
     @Column(name = "firstSemester", nullable = true)

@@ -34,7 +34,7 @@ public class ModuleSpecification {
     private List<ConcreteExamType> concreteExamTypes = new ArrayList<ConcreteExamType>();
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(nullable = false)
+    @JoinColumn(nullable = true)
     private List<CourseTypeDeclaration> courseTypes = new ArrayList<CourseTypeDeclaration>();
 
     @Column(name = "semester", nullable = true)

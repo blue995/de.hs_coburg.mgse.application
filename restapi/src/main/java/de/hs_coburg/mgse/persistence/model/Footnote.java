@@ -17,7 +17,7 @@ public class Footnote {
     @JoinColumn(nullable = true)
     private List<Sentence> sentences = new ArrayList<Sentence>();
 
-    @Column(name = "text", nullable = true)
+    @Column(name = "text", nullable = true, columnDefinition="TEXT")
     private String text;
 
     //getter and setter

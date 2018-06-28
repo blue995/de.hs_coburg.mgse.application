@@ -104,6 +104,10 @@ public class GlossaryModelCreator {
             setGlossaryEntryMaterials(ge_9, "Programmieren 1", "", "Prog1");
             l_ge_3.add(ge_9);
             //9
+            GlossaryEntry ge_10 = new GlossaryEntry();
+            setGlossaryEntryMaterials(ge_10, "Grundlagen der Informatik", "", "GI");
+            l_ge_3.add(ge_10);
+            //10
 
             gs_3.setEntries(l_ge_3);
             gs_3.setCompleteName("Module");
@@ -113,10 +117,10 @@ public class GlossaryModelCreator {
             GlossarySection gs_4 = new GlossarySection();
             List<GlossaryEntry> l_ge_4 = new ArrayList<GlossaryEntry>();
 
-            GlossaryEntry ge_10 = new GlossaryEntry();
-            setGlossaryEntryMaterials(ge_10, "Schriftliche Prüfung", "", "schrPr");
-            l_ge_4.add(ge_10);
-            //10
+            GlossaryEntry ge_11 = new GlossaryEntry();
+            setGlossaryEntryMaterials(ge_11, "Schriftliche Prüfung", "", "schrPr");
+            l_ge_4.add(ge_11);
+            //11
 
             gs_4.setEntries(l_ge_4);
             gs_4.setCompleteName("Prüfungsarten");
@@ -126,22 +130,22 @@ public class GlossaryModelCreator {
             GlossarySection gs_5 = new GlossarySection();
             List<GlossaryEntry> l_ge_5 = new ArrayList<GlossaryEntry>();
 
-            GlossaryEntry ge_11 = new GlossaryEntry();
-            setGlossaryEntryMaterials(ge_11, "Übung", "", "Ü");
-            l_ge_5.add(ge_11);
-            //11
             GlossaryEntry ge_12 = new GlossaryEntry();
-            setGlossaryEntryMaterials(ge_12, "Lehrvortrag", "", "V");
+            setGlossaryEntryMaterials(ge_12, "Übung", "", "Ü");
             l_ge_5.add(ge_12);
             //12
             GlossaryEntry ge_13 = new GlossaryEntry();
-            setGlossaryEntryMaterials(ge_13, "Seminaristischer Unterricht", "", "SU");
+            setGlossaryEntryMaterials(ge_13, "Lehrvortrag", "", "V");
             l_ge_5.add(ge_13);
             //13
             GlossaryEntry ge_14 = new GlossaryEntry();
-            setGlossaryEntryMaterials(ge_14, "Praktikum", "", "Pr");
+            setGlossaryEntryMaterials(ge_14, "Seminaristischer Unterricht", "", "SU");
             l_ge_5.add(ge_14);
             //14
+            GlossaryEntry ge_15 = new GlossaryEntry();
+            setGlossaryEntryMaterials(ge_15, "Praktikum", "", "Pr");
+            l_ge_5.add(ge_15);
+            //15
 
             gs_5.setEntries(l_ge_5);
             gs_5.setCompleteName("Lehrveranstaltungsarten");
@@ -171,22 +175,22 @@ public class GlossaryModelCreator {
             GlossarySection gs_6 = new GlossarySection();
             List<GlossaryEntry> l_ge_6 = new ArrayList<GlossaryEntry>();
 
-            GlossaryEntry ge_15 = new GlossaryEntry();
-            setGlossaryEntryMaterials(ge_15, "aaa", "dddd", "sadfadsf");
-            l_ge_6.add(ge_15);
-            //15
             GlossaryEntry ge_16 = new GlossaryEntry();
-            setGlossaryEntryMaterials(ge_16, "bbb", "asdfdasdf", "asdsffasdf");
+            setGlossaryEntryMaterials(ge_16, "aaa", "dddd", "sadfadsf");
             l_ge_6.add(ge_16);
             //16
             GlossaryEntry ge_17 = new GlossaryEntry();
-            setGlossaryEntryMaterials(ge_17, "ccc", "Madfasdfsadfmittelt.", "dfdfd");
+            setGlossaryEntryMaterials(ge_17, "bbb", "asdfdasdf", "asdsffasdf");
             l_ge_6.add(ge_17);
             //17
             GlossaryEntry ge_18 = new GlossaryEntry();
-            setGlossaryEntryMaterials(ge_18, "ddd", "Bachelorabschluasdfasdfss eines natusadfrwissenschaftlichen Stuasdfasdfdienganges", "B.adsfadsf.");
+            setGlossaryEntryMaterials(ge_18, "ccc", "Madfasdfsadfmittelt.", "dfdfd");
             l_ge_6.add(ge_18);
             //18
+            GlossaryEntry ge_19 = new GlossaryEntry();
+            setGlossaryEntryMaterials(ge_19, "ddd", "Bachelorabschluasdfasdfss eines natusadfrwissenschaftlichen Stuasdfasdfdienganges", "B.adsfadsf.");
+            l_ge_6.add(ge_19);
+            //19
 
             gs_6.setEntries(l_ge_6);
             gs_6.setCompleteName("irgendwas anderes");

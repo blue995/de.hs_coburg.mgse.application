@@ -14,6 +14,10 @@ public class StudyExaminationRegulations {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = true)
+    private CourseOfStudies course;
+
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
     private List<Footnote> footnotes= new ArrayList<Footnote>();
@@ -22,11 +26,15 @@ public class StudyExaminationRegulations {
     @JoinColumn(nullable = false)
     private List<StudySection> studySections= new ArrayList<StudySection>();
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = true)
+    private List<Paragraph> paragraphs = new ArrayList<Paragraph>();
+
     @Column(name = "version", nullable = true)
     private int version;
 
-    @Column(name = "date", nullable = true)
-    private Date date;
+    @Column(name = "validityDate", nullable = true)
+    private Date validityDate;
 
     @Column(name = "title", nullable = true)
     private String title;
@@ -41,6 +49,14 @@ public class StudyExaminationRegulations {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public CourseOfStudies getCourse() {
+        return course;
+    }
+
+    public void setCourse(CourseOfStudies course) {
+        this.course = course;
     }
 
     public List<Footnote> getFootnotes() {
@@ -59,6 +75,14 @@ public class StudyExaminationRegulations {
         this.studySections = studySections;
     }
 
+    public List<Paragraph> getParagraphs() {
+        return paragraphs;
+    }
+
+    public void setParagraphs(List<Paragraph> paragraphs) {
+        this.paragraphs = paragraphs;
+    }
+
     public int getVersion() {
         return version;
     }
@@ -67,12 +91,12 @@ public class StudyExaminationRegulations {
         this.version = version;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getValidityDate() {
+        return validityDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setValidityDate(Date validityDate) {
+        this.validityDate = validityDate;
     }
 
     public String getTitle() {

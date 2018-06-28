@@ -31,10 +31,11 @@ public class CourseOfStudies {
     @JoinColumn(nullable = true)
     private Degree degree;
 
+    /*
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
     private List<StudyExaminationRegulations> ser = new ArrayList<StudyExaminationRegulations>();
-
+    */
     //getter and setter
     public Long getId() {
         return id;
@@ -76,13 +77,14 @@ public class CourseOfStudies {
         this.requirements = requirements;
     }
 
+    /*
     public List<StudyExaminationRegulations> getSer() {
         return ser;
     }
 
     public void setSer(List<StudyExaminationRegulations> ser) {
         this.ser = ser;
-    }
+    }*/
 
     public Degree getDegree() {
         return degree;

@@ -5,10 +5,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import de.hs_coburg.mgse.modelcreator.GlossaryModelCreator;
-import de.hs_coburg.mgse.modelcreator.DegreeModelCreator;
-import de.hs_coburg.mgse.modelcreator.AdmissionRequirementModelCreator;
-import de.hs_coburg.mgse.modelcreator.CourseModelCreator;
+import de.hs_coburg.mgse.modelcreator.*;
 
 /**
  * Root resource (exposed at "hello" path)
@@ -32,6 +29,10 @@ public class HelloWorldResource {
         msg = msg && DegreeModelCreator.createModel();
         msg = msg && AdmissionRequirementModelCreator.createModel();
         msg = msg && CourseModelCreator.createModel();
+        msg = msg && CourseTypeDeclarationModelCreator.createModel();
+        msg = msg && ExamTypeDeclarationModelCreator.createModel();
+        msg = msg && ModuleModelCreator.createModel();
+        msg = msg && SPOModelCreator.createModel();
 
         if(msg)
             return "Got it!";

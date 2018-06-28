@@ -8,22 +8,20 @@ import java.util.List;
 @Table(name = "PARAGRAPH")
 public class Paragraph extends AParagraph {
 
-    @Column(name = "number", nullable = true)
-    private Integer number;
+    @Column(name = "title", nullable = true)
+    private String title;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
     private List<SubParagraph> subParagraphs = new ArrayList<SubParagraph>();
 
     //getter and setter
-    @Override
-    public Integer getNumber() {
-        return number;
+    public String getTitle() {
+        return title;
     }
 
-    @Override
-    public void setNumber(Integer number) {
-        this.number = number;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public List<SubParagraph> getSubParagraphs() {

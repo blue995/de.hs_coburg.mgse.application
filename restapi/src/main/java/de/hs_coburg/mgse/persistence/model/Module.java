@@ -14,11 +14,11 @@ public class Module {
     private Long id;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinColumn(nullable = false)
+    @JoinColumn(nullable = true)
     private List<CourseTypeDeclaration> courseType = new ArrayList<CourseTypeDeclaration>();
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(nullable = false)
+    @JoinColumn(nullable = true) //false
     private List<ExamType> examTypes = new ArrayList<ExamType>();
 
     @OneToMany(cascade = CascadeType.ALL)
@@ -32,10 +32,13 @@ public class Module {
     private Integer ects;
 
     @Column(name = "quantifier", nullable = true)
-    private Integer quantifier;
+    private Double quantifier;
 
     @Column(name = "semesterHours", nullable = true)
     private Integer semesterHours;
+
+    @Column(name = "moduleType", nullable = true)
+    private String moduleType;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
@@ -60,6 +63,7 @@ public class Module {
     public void setCourseType(List<CourseTypeDeclaration> courseType) {
         this.courseType = courseType;
     }
+
 
     public List<ExamType> getExamTypes() {
         return examTypes;
@@ -93,11 +97,11 @@ public class Module {
         this.ects = ects;
     }
 
-    public Integer getQuantifier() {
+    public Double getQuantifier() {
         return quantifier;
     }
 
-    public void setQuantifier(Integer quantifier) {
+    public void setQuantifier(Double quantifier) {
         this.quantifier = quantifier;
     }
 
@@ -123,5 +127,13 @@ public class Module {
 
     public void setCount(Integer count) {
         this.count = count;
+    }
+
+    public String getModuleType() {
+        return moduleType;
+    }
+
+    public void setModuleType(String moduleType) {
+        this.moduleType = moduleType;
     }
 }
