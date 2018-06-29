@@ -20,11 +20,11 @@ public class Module {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true) //false
     private List<ExamType> examTypes = new ArrayList<ExamType>();
-
+    /*
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
     private List<ModuleSpecification> moduleSpecifications = new ArrayList<ModuleSpecification>();
-
+    */
     @Column(name = "completeName", nullable = true)
     private String completeName;
 
@@ -72,7 +72,7 @@ public class Module {
     public void setExamTypes(List<ExamType> examTypes) {
         this.examTypes = examTypes;
     }
-
+    /*
     public List<ModuleSpecification> getModuleSpecifications() {
         return moduleSpecifications;
     }
@@ -80,7 +80,7 @@ public class Module {
     public void setModuleSpecifications(List<ModuleSpecification> moduleSpecifications) {
         this.moduleSpecifications = moduleSpecifications;
     }
-
+    */
     public String getCompleteName() {
         return completeName;
     }
