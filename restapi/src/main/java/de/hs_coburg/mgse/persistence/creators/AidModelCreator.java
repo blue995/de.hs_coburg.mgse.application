@@ -1,11 +1,11 @@
-package de.hs_coburg.mgse.modelcreator;
+package de.hs_coburg.mgse.persistence.creators;
 
 import de.hs_coburg.mgse.persistence.HibernateUtil;
 import javax.persistence.EntityManager;
 
-import de.hs_coburg.mgse.persistence.model.AdmissionRequirement;
+import de.hs_coburg.mgse.persistence.model.Aid;
 
-public class AdmissionRequirementModelCreator {
+public class AidModelCreator {
     public static boolean createModel() {
         boolean resp = true;
 
@@ -14,23 +14,19 @@ public class AdmissionRequirementModelCreator {
         return resp;
     }
 
-    //0: AdmissionRequirement
+    //0: Aid
     private static boolean createModelPart0() {
         try {
             EntityManager em = HibernateUtil.getEntityManager();
             em.getTransaction().begin();
 
-            AdmissionRequirement ar0 = new AdmissionRequirement();
-            ar0.setValue("Allgemeine Hochschulreife");
-            em.persist(ar0);
-
-            AdmissionRequirement ar1 = new AdmissionRequirement();
-            ar1.setValue("Fachhochschulreife");
-            em.persist(ar1);
-
-            AdmissionRequirement ar2 = new AdmissionRequirement();
-            ar2.setValue("Bachelor of Science");
-            em.persist(ar2);
+            //implement me
+            Aid a0 = new Aid();
+            a0.setCompleteName("Nicht programmierbarer Taschenrechner");
+            em.persist(a0);
+            Aid a1 = new Aid();
+            a1.setCompleteName("Alles mit Einschränkungen");
+            em.persist(a1);
 
             //commit and close Transaction
             em.getTransaction().commit();

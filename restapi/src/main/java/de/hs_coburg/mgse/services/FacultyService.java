@@ -27,7 +27,7 @@ public class FacultyService {
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getGlossaryList() {
+    public Response getFacultyList() {
         if (bg == null) Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new Exception("Business interface not found")).build();
         List<Faculty> faculty_list;
 
@@ -47,7 +47,7 @@ public class FacultyService {
     @GET
     @Path("/{faculty_id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getGlossarySection(@PathParam("faculty_id") long faculty_id) {
+    public Response getFaculty(@PathParam("faculty_id") long faculty_id) {
         if (bg == null) Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new Exception("Business interface not found")).build();
         Faculty faculty;
 

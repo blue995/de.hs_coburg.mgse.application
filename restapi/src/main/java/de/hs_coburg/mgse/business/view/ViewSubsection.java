@@ -1,13 +1,15 @@
 package de.hs_coburg.mgse.business.view;
 
+import java.util.List;
+
 public class ViewSubsection {
 
     private int number;
-    private String text;
+    private List<String> text;
 
     public ViewSubsection() { }
 
-    public ViewSubsection(int number, String text) {
+    public ViewSubsection(int number, List<String> text) {
         this.number = number;
         this.text = text;
     }
@@ -20,11 +22,11 @@ public class ViewSubsection {
         this.number = number;
     }
 
-    public String getText() {
+    public List<String> getText() {
         return text;
     }
 
-    public void setText(String text) {
+    public void setText(List<String> text) {
         this.text = text;
     }
 }

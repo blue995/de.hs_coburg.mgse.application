@@ -29,6 +29,10 @@ public class ModuleSpecification {
     @JoinColumn(nullable = true)
     private GlossaryEntry details;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = true)
+    private Module module;
+
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(nullable = false)
     private List<ConcreteExamType> concreteExamTypes = new ArrayList<ConcreteExamType>();
@@ -82,6 +86,14 @@ public class ModuleSpecification {
 
     public void setDetails(GlossaryEntry details) {
         this.details = details;
+    }
+
+    public Module getModule() {
+        return module;
+    }
+
+    public void setModule(Module module) {
+        this.module = module;
     }
 
     public List<ConcreteExamType> getConcreteExamTypes() {
