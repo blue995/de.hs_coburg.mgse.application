@@ -47,6 +47,9 @@ public class ModuleSpecification {
     @Column(name = "completeName", nullable = true)
     private String completeName;
 
+    @Column(name = "rota", nullable = true)
+    private String rota;
+
     //getter and setter
     public Long getId() {
         return id;
@@ -126,5 +129,13 @@ public class ModuleSpecification {
 
     public void setCompleteName(String completeName) {
         this.completeName = completeName;
+    }
+
+    public String getRota() {
+        return rota;
+    }
+
+    public void setRota(String rota) {
+        this.rota = rota;
     }
 }

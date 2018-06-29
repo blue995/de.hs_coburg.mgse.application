@@ -14,6 +14,10 @@ public class Curriculum {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = true)
+    private StudyExaminationRegulations ser;
+
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(nullable = false)
     private List<ModuleSpecification> moduleSpecifications = new ArrayList<ModuleSpecification>();
@@ -34,9 +38,6 @@ public class Curriculum {
     @Column(name = "year", nullable = true)
     private Integer year;
 
-    @Column(name = "date", nullable = true)
-    private Date date;
-
     //getter and setter
     public Long getId() {
         return id;
@@ -46,12 +47,20 @@ public class Curriculum {
         this.id = id;
     }
 
-    public List<ModuleSpecification> getModuleSpecifications() {
-        return moduleSpecifications;
+    public StudyExaminationRegulations getSer() {
+        return ser;
     }
 
-    public void setModuleSpecifications(List<ModuleSpecification> moduleSpecifications) {
-        this.moduleSpecifications = moduleSpecifications;
+    public void setSer(StudyExaminationRegulations ser) {
+        this.ser = ser;
+    }
+
+    public String getCompleteName() {
+        return completeName;
+    }
+
+    public void setCompleteName(String completeName) {
+        this.completeName = completeName;
     }
 
     public Integer getVersion() {
@@ -78,19 +87,19 @@ public class Curriculum {
         this.year = year;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
     public List<ModuleHandbook> getModuleHandbooks() {
         return moduleHandbooks;
     }
 
     public void setModuleHandbooks(List<ModuleHandbook> moduleHandbooks) {
         this.moduleHandbooks = moduleHandbooks;
+    }
+
+    public List<ModuleSpecification> getModuleSpecifications() {
+        return moduleSpecifications;
+    }
+
+    public void setModuleSpecifications(List<ModuleSpecification> moduleSpecifications) {
+        this.moduleSpecifications = moduleSpecifications;
     }
 }

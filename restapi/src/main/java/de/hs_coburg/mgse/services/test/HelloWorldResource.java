@@ -33,6 +33,9 @@ public class HelloWorldResource {
         msg = msg && ExamTypeDeclarationModelCreator.createModel();
         msg = msg && ModuleModelCreator.createModel();
         msg = msg && SPOModelCreator.createModel();
+        msg = msg && AidModelCreator.createModel();
+        //msg = msg && CurriculumCreator.createModel();
+        //msg = msg && ModuleHandbookModelCreator.createModel();
 
         if(msg)
             return "Got it!";
