@@ -10,16 +10,16 @@ public class ViewStudyExaminationRegulations {
     private String shortName;
     private String title;
     private String validityDate;
-    private List<ViewCourseOfStudy> courseOfStudiy;
+    private ViewCourseOfStudy courseOfStudiy;
     private String preface;
     private List<ViewParagraph> paragraphs;
     private List<ViewStudySection> studySections;
     private List<ViewFootnote> footnotes;
-    private Glossary glossary;
+    private ViewGlossary glossary;
 
     public ViewStudyExaminationRegulations() { }
 
-    public ViewStudyExaminationRegulations(long id, String shortName, String title, String validityDate, List<ViewCourseOfStudy> courseOfStudiy, String preface, List<ViewParagraph> paragraphs, List<ViewStudySection> studySections, List<ViewFootnote> footnotes, Glossary glossary) {
+    public ViewStudyExaminationRegulations(long id, String shortName, String title, String validityDate, ViewCourseOfStudy courseOfStudiy, String preface, List<ViewParagraph> paragraphs, List<ViewStudySection> studySections, List<ViewFootnote> footnotes, ViewGlossary glossary) {
         this.id = id;
         this.shortName = shortName;
         this.title = title;
@@ -64,11 +64,11 @@ public class ViewStudyExaminationRegulations {
         this.validityDate = validityDate;
     }
 
-    public List<ViewCourseOfStudy> getCourseOfStudiy() {
+    public ViewCourseOfStudy getCourseOfStudiy() {
         return courseOfStudiy;
     }
 
-    public void setCourseOfStudiy(List<ViewCourseOfStudy> courseOfStudiy) {
+    public void setCourseOfStudiy(ViewCourseOfStudy courseOfStudiy) {
         this.courseOfStudiy = courseOfStudiy;
     }
 
@@ -104,11 +104,11 @@ public class ViewStudyExaminationRegulations {
         this.footnotes = footnotes;
     }
 
-    public Glossary getGlossary() {
+    public ViewGlossary getGlossary() {
         return glossary;
     }
 
-    public void setGlossary(Glossary glossary) {
+    public void setGlossary(ViewGlossary glossary) {
         this.glossary = glossary;
     }
 }

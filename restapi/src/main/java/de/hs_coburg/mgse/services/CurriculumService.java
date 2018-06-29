@@ -26,7 +26,7 @@ public class CurriculumService {
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getGlossaryList() {
+    public Response getCurriculumList() {
         if (bg == null) Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new Exception("Business interface not found")).build();
         List<Curriculum> curriculum_list;
 
@@ -46,7 +46,7 @@ public class CurriculumService {
     @GET
     @Path("/{curriculum_id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getGlossarySection(@PathParam("curriculum_id") long curriculum_id) {
+    public Response getCurriculum(@PathParam("curriculum_id") long curriculum_id) {
         if (bg == null) Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new Exception("Business interface not found")).build();
         Curriculum curriculum;
 
