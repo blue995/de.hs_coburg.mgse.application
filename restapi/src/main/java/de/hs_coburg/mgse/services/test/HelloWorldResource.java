@@ -34,7 +34,7 @@ public class HelloWorldResource {
         msg = msg && ModuleModelCreator.createModel();
         msg = msg && SPOModelCreator.createModel();
         msg = msg && AidModelCreator.createModel();
-        //msg = msg && CurriculumCreator.createModel();
+        msg = msg && CurriculumModelCreator.createModel();
         //msg = msg && ModuleHandbookModelCreator.createModel();
 
         if(msg)
