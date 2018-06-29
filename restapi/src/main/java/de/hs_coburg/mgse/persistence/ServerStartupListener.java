@@ -2,6 +2,7 @@ package de.hs_coburg.mgse.persistence;
 
 import de.hs_coburg.mgse.persistence.creators.*;
 
+import javax.naming.NamingException;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import java.util.Collection;
@@ -10,6 +11,11 @@ import java.util.LinkedList;
 public class ServerStartupListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
+        try {
+            HibernateUtil.getEntityManager();
+        } catch (NamingException e) {
+            e.printStackTrace();
+        }
         Collection<Class<?>> successfulClasses = new LinkedList<>();
         boolean msg = true;
 
