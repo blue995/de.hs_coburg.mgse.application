@@ -12,10 +12,14 @@ public class ModuleSpecification {
     @GeneratedValue
     @Column(name = "id", nullable = false)
     private Long id;
-
+    /*
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
     private List<ModuleDescription> referencedBy = new ArrayList<ModuleDescription>();
+    */
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = true)
+    private List<Professor> testers = new ArrayList<Professor>();
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
@@ -25,11 +29,13 @@ public class ModuleSpecification {
     @JoinColumn(nullable = true)
     private List<CustomAid> customAids = new ArrayList<CustomAid>();
 
+    /*
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
     private GlossaryEntry details;
+    */
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
     private Module module;
 
@@ -59,14 +65,23 @@ public class ModuleSpecification {
         this.id = id;
     }
 
-    public List<ModuleDescription> getReferencedBy() {
-        return referencedBy;
+    public List<Professor> getTesters() {
+        return testers;
     }
 
-    public void setReferencedBy(List<ModuleDescription> referencedBy) {
-        this.referencedBy = referencedBy;
+    public void setTesters(List<Professor> testers) {
+        this.testers = testers;
     }
 
+    /*
+        public List<ModuleDescription> getReferencedBy() {
+            return referencedBy;
+        }
+
+        public void setReferencedBy(List<ModuleDescription> referencedBy) {
+            this.referencedBy = referencedBy;
+        }
+        */
     public List<Aid> getAids() {
         return aids;
     }
@@ -82,7 +97,7 @@ public class ModuleSpecification {
     public void setCustomAids(List<CustomAid> customAids) {
         this.customAids = customAids;
     }
-
+    /*
     public GlossaryEntry getDetails() {
         return details;
     }
@@ -90,7 +105,7 @@ public class ModuleSpecification {
     public void setDetails(GlossaryEntry details) {
         this.details = details;
     }
-
+    */
     public Module getModule() {
         return module;
     }
