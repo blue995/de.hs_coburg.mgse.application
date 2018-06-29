@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {Observable, of} from 'rxjs';
-import {CourseCatalogueMeta} from '../shared/models/course-catalogue-meta';
-import {catchError, tap} from 'rxjs/operators';
-import {Ser} from '../shared/models/ser';
-import {CourseCatalogue} from '../shared/models/course-catalogue';
+import { Observable, of } from 'rxjs';
+import { CourseCatalogueMeta } from '../shared/models/course-catalogue-meta';
+import { catchError, tap } from 'rxjs/operators';
+import { CourseCatalogue } from '../shared/models/course-catalogue';
 
 /* currently not needed because we are only using a GET request */
 const httpOptions = {
