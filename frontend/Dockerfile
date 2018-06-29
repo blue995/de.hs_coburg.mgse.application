@@ -12,7 +12,7 @@ RUN npm install -g @angular/cli && npm install
 # add app
 COPY . /usr/src/app
 
-RUN ng build
+RUN ng build --prod
 
 FROM nginx:alpine AS production
 
