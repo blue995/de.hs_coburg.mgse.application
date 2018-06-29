@@ -5,7 +5,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-//import de.hs_coburg.mgse.modelcreator.*;
 import de.hs_coburg.mgse.persistence.creators.*;
 
 /**
@@ -34,8 +33,6 @@ public class HelloWorldResource {
         msg = msg && ExamTypeDeclarationModelCreator.createModel();
         msg = msg && ModuleModelCreator.createModel();
         msg = msg && SPOModelCreator.createModel();
-        msg = msg && AidModelCreator.createModel();
-        //msg = msg && ModuleHandbookModelCreator.createModel();
 
         if(msg)
             return "Got it!";
