@@ -21,13 +21,13 @@ public class ServerStartupListener implements ServletContextListener {
         msg = msg && DegreeModelCreator.createModel();
         if(msg) successfulClasses.add(DegreeModelCreator.class);
 
-        // Create Courses
-        msg = msg && CourseModelCreator.createModel();
-        if(msg) successfulClasses.add(CourseModelCreator.class);
-
         // Create AdmissionRequirements
         msg = msg && AdmissionRequirementModelCreator.createModel();
         if(msg) successfulClasses.add(AdmissionRequirementModelCreator.class);
+
+        // Create Courses
+        msg = msg && CourseModelCreator.createModel();
+        if(msg) successfulClasses.add(CourseModelCreator.class);
 
         // Create ModuleHandbookModelCreator
         msg = msg && ModuleHandbookModelCreator.createModel();
