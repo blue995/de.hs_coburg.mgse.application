@@ -42,4 +42,12 @@ public class HelloWorldResource {
         else
             return "Maybe not..";
     }
+
+    @GET
+    @Path("/john")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String helloJohn() {
+
+        return "Hello John!";
+    }
 }
