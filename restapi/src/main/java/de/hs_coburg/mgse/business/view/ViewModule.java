@@ -6,16 +6,17 @@ public class ViewModule {
 
     private String completeName;
     private int etcs;
-    private int quantifier;
+    private double quantifier;
     private int semesterHours;
     private List<ViewCourseType> courseTypes;
     private List<ViewExamType> examTypes;
     private ViewGlossaryEntry details;
-    private int count;
+    //private int count;
 
     public ViewModule() { }
 
-    public ViewModule(String completeName, int etcs, int quantifier, int semesterHours, List<ViewCourseType> courseTypes, List<ViewExamType> examTypes, ViewGlossaryEntry details, int count) {
+    /*
+    public ViewModule(String completeName, int etcs, double quantifier, int semesterHours, List<ViewCourseType> courseTypes, List<ViewExamType> examTypes, ViewGlossaryEntry details, int count) {
         this.completeName = completeName;
         this.etcs = etcs;
         this.quantifier = quantifier;
@@ -24,6 +25,17 @@ public class ViewModule {
         this.examTypes = examTypes;
         this.details = details;
         this.count = count;
+    }
+    */
+
+    public ViewModule(String completeName, int etcs, double quantifier, int semesterHours, List<ViewCourseType> courseTypes, List<ViewExamType> examTypes, ViewGlossaryEntry details) {
+        this.completeName = completeName;
+        this.etcs = etcs;
+        this.quantifier = quantifier;
+        this.semesterHours = semesterHours;
+        this.courseTypes = courseTypes;
+        this.examTypes = examTypes;
+        this.details = details;
     }
 
     public String getCompleteName() {
@@ -42,11 +54,11 @@ public class ViewModule {
         this.etcs = etcs;
     }
 
-    public int getQuantifier() {
+    public double getQuantifier() {
         return quantifier;
     }
 
-    public void setQuantifier(int quantifier) {
+    public void setQuantifier(double quantifier) {
         this.quantifier = quantifier;
     }
 
@@ -82,6 +94,7 @@ public class ViewModule {
         this.details = details;
     }
 
+    /*
     public int getCount() {
         return count;
     }
@@ -89,4 +102,5 @@ public class ViewModule {
     public void setCount(int count) {
         this.count = count;
     }
+    */
 }
