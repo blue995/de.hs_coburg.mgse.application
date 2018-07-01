@@ -31,7 +31,7 @@ export class SersService {
   }
 
   getSer (id: number):  Observable<Ser> {
-    const url = `${API_URL}/${this.sersUrl}Complete/${id}`; // TODO: remove "Complete from id template string
+    const url = `${API_URL}/${this.sersUrl}/${id}`;
     return this.http.get<Ser>(url).pipe(
       tap(ser => console.log(`fetched ser id=${id}`)),
       catchError(this.handleError<Ser>(`getSer id=${id}`))
