@@ -8,25 +8,25 @@ public class ViewCurriculumEntry {
     private String rota;
     private String moduleCompleteName;
     private String moduleAbbreviation;
-    private int etcs;
+    private int ects;
     private int semesterHours;
     private List<ViewCourseType> moduleCourseTypes;
-    private List<ViewExamType> moduleExamType;
-    private List<String> aidList;
+    private List<ViewExamType> moduleExamTypes;
+    private String aidList;
     private List<ViewProfessor> responsiblePersons;
     private List<ViewProfessor> testers;
 
     public ViewCurriculumEntry() { }
 
-    public ViewCurriculumEntry(int semester, String rota, String moduleCompleteName, String moduleAbbreviation, int etcs, int semesterHours, List<ViewCourseType> moduleCourseTypes, List<ViewExamType> moduleExamType, List<String> aidList, List<ViewProfessor> responsiblePersons, List<ViewProfessor> testers) {
+    public ViewCurriculumEntry(int semester, String rota, String moduleCompleteName, String moduleAbbreviation, int ects, int semesterHours, List<ViewCourseType> moduleCourseTypes, List<ViewExamType> moduleExamTypes, String aidList, List<ViewProfessor> responsiblePersons, List<ViewProfessor> testers) {
         this.semester = semester;
         this.rota = rota;
         this.moduleCompleteName = moduleCompleteName;
         this.moduleAbbreviation = moduleAbbreviation;
-        this.etcs = etcs;
+        this.ects = ects;
         this.semesterHours = semesterHours;
         this.moduleCourseTypes = moduleCourseTypes;
-        this.moduleExamType = moduleExamType;
+        this.moduleExamTypes = moduleExamTypes;
         this.aidList = aidList;
         this.responsiblePersons = responsiblePersons;
         this.testers = testers;
@@ -64,12 +64,12 @@ public class ViewCurriculumEntry {
         this.moduleAbbreviation = moduleAbbreviation;
     }
 
-    public int getEtcs() {
-        return etcs;
+    public int getEcts() {
+        return ects;
     }
 
-    public void setEtcs(int etcs) {
-        this.etcs = etcs;
+    public void setEcts(int etcs) {
+        this.ects = etcs;
     }
 
     public int getSemesterHours() {
@@ -88,19 +88,19 @@ public class ViewCurriculumEntry {
         this.moduleCourseTypes = moduleCourseTypes;
     }
 
-    public List<ViewExamType> getModuleExamType() {
-        return moduleExamType;
+    public List<ViewExamType> getModuleExamTypes() {
+        return moduleExamTypes;
     }
 
-    public void setModuleExamType(List<ViewExamType> moduleExamType) {
-        this.moduleExamType = moduleExamType;
+    public void setModuleExamTypes(List<ViewExamType> moduleExamTypes) {
+        this.moduleExamTypes = moduleExamTypes;
     }
 
-    public List<String> getAidList() {
+    public String getAidList() {
         return aidList;
     }
 
-    public void setAidList(List<String> aidList) {
+    public void setAidList(String aidList) {
         this.aidList = aidList;
     }
 

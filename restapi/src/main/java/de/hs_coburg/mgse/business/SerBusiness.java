@@ -89,7 +89,6 @@ public class SerBusiness implements SerBusinessIf {
                     view_ser_meta_list.add(vserm);
                 }
             }
-
         } catch (Exception e) {
             e.printStackTrace();
             throw new Exception(e);
