@@ -47,8 +47,8 @@ import { ChildFootnotesComponent } from './components/child-footnotes/child-foot
     CourseCatalogueComponent,
     CurriculumComponent,
     GlossaryComponent,
-    KeysPipe,             // TEST
-    TranslatePipe,        // TEST
+    KeysPipe,
+    TranslatePipe,
     OrderBy, RomanizePipe, GetSemPipe, GetRouteLabelPipe, ChildGlossaryComponent, ChildFootnotesComponent
   ],
   imports: [

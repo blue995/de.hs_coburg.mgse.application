@@ -4,7 +4,7 @@ import { Glossary } from "../../shared/models/glossary";
 
 import { PipeTransform, Pipe } from '@angular/core';
 
-// TEST: get key-value pair from object/array
+// get key-value pair from object/array
 @Pipe({name: 'keys'})
 export class KeysPipe implements PipeTransform {
   transform(value, args:string[]) : any {
@@ -16,21 +16,21 @@ export class KeysPipe implements PipeTransform {
   }
 }
 
-// TEST: translation
+// translation
 @Pipe({name: 'translate'})
 export class TranslatePipe implements PipeTransform {
   transform(value) : any {
-    let lexicon = {
+    let dictionary = {
       abbreviation: "Abkürzung",
       word: "Bezeichnung",
       description: "Bedeutung",
       meaning: "Bedeutung"
     };
-    return (lexicon[value] !== undefined) ? lexicon[value] : value;
+    return (dictionary[value] !== undefined) ? dictionary[value] : value;
   }
 }
 
-// TEST: sort array
+// sort array
 @Pipe({name: 'orderBy', pure: false})
 export class OrderBy implements PipeTransform {
 
@@ -112,6 +112,6 @@ export class GlossaryComponent implements OnInit {
 
   getGlossary(): void {
     this.glossaryService.getGlossary()
-      .subscribe(glossary => this.glossary = glossary);
+      .subscribe(glossary => this.glossary = glossary[0]);
   }
 }
