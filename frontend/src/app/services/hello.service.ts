@@ -19,7 +19,7 @@ export class HelloService {
   }
 
   getHelloMessage (): Observable<Object> {
-    return this.http.get<Object>(`${API_URL}/${this.helloUrl}`)
+    return this.http.get(`${API_URL}/${this.helloUrl}`, {responseType: 'text'})
       .pipe(
         tap( helloMessage => console.log(`fetched hello message`)),
         catchError(this.handleError<Object>(`getHelloMessage`))

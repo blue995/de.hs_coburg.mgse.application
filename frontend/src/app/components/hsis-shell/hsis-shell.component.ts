@@ -22,7 +22,10 @@ export class HsisShellComponent implements OnInit {
   _router: any;
   message: any;
 
-  constructor(private router: Router, private helloService: HelloService) { }
+  constructor(
+    private router: Router,
+    private helloService: HelloService
+  ) { }
 
   ngOnInit() {
     this.sideNavOpened = false;
@@ -39,7 +42,7 @@ export class HsisShellComponent implements OnInit {
 
   helloDebugger(helloMessage: any) {
     this.message = helloMessage;
-    console.log(this.message);
+    console.log(`hey, there is a message for you: ${this.message}`);
   }
 
   logout() {

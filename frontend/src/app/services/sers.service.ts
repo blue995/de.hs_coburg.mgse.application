@@ -18,7 +18,7 @@ const httpOptions = {
 })
 export class SersService {
 
-  private sersUrl = 'sers';
+  private sersUrl = 'ser';
 
   constructor(private http: HttpClient) { }
 
