@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-
 import { environment } from '../../environments/environment';
 
 const API_URL = environment.apiUrl;
@@ -12,7 +11,7 @@ const API_URL = environment.apiUrl;
 })
 export class HelloService {
 
-  private helloUrl = 'restapi/hello';
+  private helloUrl = 'hello/john';
 
   constructor(private http: HttpClient) {
 
@@ -20,7 +19,7 @@ export class HelloService {
   }
 
   getHelloMessage (): Observable<Object> {
-    return this.http.get<Object>(this.helloUrl)
+    return this.http.get<Object>(`${API_URL}/${this.helloUrl}`)
       .pipe(
         tap( helloMessage => console.log(`fetched hello message`)),
         catchError(this.handleError<Object>(`getHelloMessage`))

@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
-import {SerMeta} from '../shared/models/ser-meta';
-import {Ser} from '../shared/models/ser';
+import { catchError, tap } from 'rxjs/operators';
+import { SerMeta } from '../shared/models/ser-meta';
+import { Ser } from '../shared/models/ser';
+import { environment } from '../../environments/environment';
+
+const API_URL = environment.apiUrl;
 
 /* currently not needed because we are only using a GET request */
 const httpOptions = {
@@ -15,13 +18,12 @@ const httpOptions = {
 })
 export class SersService {
 
-  // TODO: store in config/ routes file
-  private sersUrl = 'api/sers';
+  private sersUrl = 'sers';
 
   constructor(private http: HttpClient) { }
 
   getSersMeta (): Observable<SerMeta[]> {
-    return this.http.get<SerMeta[]>(this.sersUrl)
+    return this.http.get<SerMeta[]>(`${API_URL}/${this.sersUrl}`)
       .pipe(
         tap(sersMeta => console.log(`fetched ser meta objects`)),
         catchError(this.handleError('getSersMeta', []))
@@ -29,7 +31,7 @@ export class SersService {
   }
 
   getSer (id: number):  Observable<Ser> {
-    const url = `${this.sersUrl}Complete/${id}`; // TODO: remove "Complete from id template string
+    const url = `${API_URL}/${this.sersUrl}Complete/${id}`; // TODO: remove "Complete from id template string
     return this.http.get<Ser>(url).pipe(
       tap(ser => console.log(`fetched ser id=${id}`)),
       catchError(this.handleError<Ser>(`getSer id=${id}`))
