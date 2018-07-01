@@ -86,6 +86,10 @@
       color: #0000ff;
       background-color: #eee;
     }
+
+    &:focus {
+      outline: none;
+    }
   }
 
   &__main-content {
