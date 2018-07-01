@@ -6,16 +6,16 @@ public class ViewExamType {
     private String abbreviation;
     private String examTestUnit;
     private int lowerBound;
-    private int upperBond;
+    private int upperBound;
 
     public ViewExamType() { }
 
-    public ViewExamType(String name, String abbreviation, String examTestUnit, int lowerBound, int upperBond) {
+    public ViewExamType(String name, String abbreviation, String examTestUnit, int lowerBound, int upperBound) {
         this.name = name;
         this.abbreviation = abbreviation;
         this.examTestUnit = examTestUnit;
         this.lowerBound = lowerBound;
-        this.upperBond = upperBond;
+        this.upperBound = upperBound;
     }
 
     public String getName() {
@@ -50,11 +50,11 @@ public class ViewExamType {
         this.lowerBound = lowerBound;
     }
 
-    public int getUpperBond() {
-        return upperBond;
+    public int getUpperBound() {
+        return upperBound;
     }
 
-    public void setUpperBond(int upperBond) {
-        this.upperBond = upperBond;
+    public void setUpperBound(int upperBond) {
+        this.upperBound = upperBound;
     }
 }

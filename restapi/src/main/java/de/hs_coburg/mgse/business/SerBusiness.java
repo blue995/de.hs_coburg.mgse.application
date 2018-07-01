@@ -236,8 +236,8 @@ public class SerBusiness implements SerBusinessIf {
                     }
 
                     ViewModule view_module = new ViewModule();
-                    view_module.setCompleteName(module.getCompleteName());
-                    view_module.setEtcs(module.getEcts());
+                    view_module.setCompleteName(module.getDetails().getWord());
+                    view_module.setEcts(module.getEcts());
                     view_module.setQuantifier(module.getQuantifier());
                     view_module.setSemesterHours(module.getSemesterHours());
                     //view_module.setCount(module.getCount());
