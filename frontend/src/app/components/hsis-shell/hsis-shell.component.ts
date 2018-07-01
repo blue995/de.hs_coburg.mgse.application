@@ -20,6 +20,7 @@ export class HsisShellComponent implements OnInit {
   sideNavOpened: boolean;
   navLinks: Object[];
   _router: any;
+  message: any;
 
   constructor(private router: Router, private helloService: HelloService) { }
 
@@ -28,11 +29,17 @@ export class HsisShellComponent implements OnInit {
     this.navLinks = NAVLINKS;
     this._router = this.router;
 
-    console.log(this.getHelloMessage());
+    this.getHelloMessage();
   }
 
   getHelloMessage() {
-    this.helloService.getHelloMessage();
+    this.helloService.getHelloMessage()
+      .subscribe(helloMessage => this.helloDebugger(helloMessage));
+  }
+
+  helloDebugger(helloMessage: any) {
+    this.message = helloMessage;
+    console.log(this.message);
   }
 
   logout() {
