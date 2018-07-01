@@ -1,23 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Observable, of} from "rxjs/index";
-import {catchError, tap} from "rxjs/operators";
-import { Glossary } from "../shared/models/glossary";
+import { Observable, of } from 'rxjs/index';
+import { catchError, tap } from 'rxjs/operators';
+import { Glossary } from '../shared/models/glossary';
+import { environment } from '../../environments/environment';
+
+const API_URL = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'
 })
 export class GlossaryService {
 
-  // TODO: store in config/ routes file
-  private coursesUrl = 'api/glossary';
+  private glossaryUrl = 'glossary';
 
   constructor(private http: HttpClient) { }
 
   getGlossary (): Observable<Glossary> {
-    const url = `${this.coursesUrl}`;
-    return this.http.get<Glossary>(url).pipe(
-      tap(Glossary => console.log(`fetched glossary`)),
+    return this.http.get<Glossary>(`${API_URL}/${this.glossaryUrl}`)
+      .pipe(
+      tap(glossary => console.log(`fetched glossary`)),
       catchError(this.handleError<Glossary>(`getGlossary`))
     );
   }

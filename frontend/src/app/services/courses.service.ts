@@ -4,6 +4,9 @@ import { Observable, of } from 'rxjs';
 import { CourseCatalogueMeta } from '../shared/models/course-catalogue-meta';
 import { catchError, tap } from 'rxjs/operators';
 import { CourseCatalogue } from '../shared/models/course-catalogue';
+import { environment } from '../../environments/environment';
+
+const API_URL = environment.apiUrl;
 
 /* currently not needed because we are only using a GET request */
 const httpOptions = {
@@ -15,13 +18,12 @@ const httpOptions = {
 })
 export class CoursesService {
 
-  // TODO: store in config/ routes file
-  private coursesUrl = 'api/courses';
+  private coursesUrl = 'courses';
 
   constructor(private http: HttpClient) { }
 
   getCoursesMeta (): Observable<CourseCatalogueMeta[]> {
-    return this.http.get<CourseCatalogueMeta[]>(this.coursesUrl)
+    return this.http.get<CourseCatalogueMeta[]>(`${API_URL}/${this.coursesUrl}`)
       .pipe(
         tap(courseCataloguesMeta => console.log(`fetched course meta objects`)),
         catchError(this.handleError('getCoursesMeta', []))
@@ -29,7 +31,7 @@ export class CoursesService {
   }
 
   getCourseCatalogue (id: number): Observable<CourseCatalogue> {
-    const url = `${this.coursesUrl}Complete/${id}`; // TODO: remove "Complete from id template string
+    const url = `${API_URL}/$${this.coursesUrl}Complete/${id}`; // TODO: remove "Complete from id template string
     return this.http.get<CourseCatalogue>(url).pipe(
       tap(courseCatalogue => console.log(`fetched course catalogue id=${id}`)),
       catchError(this.handleError<CourseCatalogue>(`getCourseCatalogue id=${id}`))

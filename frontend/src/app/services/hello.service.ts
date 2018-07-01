@@ -1,21 +1,27 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable, of} from 'rxjs';
-import {catchError, tap} from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
+
+const API_URL = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'
 })
 export class HelloService {
 
-  private helloUrl = 'restapi/hello';
+  private helloUrl = 'hello/john';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+
+    console.log(`current hello url: ${API_URL}/${this.helloUrl}`);
+  }
 
   getHelloMessage (): Observable<Object> {
-    return this.http.get<Object>(this.helloUrl)
+    return this.http.get<Object>(`${API_URL}/${this.helloUrl}`)
       .pipe(
-        tap( helloMessage => console.log(`fetched hello message`)),
+        tap( helloMessage => console.log(helloMessage)),
         catchError(this.handleError<Object>(`getHelloMessage`))
       );
   }
