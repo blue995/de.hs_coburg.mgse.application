@@ -18,7 +18,7 @@ import de.hs_coburg.mgse.persistence.model.StudyExaminationRegulations;
 import java.util.List;
 
 
-@Path("/sers")
+@Path("/ser")
 public class StudyExaminationRegulationsService {
 
     private static SerBusinessIf bg;
