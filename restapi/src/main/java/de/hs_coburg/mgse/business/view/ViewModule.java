@@ -11,11 +11,10 @@ public class ViewModule {
     private List<ViewCourseType> courseTypes;
     private List<ViewExamType> examTypes;
     private ViewGlossaryEntry details;
-    //private int count;
+    private int count;
 
     public ViewModule() { }
 
-    /*
     public ViewModule(String completeName, int ects, double quantifier, int semesterHours, List<ViewCourseType> courseTypes, List<ViewExamType> examTypes, ViewGlossaryEntry details, int count) {
         this.completeName = completeName;
         this.ects = ects;
@@ -25,17 +24,6 @@ public class ViewModule {
         this.examTypes = examTypes;
         this.details = details;
         this.count = count;
-    }
-    */
-
-    public ViewModule(String completeName, int ects, double quantifier, int semesterHours, List<ViewCourseType> courseTypes, List<ViewExamType> examTypes, ViewGlossaryEntry details) {
-        this.completeName = completeName;
-        this.ects = ects;
-        this.quantifier = quantifier;
-        this.semesterHours = semesterHours;
-        this.courseTypes = courseTypes;
-        this.examTypes = examTypes;
-        this.details = details;
     }
 
     public String getCompleteName() {
@@ -94,7 +82,6 @@ public class ViewModule {
         this.details = details;
     }
 
-    /*
     public int getCount() {
         return count;
     }
@@ -102,5 +89,4 @@ public class ViewModule {
     public void setCount(int count) {
         this.count = count;
     }
-    */
 }

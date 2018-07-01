@@ -236,11 +236,11 @@ public class SerBusiness implements SerBusinessIf {
                     }
 
                     ViewModule view_module = new ViewModule();
-                    view_module.setCompleteName(module.getDetails().getWord());
+                    view_module.setCompleteName((module.getDetails() != null) ? module.getDetails().getWord() : module.getCompleteName());
                     view_module.setEcts(module.getEcts());
                     view_module.setQuantifier(module.getQuantifier());
                     view_module.setSemesterHours(module.getSemesterHours());
-                    //view_module.setCount(module.getCount());
+                    if (module.getCount() != null) view_module.setCount(module.getCount());
 
                     sum_of_etcs           += module.getEcts();
                     sum_of_semester_hours += module.getSemesterHours();
@@ -317,9 +317,6 @@ public class SerBusiness implements SerBusinessIf {
             e.printStackTrace();
             throw new Exception(e);
         }
-
-
-
 
         return view_ser;
     }
