@@ -26,7 +26,7 @@ export class CurriculaService {
   }
 
   getCurriculum (id: number): Observable<Curriculum> {
-    const url = `${API_URL}/${this.curriculaUrl}/${id}`;
+    const url = `${API_URL}/${this.curriculaUrl}Complete/${id}`;
     return this.http.get<Curriculum>(url).pipe(
       tap( curriculum => console.log(`fetched curriculum id=${id}`)),
       catchError(this.handleError<Curriculum>(`getCurriculum id=${id}`))

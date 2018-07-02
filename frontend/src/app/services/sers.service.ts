@@ -18,7 +18,7 @@ const httpOptions = {
 })
 export class SersService {
 
-  private sersUrl = 'ser';
+  private sersUrl = 'sers';
 
   constructor(private http: HttpClient) { }
 
@@ -31,7 +31,7 @@ export class SersService {
   }
 
   getSer (id: number):  Observable<Ser> {
-    const url = `${API_URL}/${this.sersUrl}/${id}`;
+    const url = `${API_URL}/${this.sersUrl}Complete/${id}`;
     return this.http.get<Ser>(url).pipe(
       tap(ser => console.log(`fetched ser id=${id}`)),
       catchError(this.handleError<Ser>(`getSer id=${id}`))

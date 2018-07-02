@@ -31,7 +31,7 @@ export class CoursesService {
   }
 
   getCourseCatalogue (id: number): Observable<CourseCatalogue> {
-    const url = `${API_URL}/$${this.coursesUrl}/${id}`; //
+    const url = `${API_URL}/$${this.coursesUrl}Complete/${id}`; //
     return this.http.get<CourseCatalogue>(url).pipe(
       tap(courseCatalogue => console.log(`fetched course catalogue id=${id}`)),
       catchError(this.handleError<CourseCatalogue>(`getCourseCatalogue id=${id}`))

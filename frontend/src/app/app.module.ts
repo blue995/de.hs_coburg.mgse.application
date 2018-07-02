@@ -64,9 +64,9 @@ import { ChildFootnotesComponent } from './components/child-footnotes/child-foot
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    /*HttpClientInMemoryWebApiModule.forRoot(
+    HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    ),*/
+    ),
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSidenavModule,
