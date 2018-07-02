@@ -1,6 +1,7 @@
 package de.hs_coburg.mgse.business.view;
 
 import java.util.List;
+import java.util.Objects;
 
 public class ViewCurriculumEntry {
 
@@ -118,5 +119,19 @@ public class ViewCurriculumEntry {
 
     public void setTesters(List<ViewProfessor> testers) {
         this.testers = testers;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ViewCurriculumEntry that = (ViewCurriculumEntry) o;
+        return Objects.equals(moduleAbbreviation, that.moduleAbbreviation);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(moduleAbbreviation);
     }
 }
