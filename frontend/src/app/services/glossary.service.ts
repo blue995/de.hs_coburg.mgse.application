@@ -22,6 +22,6 @@ export class GlossaryService {
     return this.http.get<Glossary>(`${API_URL}/${this.glossaryUrl}`)
       .pipe(
         catchError(this.error.handleError<Glossary>(`getGlossary`))
-    );
+      );
   }
 }

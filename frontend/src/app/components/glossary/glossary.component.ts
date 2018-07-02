@@ -120,6 +120,6 @@ export class GlossaryComponent implements OnInit {
 
   getGlossary(): void {
     this.glossaryService.getGlossary()
-      .subscribe(glossary => this.glossary = glossary[0]);
+      .subscribe(glossary => this.glossary = glossary);
   }
 }
