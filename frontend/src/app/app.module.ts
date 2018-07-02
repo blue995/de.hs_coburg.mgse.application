@@ -29,9 +29,6 @@ import {
   TranslatePipe
 } from './components/glossary/glossary.component';
 
-/* this will be removed once we start using our REST api */
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './shared/mocks/in-memory-data.service';
 import { SerDetailComponent } from './components/ser-detail/ser-detail.component';
 import { CourseCatalogueComponent } from './components/course-catalogue/course-catalogue.component';
 import { CurriculumComponent } from './components/curriculum/curriculum.component';
@@ -61,12 +58,6 @@ import { ChildFootnotesComponent } from './components/child-footnotes/child-foot
   imports: [
     BrowserModule, // make sure this import is on the top of the list
     HttpClientModule,
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated server responses.
-    // Remove it when a real server is ready to receive requests.
-    /*HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    ),*/
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSidenavModule,
