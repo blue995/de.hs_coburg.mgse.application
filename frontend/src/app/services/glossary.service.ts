@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs/index';
-import { catchError, tap } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { Glossary } from '../shared/models/glossary';
 import { environment } from '../../environments/environment';
 
@@ -19,8 +19,7 @@ export class GlossaryService {
   getGlossary (): Observable<Glossary> {
     return this.http.get<Glossary>(`${API_URL}/${this.glossaryUrl}`)
       .pipe(
-      tap(glossary => console.log(`fetched glossary`)),
-      catchError(this.handleError<Glossary>(`getGlossary`))
+        catchError(this.handleError<Glossary>(`getGlossary`))
     );
   }
 
@@ -30,7 +29,7 @@ export class GlossaryService {
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
 
-      // TODO: better job of transforming error for user consumption (Snackbar)
+      // TODO: better job of transforming error for user consumption
       console.error(`${operation} failed: ${error.message}`);
 
       // Let the app keep running by returning an empty result.

@@ -1,17 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { SerMeta } from '../shared/models/ser-meta';
 import { Ser } from '../shared/models/ser';
 import { environment } from '../../environments/environment';
 
 const API_URL = environment.apiUrl;
-
-/* currently not needed because we are only using a GET request */
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +20,6 @@ export class SersService {
   getSersMeta (): Observable<SerMeta[]> {
     return this.http.get<SerMeta[]>(`${API_URL}/${this.sersUrl}`)
       .pipe(
-        tap(sersMeta => console.log(`fetched ser meta objects`)),
         catchError(this.handleError('getSersMeta', []))
       );
   }
@@ -33,7 +27,6 @@ export class SersService {
   getSer (id: number):  Observable<Ser> {
     const url = `${API_URL}/${this.sersUrl}/${id}`;
     return this.http.get<Ser>(url).pipe(
-      tap(ser => console.log(`fetched ser id=${id}`)),
       catchError(this.handleError<Ser>(`getSer id=${id}`))
     );
   }
@@ -44,7 +37,7 @@ export class SersService {
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
 
-      // TODO: better job of transforming error for user consumption (Snackbar)
+      // TODO: better job of transforming error for user consumption
       console.error(`${operation} failed: ${error.message}`);
 
       // Let the app keep running by returning an empty result.
