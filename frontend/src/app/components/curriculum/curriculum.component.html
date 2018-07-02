@@ -38,38 +38,38 @@
             <td>{{ entry.moduleCompleteName }}</td>
             <td>{{ entry.moduleAbbreviation }}</td>
             <td>
-            <span *ngIf="entry.semester === 1 || entry.semester === 3 || entry.semester === 5">
-              {{ entry.semesterHours }}
-            </span>
+              <span *ngIf="entry.semester === 1 || entry.semester === 3 || entry.semester === 5">
+                {{ entry.semesterHours }}
+              </span>
             </td>
             <td>
-            <span *ngIf="entry.semester === 2 || entry.semester === 4 || entry.semester === 6">
-              {{ entry.semesterHours }}
-            </span>
+              <span *ngIf="entry.semester === 2 || entry.semester === 4 || entry.semester === 6">
+                {{ entry.semesterHours }}
+              </span>
             </td>
             <td>{{ entry.semesterHours }}</td>
             <td>{{ entry.ects }}</td>
             <td>
-            <span *ngFor="let courseType of entry.moduleCourseTypes; last as isLast" matTooltip="{{ courseType.name }}">
-                {{ courseType.abbreviation }}<span *ngIf="!isLast">,</span>
-            </span>
+              <span *ngFor="let courseType of entry.moduleCourseTypes; last as isLast" matTooltip="{{ courseType.name }}">
+                  {{ courseType.abbreviation }}<span *ngIf="!isLast">,</span>
+              </span>
             </td>
             <td>{{ entry.semester }}.</td>
             <td>
-            <span *ngFor="let examType of entry.moduleExamTypes; last as isLast" matTooltip="{{ examType.name }}">
-                {{ examType.abbreviation }} ({{ examType.upperBound + " " + examType.examTestUnit }})<span *ngIf="!isLast">,<br/></span>
-            </span>
+              <span *ngFor="let examType of entry.moduleExamTypes; last as isLast" matTooltip="{{ examType.name }}">
+                  {{ examType.abbreviation }} ({{ examType.upperBound + " " + examType.examTestUnit }})<span *ngIf="!isLast">,<br/></span>
+              </span>
             </td>
             <td>{{ entry.aidList }}</td>
             <td>
-            <span *ngFor="let person of entry.responsiblePersons; last as isLast" matTooltip="{{ person.lastName }}">
-                {{ person.abbreviation }}<span *ngIf="!isLast">,</span>
-            </span>
+              <span *ngFor="let person of entry.testers; first as isFirst" matTooltip="{{ person.lastName }}">
+                  <span *ngIf="person && isFirst">{{ person.abbreviation }}</span>
+              </span>
             </td>
             <td>
-            <span *ngFor="let person of entry.testers; last as isLast" matTooltip="{{ person.lastName }}">
-                <span *ngIf="person">{{ person.abbreviation }}<span *ngIf="!isLast">,</span></span>
-            </span>
+              <span *ngFor="let person of entry.testers; first as isFirst; last as isLast" matTooltip="{{ person.lastName }}">
+                  <span *ngIf="person && !isFirst">{{ person.abbreviation }}<span *ngIf="!isLast">,</span></span>
+              </span>
             </td>
           </tr>
         </table>
