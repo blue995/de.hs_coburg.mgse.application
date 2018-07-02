@@ -17,7 +17,7 @@
           <mat-list-item *ngFor="let ser of degree.sers">
             <mat-icon mat-list-icon>description</mat-icon>
             <a routerLink="/sers/{{ ser.serId }}" mat-line>{{ ser.shortName }}</a>
-            <p mat-line> Gültig für Studienanfänger ab dem {{ ser.validityDate }} </p>
+            <p mat-line> Gültig für Studienanfänger ab dem {{ ser.validityDate | localizeDate }} </p>
           </mat-list-item>
           <mat-divider *ngIf="!isLast"></mat-divider>
         </div>

@@ -2,7 +2,7 @@
   <div class="a4-document a4-document--landscape">
     <div class="a4-document__title">
       {{ curriculum?.completeName }}<br/>
-      (gültig für Studienanfänger ab dem {{ curriculum?.validityDate }})<br/>
+      (gültig für Studienanfänger ab dem {{ curriculum?.validityDate | localizeDate }})<br/>
       ({{ curriculum?.semester | getSem }} {{ curriculum?.year }})
     </div>
     <div class="a4-document__study-section a4-document--page-break" *ngFor="let studySection of curriculum?.curriculumStudySections; let i = index">

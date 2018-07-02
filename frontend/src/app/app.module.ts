@@ -21,7 +21,13 @@ import { HsisShellComponent } from './components/hsis-shell/hsis-shell.component
 import { SersComponent } from './components/sers/sers.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { CurriculaComponent } from './components/curricula/curricula.component';
-import { GlossaryComponent, KeysPipe, OrderBy, TranslatePipe } from './components/glossary/glossary.component';
+import {
+  GlossaryComponent,
+  KeysPipe,
+  LocalizedDatePipe,
+  OrderBy,
+  TranslatePipe
+} from './components/glossary/glossary.component';
 
 /* this will be removed once we start using our REST api */
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -49,6 +55,7 @@ import { ChildFootnotesComponent } from './components/child-footnotes/child-foot
     GlossaryComponent,
     KeysPipe,
     TranslatePipe,
+    LocalizedDatePipe,
     OrderBy, RomanizePipe, GetSemPipe, GetRouteLabelPipe, ChildGlossaryComponent, ChildFootnotesComponent
   ],
   imports: [

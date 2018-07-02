@@ -30,6 +30,14 @@ export class TranslatePipe implements PipeTransform {
   }
 }
 
+@Pipe({ name: 'localizeDate', pure: false })
+export class LocalizedDatePipe implements PipeTransform {
+  transform(value: any): String {
+    const options = {  day: 'numeric', month: 'long', year: 'numeric' };
+    return new Date(value).toLocaleDateString('de-DE', options);
+  }
+}
+
 // sort array
 @Pipe({name: 'orderBy', pure: false})
 export class OrderBy implements PipeTransform {

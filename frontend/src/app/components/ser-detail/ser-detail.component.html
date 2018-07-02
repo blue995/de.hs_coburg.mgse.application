@@ -5,7 +5,7 @@
         {{ ser?.title }}
       </div>
       <div class="a4-document__creation-date">
-        Vom {{ ser?.validityDate }}
+        Vom {{ ser?.validityDate | localizeDate }}
       </div>
       <div class="a4-document__sub-title">
         {{ ser?.preface }}

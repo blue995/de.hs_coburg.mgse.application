@@ -17,7 +17,7 @@
           <mat-list-item *ngFor="let curriculum of degree.curricula">
             <mat-icon mat-list-icon>description</mat-icon>
             <a routerLink="/curricula/{{ curriculum.curriculumId }}" mat-line>{{ curriculum.shortName }}</a>
-            <p mat-line> Gültig für Studienanfänger ab dem {{ curriculum.validityDate }} </p>
+            <p mat-line> Gültig für Studienanfänger ab dem {{ curriculum.validityDate | localizeDate }} </p>
           </mat-list-item>
           <mat-divider *ngIf="!isLast"></mat-divider>
         </div>
