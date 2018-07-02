@@ -9,6 +9,11 @@ import javax.naming.NamingException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import java.util.List;
 
 public class HibernateUtil {
     private static SessionFactory SESSION_FACTORY_INSTANCE;
@@ -51,5 +56,14 @@ public class HibernateUtil {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("mgse-persistence");
         ENTITY_MANAGER = emf.createEntityManager();
         return emf.createEntityManager();
+    }
+
+    public static <E> List<E> getAllEntries(Class<E> clazz, EntityManager em){
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<E> cq = cb.createQuery(clazz);
+        Root<E> rootEntry = cq.from(clazz);
+        CriteriaQuery<E> all = cq.select(rootEntry);
+        TypedQuery<E> allQuery = em.createQuery(all);
+        return allQuery.getResultList();
     }
 }
