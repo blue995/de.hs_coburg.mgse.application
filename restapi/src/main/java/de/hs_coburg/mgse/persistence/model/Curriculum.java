@@ -22,10 +22,6 @@ public class Curriculum {
     @JoinColumn(nullable = false)
     private List<ModuleSpecification> moduleSpecifications = new ArrayList<ModuleSpecification>();
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(nullable = true)
-    private List<ModuleHandbook> moduleHandbooks = new ArrayList<ModuleHandbook>();
-
     @Column(name = "completeName", nullable = true)
     private String completeName;
 
@@ -85,14 +81,6 @@ public class Curriculum {
 
     public void setYear(Integer year) {
         this.year = year;
-    }
-
-    public List<ModuleHandbook> getModuleHandbooks() {
-        return moduleHandbooks;
-    }
-
-    public void setModuleHandbooks(List<ModuleHandbook> moduleHandbooks) {
-        this.moduleHandbooks = moduleHandbooks;
     }
 
     public List<ModuleSpecification> getModuleSpecifications() {

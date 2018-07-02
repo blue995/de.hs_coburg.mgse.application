@@ -21,6 +21,10 @@ public class ModuleHandbook {
     @JoinColumn(nullable = true)
     private List<ModuleDescription> moduleDescriptions = new ArrayList<ModuleDescription>();
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = true)
+    private Curriculum curriculum;
+
     //getter and setter
     public Long getId() {
         return id;
