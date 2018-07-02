@@ -60,8 +60,8 @@ public class ServerStartupListener implements ServletContextListener {
         if(msg) successfulClasses.add(CurriculumModelCreator.class);
 
         // Create ModuleHandbookModelCreator
-        //msg = msg && ModuleHandbookModelCreator.createModel();
-        //if(msg) successfulClasses.add(ModuleHandbookModelCreator.class);
+        msg = msg && ModuleHandbookModelCreator.createModel();
+        if(msg) successfulClasses.add(ModuleHandbookModelCreator.class);
 
 
         for (Class<?> clazz : successfulClasses) {
