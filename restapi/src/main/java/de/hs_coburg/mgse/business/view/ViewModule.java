@@ -5,8 +5,8 @@ import java.util.List;
 public class ViewModule {
 
     private String completeName;
-    private int etcs;
-    private int quantifier;
+    private int ects;
+    private double quantifier;
     private int semesterHours;
     private List<ViewCourseType> courseTypes;
     private List<ViewExamType> examTypes;
@@ -15,9 +15,9 @@ public class ViewModule {
 
     public ViewModule() { }
 
-    public ViewModule(String completeName, int etcs, int quantifier, int semesterHours, List<ViewCourseType> courseTypes, List<ViewExamType> examTypes, ViewGlossaryEntry details, int count) {
+    public ViewModule(String completeName, int ects, double quantifier, int semesterHours, List<ViewCourseType> courseTypes, List<ViewExamType> examTypes, ViewGlossaryEntry details, int count) {
         this.completeName = completeName;
-        this.etcs = etcs;
+        this.ects = ects;
         this.quantifier = quantifier;
         this.semesterHours = semesterHours;
         this.courseTypes = courseTypes;
@@ -34,19 +34,19 @@ public class ViewModule {
         this.completeName = completeName;
     }
 
-    public int getEtcs() {
-        return etcs;
+    public int getEcts() {
+        return ects;
     }
 
-    public void setEtcs(int etcs) {
-        this.etcs = etcs;
+    public void setEcts(int ects) {
+        this.ects = ects;
     }
 
-    public int getQuantifier() {
+    public double getQuantifier() {
         return quantifier;
     }
 
-    public void setQuantifier(int quantifier) {
+    public void setQuantifier(double quantifier) {
         this.quantifier = quantifier;
     }
 

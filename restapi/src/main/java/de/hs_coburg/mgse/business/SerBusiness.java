@@ -69,12 +69,12 @@ public class SerBusiness implements SerBusinessIf {
                         }
                     }
 
+                    ViewStudyExaminationRegulationsInfo vseri = new ViewStudyExaminationRegulationsInfo(ser.getId(), short_name, ser.getValidityDate().toString());
+
                     // is degree already in view_ser_meta.degrees -> add new ViewStudyExaminationRegulationsInfo
                     if (tmp_view_degree_meta != null) {
-                        ViewStudyExaminationRegulationsInfo vseri = new ViewStudyExaminationRegulationsInfo(ser.getId(), short_name, ser.getValidityDate().toString());
                         tmp_view_degree_meta.getSers().add(vseri);
                     } else { // is degree not in view_ser_meta.degrees -> add new ViewDegreeMeta with new ViewStudyExaminationRegulationsInfo list with new ViewStudyExaminationRegulationsInfo
-                        ViewStudyExaminationRegulationsInfo vseri = new ViewStudyExaminationRegulationsInfo(ser.getId(), short_name, ser.getValidityDate().toString());
                         ViewDegreeMeta vdm = new ViewDegreeMeta(ser.getCourse().getDegree().getGlossaryEntry().getWord(), new ArrayList<ViewStudyExaminationRegulationsInfo>(), null, null);
                         vdm.getSers().add(vseri);
                         tmp_view_ser_meta.getDegrees().add(vdm);
@@ -89,7 +89,6 @@ public class SerBusiness implements SerBusinessIf {
                     view_ser_meta_list.add(vserm);
                 }
             }
-
         } catch (Exception e) {
             e.printStackTrace();
             throw new Exception(e);
@@ -153,6 +152,7 @@ public class SerBusiness implements SerBusinessIf {
             view_ser.setShortName(ser.getTitle().substring(ser.getTitle().indexOf("(") + 1, ser.getTitle().indexOf(")")));
             view_ser.setTitle(ser.getTitle());
             view_ser.setValidityDate(ser.getValidityDate().toString());
+            view_ser.setPreface(ser.getForeword());
 
             // ### CourseOfStudy ###
             ViewCourseOfStudy view_course = new ViewCourseOfStudy();
@@ -165,7 +165,7 @@ public class SerBusiness implements SerBusinessIf {
             for (AdmissionRequirement ar : ser.getCourse().getRequirements()) requirement_list.add(ar.getValue());
             view_course.setRequirements(String.join(", ", requirement_list));
             view_course.setFacultyName(faculty.getCompleteName());
-            // TODO: faculty short name is hiding somewhere -> workaround: take first letters (to upper case) of complete name
+            // faculty short name is hiding somewhere -> workaround: take first letters (to upper case) of complete name
             String faculty_short_name = "";
             for (String s : faculty.getCompleteName().split(" ")) faculty_short_name += s.charAt(0);
             view_course.setFacultyShortName(faculty_short_name.toUpperCase());
@@ -180,15 +180,17 @@ public class SerBusiness implements SerBusinessIf {
                 view_paragraph.setNumber(paragraph.getNumber());
                 //view_paragraph.setSubtitle("");
 
-                // paragraph sentences
-                List<String> view_sentence_list = new ArrayList<>();
+                // paragraph sentences 2 paragraph subsection
+                List<ViewSubsection> view_subsection_list = new ArrayList<>();
+                List<String> sentences = new ArrayList<>();
                 for (Sentence sentence : paragraph.getSentences()) {
-                    view_sentence_list.add(sentence.getText());
+                    sentences.add(sentence.getText());
                 }
-                view_paragraph.setSentences(view_sentence_list);
+                ViewSubsection view_subsection_sentences = new ViewSubsection();
+                view_subsection_sentences.setText(String.join("\n", sentences));
+                if (view_subsection_sentences.getText().length() > 0) view_subsection_list.add(view_subsection_sentences);
 
                 // subsections / subparagraph
-                List<ViewSubsection> view_subsection_list = new ArrayList<>();
                 for (SubParagraph subsection : paragraph.getSubParagraphs()) {
                     ViewSubsection view_subsection = new ViewSubsection();
                     view_subsection.setNumber(subsection.getNumber());
@@ -198,7 +200,7 @@ public class SerBusiness implements SerBusinessIf {
                     for (Sentence sentence : subsection.getSentences()) {
                         view_sub_sentence_list.add(sentence.getText());
                     }
-                    view_subsection.setText(view_sub_sentence_list);
+                    view_subsection.setText(String.join("\n", view_sub_sentence_list));
                     view_subsection_list.add(view_subsection);
                 }
                 view_paragraph.setSubsections(view_subsection_list);
@@ -207,7 +209,77 @@ public class SerBusiness implements SerBusinessIf {
             view_ser.setParagraphs(view_paragraph_list);
 
             // ### StudySections ###
-            // TODO
+            List<ViewStudySection> view_study_section_list = new ArrayList<>();
+
+            for (StudySection study_section : ser.getStudySections()) {
+                ViewStudySection view_study_section = new ViewStudySection();
+
+                view_study_section.setCompleteName(study_section.getCompleteName());
+                view_study_section.setFirstSemester(study_section.getFirstSemester());
+                view_study_section.setLastSemester(study_section.getLastSemester());
+
+                int sum_of_etcs = 0;
+                int sum_of_semester_hours = 0;
+                double sum_of_quantifiers = 0;
+
+                List<ViewModuleType> view_module_type_list = new ArrayList<>();
+
+                for (Module module : study_section.getModules()) {
+                    ViewModuleType view_module_type = null;
+
+                    for (ViewModuleType mt : view_module_type_list) {
+                        if (mt.getTypeName() == module.getModuleType()) {
+                            view_module_type = mt;
+                            break;
+                        }
+                    }
+
+                    ViewModule view_module = new ViewModule();
+                    view_module.setCompleteName((module.getDetails() != null) ? module.getDetails().getWord() : module.getCompleteName());
+                    view_module.setEcts(module.getEcts());
+                    view_module.setQuantifier(module.getQuantifier());
+                    view_module.setSemesterHours(module.getSemesterHours());
+                    if (module.getCount() != null) view_module.setCount(module.getCount());
+
+                    sum_of_etcs           += module.getEcts();
+                    sum_of_semester_hours += module.getSemesterHours();
+                    sum_of_quantifiers    += module.getQuantifier();
+
+                    // course types
+                    List<ViewCourseType> view_course_type_list = new ArrayList<>();
+                    for (CourseTypeDeclaration ctd : module.getCourseType()) {
+                        view_course_type_list.add(new ViewCourseType(ctd.getDetails().getWord(), ctd.getDetails().getAbbreviation()));
+                    }
+                    view_module.setCourseTypes(view_course_type_list);
+
+                    // exam types
+                    List<ViewExamType> view_exam_type_list = new ArrayList<>();
+                    for (ExamType cet : module.getExamTypes()) {
+                        view_exam_type_list.add(new ViewExamType(cet.getExamTypeDeclaration().getDetails().getWord(),
+                                                                 cet.getExamTypeDeclaration().getDetails().getAbbreviation(),
+                                                                 cet.getExamTypeDeclaration().getUnit(),
+                                                                 cet.getLowerBound(), cet.getUpperBound()));
+                    }
+                    view_module.setExamTypes(view_exam_type_list);
+
+                    // is module type already in view module type list?
+                    if (view_module_type != null) {
+                        view_module_type.getModules().add(view_module);
+                    } else { // is module not in view module type list
+                        ViewModuleType tmp_view_module_type = new ViewModuleType();
+                        tmp_view_module_type.setTypeName(module.getModuleType());
+                        tmp_view_module_type.setModules(new ArrayList<>());
+                        tmp_view_module_type.getModules().add(view_module);
+                        view_module_type_list.add(tmp_view_module_type);
+                    }
+                }
+                view_study_section.setSumOfEcts(sum_of_etcs);
+                view_study_section.setSumOfSemesterHours(sum_of_semester_hours);
+                view_study_section.setSumOfQuantifiers(sum_of_quantifiers);
+                view_study_section.setModuleTypes(view_module_type_list);
+                view_study_section_list.add(view_study_section);
+            }
+            view_ser.setStudySections(view_study_section_list);
 
             // ### Footnote ###
             List<ViewFootnote> footnote_list = new ArrayList<>();
@@ -244,9 +316,6 @@ public class SerBusiness implements SerBusinessIf {
             e.printStackTrace();
             throw new Exception(e);
         }
-
-
-
 
         return view_ser;
     }

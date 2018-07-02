@@ -29,11 +29,11 @@ public class ModuleSpecification {
     @JoinColumn(nullable = true)
     private List<CustomAid> customAids = new ArrayList<CustomAid>();
 
-    /*
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
     private GlossaryEntry details;
-    */
+
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
@@ -97,7 +97,7 @@ public class ModuleSpecification {
     public void setCustomAids(List<CustomAid> customAids) {
         this.customAids = customAids;
     }
-    /*
+
     public GlossaryEntry getDetails() {
         return details;
     }
@@ -105,7 +105,7 @@ public class ModuleSpecification {
     public void setDetails(GlossaryEntry details) {
         this.details = details;
     }
-    */
+
     public Module getModule() {
         return module;
     }

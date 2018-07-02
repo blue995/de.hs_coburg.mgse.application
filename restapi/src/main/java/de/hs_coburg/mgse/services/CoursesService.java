@@ -13,7 +13,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
-@Path("/courses")
+@Path("/not_courses")
 public class CoursesService {
 
     private static CoursesBusinessIf bg;

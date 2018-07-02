@@ -5,11 +5,11 @@ import java.util.List;
 public class ViewSubsection {
 
     private int number;
-    private List<String> text;
+    private String text;
 
     public ViewSubsection() { }
 
-    public ViewSubsection(int number, List<String> text) {
+    public ViewSubsection(int number, String text) {
         this.number = number;
         this.text = text;
     }
@@ -22,11 +22,11 @@ public class ViewSubsection {
         this.number = number;
     }
 
-    public List<String> getText() {
+    public String getText() {
         return text;
     }
 
-    public void setText(List<String> text) {
+    public void setText(String text) {
         this.text = text;
     }
 }

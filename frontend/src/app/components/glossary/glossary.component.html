@@ -20,7 +20,7 @@
   </div>
 
   <ng-container *ngIf="glossary">
-    <div class="a4-document a4-document--portrait" *ngFor="let section of glossary.sections">
+    <div class="a4-document a4-document--portrait" *ngFor="let section of glossary.sections | orderBy : ['completeName', '-completeName']">
       <div style="margin-bottom: 20px;">
         <span class="a4-document__cover-subheadline">{{ section?.completeName }}</span>
       </div>

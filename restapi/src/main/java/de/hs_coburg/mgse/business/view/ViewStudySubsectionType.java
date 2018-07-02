@@ -4,22 +4,22 @@ import java.util.List;
 
 public class ViewStudySubsectionType {
 
-    private String subjectionTypeName;
+    private String subsectionTypeName;
     private List<ViewCurriculumEntry> curriculumEntries;
 
     public ViewStudySubsectionType() { }
 
-    public ViewStudySubsectionType(String subjectionTypeName, List<ViewCurriculumEntry> curriculumEntries) {
-        this.subjectionTypeName = subjectionTypeName;
+    public ViewStudySubsectionType(String subsectionTypeName, List<ViewCurriculumEntry> curriculumEntries) {
+        this.subsectionTypeName = subsectionTypeName;
         this.curriculumEntries = curriculumEntries;
     }
 
-    public String getSubjectionTypeName() {
-        return subjectionTypeName;
+    public String getSubsectionTypeName() {
+        return subsectionTypeName;
     }
 
-    public void setSubjectionTypeName(String subjectionTypeName) {
-        this.subjectionTypeName = subjectionTypeName;
+    public void setSubsectionTypeName(String subsectionTypeName) {
+        this.subsectionTypeName = subsectionTypeName;
     }
 
     public List<ViewCurriculumEntry> getCurriculumEntries() {

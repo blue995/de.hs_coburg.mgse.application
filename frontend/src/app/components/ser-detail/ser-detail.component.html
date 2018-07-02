@@ -5,7 +5,7 @@
         {{ ser?.title }}
       </div>
       <div class="a4-document__creation-date">
-        Vom {{ ser?.validityDate }}
+        Vom {{ ser?.validityDate | localizeDate }}
       </div>
       <div class="a4-document__sub-title">
         {{ ser?.preface }}
@@ -66,7 +66,7 @@
         </div>
         <table class="a4-document__module-table">
           <tr *ngFor="let module of moduleType.modules">
-            <td style="width: 25%; text-align: left" valign="top">
+            <td style="width: 27.5%; text-align: left" valign="top">
               {{ module.completeName }}
             </td>
             <td style="width: 7.5%" valign="top">
@@ -74,7 +74,7 @@
               {{ module.semesterHours }}
               <span *ngIf="module.count"> = {{ module.count*module.semesterHours }}</span>
             </td>
-            <td style="width: 10%" valign="top">
+            <td style="width: 12.5%" valign="top">
               <span *ngFor="let courseType of module.courseTypes; last as isLast" matTooltip="{{ courseType.name }}">
                 {{ courseType.abbreviation }}<span *ngIf="!isLast">,</span>
               </span>
@@ -105,7 +105,7 @@
 
       <table class="a4-document__sum-table a4-document--page-break">
         <tr>
-          <td style="width: 25%" valign="top">
+          <td style="width: 27.5%" valign="top">
             <span class="a4-document__section-sum-text">
               Zwischensumme {{ studySection.firstSemester }}. + {{ studySection.lastSemester }}.
             </span>
@@ -115,7 +115,7 @@
               {{ studySection.sumOfSemesterHours }}
             </span>
           </td>
-          <td style="width: 47.5%; visibility: hidden" valign="top"></td>
+          <td style="width: 50%; visibility: hidden" valign="top"></td>
           <td style="width: 7.5%" valign="top">
             <span class="a4-document__section-sum-text">
               {{ studySection.sumOfQuantifiers }}

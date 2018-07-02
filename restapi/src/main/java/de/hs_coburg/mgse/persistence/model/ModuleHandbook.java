@@ -13,6 +13,10 @@ public class ModuleHandbook {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = true)
+    private Curriculum curriculum;
+
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(nullable = true)
     private List<ModuleDescription> moduleDescriptions = new ArrayList<ModuleDescription>();
