@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Glossary } from '../shared/models/glossary';
 import { environment } from '../../environments/environment';
-import {HsisServiceError} from '../shared/errorhandling/HsisServiceError';
+import { HsisServiceError } from '../shared/errorhandling/HsisServiceError';
 
 const API_URL = environment.apiUrl;
 

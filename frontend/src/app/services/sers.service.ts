@@ -5,7 +5,7 @@ import { catchError } from 'rxjs/operators';
 import { SerMeta } from '../shared/models/ser-meta';
 import { Ser } from '../shared/models/ser';
 import { environment } from '../../environments/environment';
-import {HsisServiceError} from '../shared/errorhandling/HsisServiceError';
+import { HsisServiceError } from '../shared/errorhandling/HsisServiceError';
 
 const API_URL = environment.apiUrl;
 

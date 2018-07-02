@@ -5,7 +5,7 @@ import { CourseCatalogueMeta } from '../shared/models/course-catalogue-meta';
 import { catchError } from 'rxjs/operators';
 import { CourseCatalogue } from '../shared/models/course-catalogue';
 import { environment } from '../../environments/environment';
-import {HsisServiceError} from '../shared/errorhandling/HsisServiceError';
+import { HsisServiceError } from '../shared/errorhandling/HsisServiceError';
 
 const API_URL = environment.apiUrl;
 
@@ -27,7 +27,7 @@ export class CoursesService {
   }
 
   getCourseCatalogue (id: number): Observable<CourseCatalogue> {
-    const url = `${API_URL}/$${this.coursesUrl}/${id}`; //
+    const url = `${API_URL}/$${this.coursesUrl}/${id}`;
     return this.http.get<CourseCatalogue>(url)
       .pipe(
         catchError(this.error.handleError<CourseCatalogue>(`getCourseCatalogue id=${id}`))

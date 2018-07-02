@@ -5,7 +5,7 @@ import { CurriculumMeta } from '../shared/models/curriculum-meta';
 import { catchError } from 'rxjs/operators';
 import { Curriculum } from '../shared/models/curriculum';
 import { environment } from '../../environments/environment';
-import {HsisServiceError} from '../shared/errorhandling/HsisServiceError';
+import { HsisServiceError } from '../shared/errorhandling/HsisServiceError';
 
 const API_URL = environment.apiUrl;
 
