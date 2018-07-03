@@ -3,6 +3,7 @@ package de.hs_coburg.mgse.services;
 import de.hs_coburg.mgse.business.CourseCatalogueBusiness;
 import de.hs_coburg.mgse.business.CourseCatalogueBusinessIf;
 import de.hs_coburg.mgse.business.view.ViewCourseCatalogue;
+import de.hs_coburg.mgse.business.view.ViewCoursesMeta;
 import de.hs_coburg.mgse.persistence.model.ModuleHandbook;
 
 import javax.ws.rs.GET;
@@ -29,7 +30,7 @@ public class CourseCatalogueService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getViewCourseCatalogueList() {
         if (bg == null) Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new Exception("Business interface not found")).build();
-        List<ViewCourseCatalogue> list;
+        List<ViewCoursesMeta> list;
 
         try {
             list = bg.readViewCourseCatalogueList();

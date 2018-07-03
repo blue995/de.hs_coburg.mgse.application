@@ -141,24 +141,24 @@ public class CurriculumBusiness implements CurriculumBusinessIf {
 
             // ### StudySections ###
             List<ViewCurriculumEntry> tmp_view_curriculum_entry_list = new ArrayList<>();
-            for (ModuleSpecification module_specifcation : curriculum.getModuleSpecifications()) {
+            for (ModuleSpecification module_specification : curriculum.getModuleSpecifications()) {
                 ViewCurriculumEntry view_curriculum_entry = new ViewCurriculumEntry();
-                view_curriculum_entry.setSemester(module_specifcation.getSemester());
-                view_curriculum_entry.setRota(module_specifcation.getRota());
-                view_curriculum_entry.setModuleCompleteName((module_specifcation.getModule().getDetails() != null) ? module_specifcation.getModule().getDetails().getWord() : module_specifcation.getModule().getCompleteName());
-                view_curriculum_entry.setModuleAbbreviation(module_specifcation.getModule().getCompleteName());
-                view_curriculum_entry.setEcts(module_specifcation.getModule().getEcts());
-                view_curriculum_entry.setSemesterHours(module_specifcation.getModule().getSemesterHours());
+                view_curriculum_entry.setSemester(module_specification.getSemester());
+                view_curriculum_entry.setRota(module_specification.getRota());
+                view_curriculum_entry.setModuleCompleteName((module_specification.getModule().getDetails() != null) ? module_specification.getModule().getDetails().getWord() : module_specification.getModule().getCompleteName());
+                view_curriculum_entry.setModuleAbbreviation(module_specification.getModule().getCompleteName());
+                view_curriculum_entry.setEcts(module_specification.getModule().getEcts());
+                view_curriculum_entry.setSemesterHours(module_specification.getModule().getSemesterHours());
 
                 // concat aid & custom aid list to coma separated string
                 List<String> aid_list = new ArrayList<>();
-                for (Aid aid : module_specifcation.getAids()) aid_list.add(aid.getCompleteName());
-                for (CustomAid aid : module_specifcation.getCustomAids()) aid_list.add(aid.getCompleteName());
+                for (Aid aid : module_specification.getAids()) aid_list.add(aid.getCompleteName());
+                for (CustomAid aid : module_specification.getCustomAids()) aid_list.add(aid.getCompleteName());
                 view_curriculum_entry.setAidList(String.join(", ", aid_list));
 
                 // testers
                 List<ViewProfessor> tester_list = new ArrayList<>();
-                for (Professor tester : module_specifcation.getTesters()) {
+                for (Professor tester : module_specification.getTesters()) {
                     tester_list.add(new ViewProfessor(tester.getFirstName(), tester.getLastName(), tester.getEmail(), tester.getRoom(), tester.getAbbreviation().getAbbreviation()));
                 }
                 view_curriculum_entry.setTesters(tester_list);
@@ -168,7 +168,7 @@ public class CurriculumBusiness implements CurriculumBusinessIf {
 
                 // course types
                 List<ViewCourseType> view_course_type_list = new ArrayList<>();
-                for (CourseTypeDeclaration course_type : module_specifcation.getCourseTypes()) {
+                for (CourseTypeDeclaration course_type : module_specification.getCourseTypes()) {
                     ViewCourseType view_course_type = new ViewCourseType(course_type.getDetails().getWord(), course_type.getDetails().getAbbreviation());
                     view_course_type_list.add(view_course_type);
                 }
@@ -176,7 +176,7 @@ public class CurriculumBusiness implements CurriculumBusinessIf {
 
                 // exam types
                 List<ViewExamType> view_exam_type_list = new ArrayList<>();
-                for (ConcreteExamType exam_type : module_specifcation.getConcreteExamTypes()) {
+                for (ConcreteExamType exam_type : module_specification.getConcreteExamTypes()) {
                     ViewExamType view_exam_type = new ViewExamType(exam_type.getExamType().getExamTypeDeclaration().getDetails().getWord(),
                                                                    exam_type.getExamType().getExamTypeDeclaration().getDetails().getAbbreviation(),
                                                                    exam_type.getExamType().getExamTypeDeclaration().getUnit(),
