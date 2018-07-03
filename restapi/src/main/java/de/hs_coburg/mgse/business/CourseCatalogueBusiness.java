@@ -188,7 +188,7 @@ public class CourseCatalogueBusiness implements CourseCatalogueBusinessIf {
 
                 List<String> media_list = new ArrayList<>();
                 for (Media media : module_desc.getMedias()) media_list.add(media.getCompleteName().replace("[","").replace("]",""));
-                view_course.setMediaType(String.join(", ", media_list));
+                view_course.setMediaTypes(String.join(", ", media_list));
 
                 view_course_list.add(view_course);
             }

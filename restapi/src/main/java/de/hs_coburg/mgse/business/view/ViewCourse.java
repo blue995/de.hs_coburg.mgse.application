@@ -20,12 +20,12 @@ public class ViewCourse {
     private String qualificationGoals;
     private String content;
     private String examType;
-    private String mediaType;
+    private String mediaTypes;
     private String literature;
 
     public ViewCourse() { }
 
-    public ViewCourse(long id, String courseOfStudy, String moduleSpecification, String abbreviation, int semesterHours, int ects, String workload, int semester, String rota, String duration, String responsiblePerson, String lecturer, String language, String admissionRequirements, String prerequisites, String qualificationGoals, String content, String examType, String mediaType, String literature) {
+    public ViewCourse(long id, String courseOfStudy, String moduleSpecification, String abbreviation, int semesterHours, int ects, String workload, int semester, String rota, String duration, String responsiblePerson, String lecturer, String language, String admissionRequirements, String prerequisites, String qualificationGoals, String content, String examType, String mediaTypes, String literature) {
         this.id = id;
         this.courseOfStudy = courseOfStudy;
         this.moduleSpecification = moduleSpecification;
@@ -44,7 +44,7 @@ public class ViewCourse {
         this.qualificationGoals = qualificationGoals;
         this.content = content;
         this.examType = examType;
-        this.mediaType = mediaType;
+        this.mediaTypes = mediaTypes;
         this.literature = literature;
     }
 
@@ -192,12 +192,12 @@ public class ViewCourse {
         this.examType = examType;
     }
 
-    public String getMediaType() {
-        return mediaType;
+    public String getMediaTypes() {
+        return mediaTypes;
     }
 
-    public void setMediaType(String mediaType) {
-        this.mediaType = mediaType;
+    public void setMediaTypes(String mediaTypes) {
+        this.mediaTypes = mediaTypes;
     }
 
     public String getLiterature() {
