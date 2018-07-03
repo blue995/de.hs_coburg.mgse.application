@@ -12,8 +12,6 @@ export class ChildGlossaryComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    console.log(this.glossary);
-  }
+  ngOnInit() { }
 
 }

@@ -5,8 +5,9 @@ import de.hs_coburg.mgse.persistence.HibernateUtil;
 import de.hs_coburg.mgse.persistence.model.*;
 
 import javax.persistence.EntityManager;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class CurriculumBusiness implements CurriculumBusinessIf {
 
@@ -140,15 +141,22 @@ public class CurriculumBusiness implements CurriculumBusinessIf {
             view_curriculum.setCompleteName(curriculum.getCompleteName());
 
             // ### StudySections ###
+            Map<StudySection, Map<String, List<ViewCurriculumEntry>>> lookup = new HashMap<>();
             List<ViewCurriculumEntry> tmp_view_curriculum_entry_list = new ArrayList<>();
             for (ModuleSpecification module_specification : curriculum.getModuleSpecifications()) {
                 ViewCurriculumEntry view_curriculum_entry = new ViewCurriculumEntry();
-                view_curriculum_entry.setSemester(module_specification.getSemester());
-                view_curriculum_entry.setRota(module_specification.getRota());
-                view_curriculum_entry.setModuleCompleteName((module_specification.getModule().getDetails() != null) ? module_specification.getModule().getDetails().getWord() : module_specification.getModule().getCompleteName());
-                view_curriculum_entry.setModuleAbbreviation(module_specification.getModule().getCompleteName());
-                view_curriculum_entry.setEcts(module_specification.getModule().getEcts());
-                view_curriculum_entry.setSemesterHours(module_specification.getModule().getSemesterHours());
+                view_curriculum_entry.setSemester(module_specifcation.getSemester());
+                view_curriculum_entry.setRota(module_specifcation.getRota());
+                if(module_specifcation.getDetails() != null){
+                    view_curriculum_entry.setModuleCompleteName(module_specifcation.getDetails().getWord());
+                    view_curriculum_entry.setModuleAbbreviation(module_specifcation.getDetails().getAbbreviation());
+                }else {
+                    view_curriculum_entry.setModuleCompleteName((module_specifcation.getModule().getDetails() != null) ? module_specifcation.getModule().getDetails().getWord() : module_specifcation.getModule().getCompleteName());
+                    view_curriculum_entry.setModuleAbbreviation(module_specifcation.getModule().getCompleteName());
+                }
+
+                view_curriculum_entry.setEcts(module_specifcation.getModule().getEcts());
+                view_curriculum_entry.setSemesterHours(module_specifcation.getModule().getSemesterHours());
 
                 // concat aid & custom aid list to coma separated string
                 List<String> aid_list = new ArrayList<>();
@@ -185,49 +193,38 @@ public class CurriculumBusiness implements CurriculumBusinessIf {
                 }
                 view_curriculum_entry.setModuleExamTypes(view_exam_type_list);
 
-                tmp_view_curriculum_entry_list.add(view_curriculum_entry);
+                List<StudySection> studySections = curriculum.getSer().getStudySections().stream().filter(ss -> ss.getModules().contains(module_specifcation.getModule())).collect(Collectors.toList());
+                if(studySections.size() != 1){
+                    throw new RuntimeException("Study section is not unique");
+                }
+                StudySection section = studySections.get(0);
+                String moduleType = module_specifcation.getModule().getModuleType();
+                if(!lookup.containsKey(section)){
+                    lookup.put(section, new HashMap<>());
+                }
+                if(!lookup.get(section).containsKey(moduleType)){
+                    lookup.get(section).put(moduleType, new LinkedList<>());
+                }
+                lookup.get(section).get(moduleType).add(view_curriculum_entry);
             }
 
             List<ViewCurriculumStudySection> view_curriculum_study_section_list = new ArrayList<>();
 
-            for (StudySection study_section : curriculum.getSer().getStudySections()) {
+            List<StudySection> ordered = new LinkedList<>(lookup.keySet());
+            ordered.sort(new StudySectionComparator());
+            for (StudySection study_section : ordered) {
                 ViewCurriculumStudySection view_curriculum_study_section = new ViewCurriculumStudySection();
                 view_curriculum_study_section.setCompleteName(study_section.getCompleteName());
 
                 // Liste an SubSections (Pflichtmodul, Wahlmodule, usw.)
                 List<ViewStudySubsectionType> view_study_subsection_type_list = new ArrayList<>();
-
-                for (Module module : study_section.getModules()) {
-                    String subsection_type_name = module.getModuleType();
-                    ViewStudySubsectionType view_subsection_type = null;
-                    for (ViewStudySubsectionType vst : view_study_subsection_type_list) {
-                        if (vst.getSubsectionTypeName() == subsection_type_name) {
-                            view_subsection_type = vst;
-                            break;
-                        }
-                    }
-
-                    // get curriculum entry
-                    ViewCurriculumEntry view_curriculum_entry = null;
-                    for (ViewCurriculumEntry vce : tmp_view_curriculum_entry_list) {
-                        if (vce.getModuleAbbreviation() == module.getCompleteName()) {
-                            view_curriculum_entry = vce;
-                            break;
-                        }
-                    }
-                    if (view_curriculum_entry == null) break;
-
-                    // add curriculum entry to subsection
-                    if (view_subsection_type != null) {
-                        view_subsection_type.getCurriculumEntries().add(view_curriculum_entry);
-                    } else {
-                        ViewStudySubsectionType tmp_view_subsection_type = new ViewStudySubsectionType();
-                        tmp_view_subsection_type.setSubsectionTypeName(subsection_type_name);
-                        List<ViewCurriculumEntry> tmp_curriculum_entry_list = new ArrayList<>();
-                        tmp_curriculum_entry_list.add(view_curriculum_entry);
-                        tmp_view_subsection_type.setCurriculumEntries(tmp_curriculum_entry_list);
-                        view_study_subsection_type_list.add(tmp_view_subsection_type);
-                    }
+                List<String> orderedModuleTypes = new LinkedList<>(lookup.get(study_section).keySet());
+                orderedModuleTypes.sort(new ModuleTypeComparator(study_section));
+                for(String moduleType: orderedModuleTypes){
+                    ViewStudySubsectionType view_subsection_type = new ViewStudySubsectionType();
+                    view_subsection_type.setSubsectionTypeName(moduleType);
+                    view_subsection_type.setCurriculumEntries(lookup.get(study_section).get(moduleType));
+                    view_study_subsection_type_list.add(view_subsection_type);
                 }
 
                 view_curriculum_study_section.setSubsectionTypes(view_study_subsection_type_list);
