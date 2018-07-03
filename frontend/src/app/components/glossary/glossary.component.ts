@@ -33,7 +33,7 @@ export class TranslatePipe implements PipeTransform {
 @Pipe({ name: 'localizeDate', pure: false })
 export class LocalizedDatePipe implements PipeTransform {
   transform(value: any): String {
-    const options = {  day: 'numeric', month: 'long', year: 'numeric' };
+    const options = {  day: '2-digit', month: 'long', year: 'numeric' };
     return new Date(value).toLocaleDateString('de-DE', options);
   }
 }

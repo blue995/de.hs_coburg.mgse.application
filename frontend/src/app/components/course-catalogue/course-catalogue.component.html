@@ -17,7 +17,7 @@
         </span>
         <span class="a4-document__cover-subheadline">
           {{ courseCatalogue?.courseOfStudy }} ({{ courseCatalogue?.courseOfStudyAbbreviation }}) -
-          <br/>Gueltig fuer Studienanfaenger ab {{ courseCatalogue?.validityDate }}
+          <br/>Gueltig fuer Studienanfaenger ab {{ courseCatalogue?.validityDate | localizeDate }}
         </span>
         <span class="a4-document__cover-faculty-information">
           {{ courseCatalogue?.facultyName }}
