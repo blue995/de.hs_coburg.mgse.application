@@ -167,7 +167,7 @@ public class CourseCatalogueBusiness implements CourseCatalogueBusinessIf {
                 view_course.setDuration("einsemestrig");
 
                 List<String> lecturer_list = new ArrayList<>();
-                for (Professor prof : module_desc.getLectures()) lecturer_list.add(prof.getAbbreviation().getAbbreviation());
+                for (Professor prof : module_desc.getLectures()) lecturer_list.add(prof.getFirstName() + " " + prof.getLastName());
                 view_course.setLecturer(String.join(", ", lecturer_list));
 
                 view_course.setResponsiblePerson(lecturer_list.get(0));
