@@ -134,7 +134,7 @@ public class SerBusiness implements SerBusinessIf {
             em.getTransaction().begin();
             faculty_list = em.createQuery("SELECT x FROM Faculty x").getResultList();
             em.getTransaction().commit();
-            if (ser == null) throw new Exception("Faculty list not found");
+            if (faculty_list == null) throw new Exception("Faculty list not found");
 
             Faculty faculty = null;
             for (Faculty f : faculty_list) {

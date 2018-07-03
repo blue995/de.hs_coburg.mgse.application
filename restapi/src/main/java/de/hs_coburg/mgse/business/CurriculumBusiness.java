@@ -172,7 +172,6 @@ public class CurriculumBusiness implements CurriculumBusinessIf {
                 view_curriculum_entry.setTesters(tester_list);
 
                 // responsible persons
-                // TODO
 
                 // course types
                 List<ViewCourseType> view_course_type_list = new ArrayList<>();

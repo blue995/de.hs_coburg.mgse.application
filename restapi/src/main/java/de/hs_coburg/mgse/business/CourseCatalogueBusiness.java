@@ -135,13 +135,29 @@ public class CourseCatalogueBusiness implements CourseCatalogueBusinessIf {
             em.getTransaction().commit();
             if (course_catalogue == null) throw new Exception("Course catalogue not found");
 
+            List<Faculty> faculty_list;
+            em.getTransaction().begin();
+            faculty_list = em.createQuery("SELECT x FROM Faculty x").getResultList();
+            em.getTransaction().commit();
+            if (faculty_list == null) throw new Exception("Faculty list not found");
+
             view_course_catalogue = new ViewCourseCatalogue();
             view_course_catalogue.setId(course_catalogue.getId());
             view_course_catalogue.setCatalogueId(course_catalogue.getId());
             view_course_catalogue.setCourseOfStudy(course_catalogue.getCurriculum().getSer().getCourse().getCompleteName() + " " + course_catalogue.getCurriculum().getSer().getCourse().getDegree().getGlossaryEntry().getWord());
             view_course_catalogue.setCourseOfStudyAbbreviation("");
             view_course_catalogue.setValidityDate(course_catalogue.getCurriculum().getSer().getValidityDate().toString());
-            //view_course_catalogue.setFacultyName();
+
+            Faculty faculty = null;
+            for (Faculty f : faculty_list) {
+                for (CourseOfStudies cos : f.getCourseOfStudies()) {
+                    if (cos.getCompleteName() == course_catalogue.getCurriculum().getSer().getCourse().getCompleteName()) {
+                        faculty = f;
+                        break;
+                    }
+                }
+            }
+            if (faculty != null) view_course_catalogue.setFacultyName(faculty.getCompleteName());
 
             List<ViewCourse> view_course_list = new ArrayList<>();
             for (ModuleDescription module_desc : course_catalogue.getModuleDescriptions()) {
