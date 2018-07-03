@@ -145,18 +145,18 @@ public class CurriculumBusiness implements CurriculumBusinessIf {
             List<ViewCurriculumEntry> tmp_view_curriculum_entry_list = new ArrayList<>();
             for (ModuleSpecification module_specification : curriculum.getModuleSpecifications()) {
                 ViewCurriculumEntry view_curriculum_entry = new ViewCurriculumEntry();
-                view_curriculum_entry.setSemester(module_specifcation.getSemester());
-                view_curriculum_entry.setRota(module_specifcation.getRota());
-                if(module_specifcation.getDetails() != null){
-                    view_curriculum_entry.setModuleCompleteName(module_specifcation.getDetails().getWord());
-                    view_curriculum_entry.setModuleAbbreviation(module_specifcation.getDetails().getAbbreviation());
+                view_curriculum_entry.setSemester(module_specification.getSemester());
+                view_curriculum_entry.setRota(module_specification.getRota());
+                if(module_specification.getDetails() != null){
+                    view_curriculum_entry.setModuleCompleteName(module_specification.getDetails().getWord());
+                    view_curriculum_entry.setModuleAbbreviation(module_specification.getDetails().getAbbreviation());
                 }else {
-                    view_curriculum_entry.setModuleCompleteName((module_specifcation.getModule().getDetails() != null) ? module_specifcation.getModule().getDetails().getWord() : module_specifcation.getModule().getCompleteName());
-                    view_curriculum_entry.setModuleAbbreviation(module_specifcation.getModule().getCompleteName());
+                    view_curriculum_entry.setModuleCompleteName((module_specification.getModule().getDetails() != null) ? module_specification.getModule().getDetails().getWord() : module_specification.getModule().getCompleteName());
+                    view_curriculum_entry.setModuleAbbreviation(module_specification.getModule().getCompleteName());
                 }
 
-                view_curriculum_entry.setEcts(module_specifcation.getModule().getEcts());
-                view_curriculum_entry.setSemesterHours(module_specifcation.getModule().getSemesterHours());
+                view_curriculum_entry.setEcts(module_specification.getModule().getEcts());
+                view_curriculum_entry.setSemesterHours(module_specification.getModule().getSemesterHours());
 
                 // concat aid & custom aid list to coma separated string
                 List<String> aid_list = new ArrayList<>();
@@ -193,12 +193,12 @@ public class CurriculumBusiness implements CurriculumBusinessIf {
                 }
                 view_curriculum_entry.setModuleExamTypes(view_exam_type_list);
 
-                List<StudySection> studySections = curriculum.getSer().getStudySections().stream().filter(ss -> ss.getModules().contains(module_specifcation.getModule())).collect(Collectors.toList());
+                List<StudySection> studySections = curriculum.getSer().getStudySections().stream().filter(ss -> ss.getModules().contains(module_specification.getModule())).collect(Collectors.toList());
                 if(studySections.size() != 1){
                     throw new RuntimeException("Study section is not unique");
                 }
                 StudySection section = studySections.get(0);
-                String moduleType = module_specifcation.getModule().getModuleType();
+                String moduleType = module_specification.getModule().getModuleType();
                 if(!lookup.containsKey(section)){
                     lookup.put(section, new HashMap<>());
                 }
