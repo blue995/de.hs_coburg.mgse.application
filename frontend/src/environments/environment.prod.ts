@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
 
-  apiUrl: 'http://restapi:8080/rest-api/webapi',
+  apiUrl: 'https://restapi:8080/rest-api/webapi',
 };
