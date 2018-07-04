@@ -19,27 +19,26 @@
     </div>
   </div>
 
-  <ng-container *ngIf="glossary">
-    <div class="a4-document a4-document--portrait" *ngFor="let section of glossary.sections | orderBy : ['completeName', '-completeName']">
-      <div style="margin-bottom: 20px;">
-        <span class="a4-document__cover-subheadline">{{ section?.completeName }}</span>
-      </div>
-      <table class="a4-document__course-table a4-document--page-break">
-        <tr>
-          <ng-container *ngFor="let item of section.entries[0] | keys">
-            <th *ngIf="item?.key !== 'id'">
-              {{ item.key | translate }}
-            </th>
-          </ng-container>
-        </tr>
-        <tr *ngFor="let entry of section.entries | orderBy : ['abbreviation', '-abbreviation']">
-          <ng-container *ngFor="let item of entry | keys ">
-            <td *ngIf="item?.key !== 'id'">
-              {{ item.value }}
-            </td>
-          </ng-container>
-        </tr>
-      </table>
+  <div class="a4-document a4-document--portrait" *ngFor="let section of glossary?.sections | orderBy : ['completeName', '-completeName']">
+    <div style="margin-bottom: 20px;">
+      <span class="a4-document__cover-subheadline">{{ section?.completeName }}</span>
     </div>
-  </ng-container>
+    <table class="a4-document__course-table a4-document--page-break">
+      <tr>
+        <ng-container *ngFor="let item of section.entries[0] | keys">
+          <th *ngIf="item?.key !== 'id'">
+            {{ item.key | translate }}
+          </th>
+        </ng-container>
+      </tr>
+      <tr *ngFor="let entry of section.entries | orderBy : ['abbreviation', '-abbreviation']">
+        <ng-container *ngFor="let item of entry | keys ">
+          <td *ngIf="item?.key !== 'id'">
+            {{ item.value }}
+          </td>
+        </ng-container>
+      </tr>
+    </table>
+  </div>
+
 </div>
